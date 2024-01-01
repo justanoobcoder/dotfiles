@@ -26,6 +26,8 @@ set -gx FZF_DEFAULT_OPTS "--layout=reverse --height 40% --color=16 --border"
 
 # Others
 set -gx CARGO_HOME $XDG_DATA_HOME/cargo
+set -gx GOPATH $XDG_DATA_HOME/go
+set -gx JAVA_HOME /usr/lib/jvm/java-17-openjdk
 set -gx WGETRC $XDG_CONFIG_HOME/wget/wgetrc
 set -gx TERMINFO $XDG_DATA_HOME/terminfo
 set -gx TERMINFO_DIRS $XDG_DATA_HOME/terminfo:/usr/share/terminfo
@@ -34,5 +36,4 @@ set -gx XAUTHORITY $XDG_RUNTIME_DIR/Xauthority
 set -gx GTK2_RC_FILES $XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0
 set -gx LESSHISTFILE -
 set -gx NPM_CONFIG_USERCONFIG $XDG_CONFIG_HOME/npm/npmrc
-set -gx IDEA_JDK /opt/openjdk-bin-11
 set -gx _JAVA_AWT_WM_NONREPARENTING 1
