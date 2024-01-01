@@ -34,11 +34,13 @@ anArea() {
 }
 
 currentWindow() {
+    sleep 1
     maim -i "$(xdotool getactivewindow)" $scrotdir/scrot-window-"$(date '+%y%m%d-%H%M-%S').png" &&
     sendNotification "Screenshot" "Saved in ~/user/pictures/screenshots"
 }
 
 fullScreen() {
+    sleep 1
     maim $scrotdir/scrot-full-"$(date '+%y%m%d-%H%M-%S').png" &&
     sendNotification "Screenshot" "Saved in ~/user/pictures/screenshots"
 }
@@ -49,11 +51,13 @@ anAreaCopy() {
 }
 
 currentWindowCopy() {
+    sleep 1
     maim -i "$(xdotool getactivewindow)" | xclip -selection clipboard -t image/png
     sendNotification "Screenshot" "Copied to clipboard"
 }
 
 fullScreenCopy() {
+    sleep 1
     maim | xclip -selection clipboard -t image/png
     sendNotification "Screenshot" "Copied to clipboard"
 }
