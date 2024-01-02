@@ -17,5 +17,5 @@ set fish_cursor_replace_one underscore
 # visual mode, but due to fish_cursor_default, is redundant here
 set fish_cursor_visual block
 
-neofetch
+fastfetch
 starship init fish | source
