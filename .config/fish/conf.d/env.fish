@@ -24,10 +24,13 @@ set -gx GLFW_IM_MODULE ibus
 # Fzf
 set -gx FZF_DEFAULT_OPTS "--layout=reverse --height 40% --color=16 --border"
 
+# Java
+set -gx JAVA_HOME /usr/lib/jvm/java-17-openjdk
+
 # Others
 set -gx CARGO_HOME $XDG_DATA_HOME/cargo
+set -gx RUSTUP_HOME $XDG_DATA_HOME/rustup
 set -gx GOPATH $XDG_DATA_HOME/go
-set -gx JAVA_HOME /usr/lib/jvm/java-17-openjdk
 set -gx WGETRC $XDG_CONFIG_HOME/wget/wgetrc
 set -gx TERMINFO $XDG_DATA_HOME/terminfo
 set -gx TERMINFO_DIRS $XDG_DATA_HOME/terminfo:/usr/share/terminfo
