@@ -1,63 +1,110 @@
 #!/bin/bash
 
+# Description: This script is used to restore my git repos
 # You don't need this script if you're not me =))
 
-error() { echo -e "$1" && exit; }
+# This script must not be run as root
+[[ $EUID -eq 0 ]] &&
+	echo "Error: this script must not be run as root." &&
+	exit 1
 
-[ $EUID -eq 0 ] && error "Do not run this script as root."
+# Dependencies: git, gum, ssh, xclip
+DEPS=(git gum ssh xclip)
 
-ssh-keygen -t rsa -b 4096 -C "syaorancode@gmail.com"
-eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/id_rsa
+EMAIL="syaorancode@gmail.com"
+NAME="Nguyen Hong Hiep"
 
-xclip -se c < ~/.ssh/id_rsa.pub
-echo "Your ssh public key has been copied to system clipboard.
-Please add your public key to your github/gitlab. Press Enter when you're done."
-read -r
-
+# Specify the directory where the repos will be cloned
 REPO_DIR="${HOME}/user/works/repos"
-rm -rf "${REPO_DIR}"/*
 
-git_repos=(
-git@github.com:justanoobcoder/code.git
-git@github.com:justanoobcoder/dmenu.git
-git@github.com:justanoobcoder/dotfiles.git
-git@github.com:justanoobcoder/dwm.git
-git@github.com:justanoobcoder/lfs.git
-git@github.com:justanoobcoder/files.git
-git@github.com:justanoobcoder/gentoo-overlay.git
-git@github.com:justanoobcoder/gentoo-stuff.git
-git@github.com:justanoobcoder/st.git
-git@github.com:justanoobcoder/nmtool.git
-git@github.com:justanoobcoder/xmenu.git
+# Specify the repos to be cloned
+GIT_REPOS=(
+	git@github.com:justanoobcoder/dotfiles.git
+	git@github.com:justanoobcoder/dwm.git
+	git@github.com:justanoobcoder/files.git
+	git@github.com:justanoobcoder/st.git
 )
 
-git_clone() {
-    local _repo_name="`basename ${1} | sed 's/\.git//g'`"
-    if [ "${_repo_name}" == "dotfiles" ]; then
-        git clone --bare ${1} ${REPO_DIR}/${_repo_name}
-    else
-        git clone ${1} ${REPO_DIR}/${_repo_name}
-    fi
+info() {
+	echo "$(gum style --foreground="75" "Info:") $1"
 }
 
-for repo in ${git_repos[@]}; do
-    git_clone ${repo}
-done
+error() {
+	echo "$(gum style --foreground="196" "Error:") $1" >&2
+	exit 1
+}
 
-cd "${REPO_DIR}"/nowater
-git checkout dev
+warning() {
+	echo "$(gum style --foreground="214" "Warning:") $1" >&2
+}
 
-cd "${REPO_DIR}"/dotfiles
-git --git-dir=${REPO_DIR}/dotfiles/ --work-tree=${HOME} \
-    config --local status.showUntrackedFiles no
+generate_ssh_key() {
+	ssh-keygen -t ed25519 -C "$1"
+	eval "$(ssh-agent -s)"
+	ssh-add ~/.ssh/id_ed25519
 
-cd
-mkdir ~/.config/git
-touch ~/.config/git/config
-git config --global user.email "syaorancode@gmail.com"
-git config --global user.name "Nguyen Hong Hiep"
-git config --global pager.branch false
-git config --global pager.log false
+	xclip -se c <~/.ssh/id_ed25519.pub
+	info "Your ssh public key has been copied to system clipboard.
+Please add your public key to your github/gitlab.
+Press $(gum style --foreground="123" "Enter") when the key has been added."
+	read -r
+}
 
-exit 0
+git_clone() {
+	local _repo_name="$(basename ${1} | sed 's/\.git//g')"
+	if [ "${_repo_name}" == "dotfiles" ]; then
+		# gum spin can't handle git clone --bare,
+		# so we have to use a temporary script
+		echo "#!/bin/bash
+        git clone --bare ${1} ${REPO_DIR}/${_repo_name}" >/tmp/dotfiles_clone.sh
+		chmod +x /tmp/dotfiles_clone.sh
+		gum spin -s dot --title "Cloning ${_repo_name}..." \
+			/tmp/dotfiles_clone.sh
+		rm /tmp/dotfiles_clone.sh
+	else
+		gum spin -s dot --title "Cloning ${_repo_name}..." \
+			git clone ${1} ${REPO_DIR}/${_repo_name}
+	fi
+}
+
+config_git() {
+	cd $HOME
+	[ ! -f ~/.config/git/config ] &&
+		mkdir -p ~/.config/git &&
+		touch ~/.config/git/config
+	git config --global user.email "${EMAIL}"
+	git config --global user.name "${NAME}"
+	git config --global pager.branch false
+	git config --global pager.log false
+}
+
+main() {
+	# Check dependencies
+	for dep in "${DEPS[@]}"; do
+		if ! command -v "$dep" &>/dev/null; then
+			echo "Error: $dep is not installed." >&2
+			exit 1
+		fi
+	done
+
+	generate_ssh_key "syaorancode@gmail.com"
+
+	# Create the directory if it doesn't exist or clear it if it does
+	[ ! -d "${REPO_DIR}" ] && mkdir -p "${REPO_DIR}" || rm -rf "${REPO_DIR}"/*
+
+	for repo in ${GIT_REPOS[@]}; do
+		git_clone ${repo}
+	done
+
+	# Point dotfiles repo working tree to $HOME
+	git --git-dir=${REPO_DIR}/dotfiles/ --work-tree=${HOME} \
+		config --local status.showUntrackedFiles no
+
+	config_git
+
+	gum style --foreground="75" "Done."
+
+	exit 0
+}
+
+main "$@"

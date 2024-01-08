@@ -14,8 +14,8 @@ shutdown | sudo shutdown -h now"
 #shutdown | sudo shutdown -h now"
 
 choice="$(echo "$optandcmd" | cut -f 1 -d '|' |
-    rofi -dmenu -p 'Option:' 2> /dev/null)" || exit
+	rofi -dmenu -p 'Option:' 2>/dev/null)" || exit
 
-`echo "$optandcmd" | grep "^$choice" | cut -f 2 -d '|'`
+$(echo "$optandcmd" | grep "^$choice" | cut -f 2 -d '|')
 
 exit 0
