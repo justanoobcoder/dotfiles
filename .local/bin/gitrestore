@@ -76,6 +76,7 @@ config_git() {
 	git config --global user.name "${NAME}"
 	git config --global pager.branch false
 	git config --global pager.log false
+    git config --global init.defaultBranch main
 }
 
 main() {
