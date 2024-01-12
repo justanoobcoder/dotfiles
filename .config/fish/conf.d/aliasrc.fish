@@ -36,3 +36,4 @@ alias cdu "cd /run/media/$USER"
 alias wget 'wget --hsts-file "$XDG_CACHE_HOME/wget-hsts"'
 alias yarn 'yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
 alias config 'git --git-dir=$HOME/user/works/repos/dotfiles/ --work-tree=$HOME'
+alias g "lazygit"
