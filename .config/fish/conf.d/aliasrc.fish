@@ -16,13 +16,13 @@ end
 if type -q edit
     alias sv "sudo edit"
 else if type -q sudoedit
-    alias sv "sudoedit"
+    alias sv sudoedit
 end
 
 alias grep "grep --color=auto"
 alias fgrep "fgrep --color=auto"
 alias egrep "egrep --color=auto"
-alias cl "clear"
+alias cl clear
 alias sd "sudo shutdown -h now"
 alias rb "sudo shutdown -r now"
 alias cfx "$EDITOR ~/.config/X11/xinitrc"
@@ -36,4 +36,5 @@ alias cdu "cd /run/media/$USER"
 alias wget 'wget --hsts-file "$XDG_CACHE_HOME/wget-hsts"'
 alias yarn 'yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
 alias config 'git --git-dir=$HOME/user/works/repos/dotfiles/ --work-tree=$HOME'
-alias g "lazygit"
+alias g lazygit
+alias gh "lazygit -w $HOME -g $HOME/user/works/repos/dotfiles/"
