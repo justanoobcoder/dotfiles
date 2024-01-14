@@ -9,44 +9,45 @@ is_mute() {
 }
 
 if [ "$1" == "inc" ]; then
-   amixer -q sset Master 2%+
-   eww update volume-muted=false
-   canberra-gtk-play -i audio-volume-change -d "changeVolume"
+	amixer -q sset Master 2%+
+	eww update volume-muted=false
+	canberra-gtk-play -i audio-volume-change -d "changeVolume"
 fi
 
 if [ "$1" == "dec" ]; then
-   amixer -q sset Master 2%-
-   eww update volume-muted=false
-   canberra-gtk-play -i audio-volume-change -d "changeVolume"
+	amixer -q sset Master 2%-
+	eww update volume-muted=false
+	canberra-gtk-play -i audio-volume-change -d "changeVolume"
 fi
 
 if [ "$1" == "toggle" ]; then
-   amixer -q sset Master toggle
-   if is_mute; then
-        eww update volume-muted=true
-   else
-        eww update volume-muted=false
-   fi
+	amixer -q sset Master toggle
+	if is_mute; then
+		eww update volume-muted=true
+	else
+		eww update volume-muted=false
+	fi
 fi
 
 AMIXER=$(amixer sget Master)
 VOLUME=$(echo $AMIXER | grep 'Right:' | awk -F'[][]' '{ print $2 }' | tr -d "%")
 MUTE=$(echo $AMIXER | grep -o '\[off\]' | tail -n 1)
 if [ "$VOLUME" -le 20 ]; then
-    ICON=audio-volume-low
-else if [ "$VOLUME" -le 60 ]; then
-         ICON=audio-volume-medium
-     else 
-         ICON=audio-volume-high
-     fi
+	ICON=audio-volume-low
+else
+	if [ "$VOLUME" -le 60 ]; then
+		ICON=audio-volume-medium
+	else
+		ICON=audio-volume-high
+	fi
 fi
 if [ "$MUTE" == "[off]" ]; then
-    ICON=audio-volume-muted
-fi 
+	ICON=audio-volume-muted
+fi
 
 notify-send.py "Volume" "$VOLUME/100" \
-                         --hint string:image-path:$ICON boolean:transient:true \
-                                int:has-percentage:$VOLUME \
-                         --replaces-process "volume-popup" &
+	--hint string:image-path:$ICON boolean:transient:true \
+	int:has-percentage:$VOLUME \
+	--replaces-process "volume-popup" &
 
 exit 0
