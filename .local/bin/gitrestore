@@ -12,7 +12,7 @@
 DEPS=(git gum ssh xclip)
 
 EMAIL="syaorancode@gmail.com"
-NAME="Nguyen Hong Hiep"
+NAME="Nguyễn Hồng Hiệp"
 
 # Specify the directory where the repos will be cloned
 REPO_DIR="${HOME}/user/works/repos"
@@ -76,7 +76,7 @@ config_git() {
 	git config --global user.name "${NAME}"
 	git config --global pager.branch false
 	git config --global pager.log false
-    git config --global init.defaultBranch main
+	git config --global init.defaultBranch main
 }
 
 main() {
