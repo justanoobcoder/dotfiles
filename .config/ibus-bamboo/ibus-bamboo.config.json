@@ -178,6 +178,7 @@
   "InputModeMapping": {
     "Alacritty:Alacritty": 4,
     "Navigator:Firefox": 1,
+    "Navigator:floorp": 4,
     "Opera:Opera": 4,
     "brave-browser:Brave-browser": 4,
     "code:Code": 1,
