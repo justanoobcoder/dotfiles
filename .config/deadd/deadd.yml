@@ -263,8 +263,8 @@ notification:
 
       ### The mouse button for dismissing a popup. Must be either "mouse1", 
       ### "mouse2", "mouse3", "mouse4", or "mouse5"
-      dismiss: mouse1
+      dismiss: mouse3
 
       ### The mouse button for opening a popup with the default action.
       ### Must be either "mouse1", "mouse2", "mouse3", "mouse4", or "mouse5"
-      default-action: mouse3
+      default-action: mouse1
