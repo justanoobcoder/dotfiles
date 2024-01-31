@@ -1,0 +1,1 @@
+/home/hiepnh/.local/share/pipx/venvs/notify-send-py/bin/notify-send.py
