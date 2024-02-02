@@ -31,9 +31,13 @@ set -gx FZF_DEFAULT_OPTS "--layout=reverse --height 40% --color=16 --border"
 set -gx JAVA_HOME /usr/lib/jvm/java-17-openjdk
 
 # Others
+set -gx DOCKER_CONFIG $XDG_CONFIG_HOME/docker
+set -gx MACHINE_STORAGE_PATH $XDG_DATA_HOME/docker-machine
 set -gx CARGO_HOME $XDG_DATA_HOME/cargo
 set -gx RUSTUP_HOME $XDG_DATA_HOME/rustup
 set -gx GOPATH $XDG_DATA_HOME/go
+set -gx GOMODCACHE $XDG_CACHE_HOME/go/mod
+set -gx GRADLE_USER_HOME $XDG_DATA_HOME/gradle
 set -gx WGETRC $XDG_CONFIG_HOME/wget/wgetrc
 set -gx TERMINFO $XDG_DATA_HOME/terminfo
 set -gx TERMINFO_DIRS $XDG_DATA_HOME/terminfo:/usr/share/terminfo
