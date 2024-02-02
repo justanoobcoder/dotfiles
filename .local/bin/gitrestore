@@ -12,14 +12,13 @@
 DEPS=(git gum ssh xclip)
 
 EMAIL="syaorancode@gmail.com"
-NAME="Nguyễn Hồng Hiệp"
+NAME="Nguyen Hong Hiep"
 
 # Specify the directory where the repos will be cloned
 REPO_DIR="${HOME}/user/works/repos"
 
 # Specify the repos to be cloned
 GIT_REPOS=(
-	git@github.com:justanoobcoder/dotfiles.git
 	git@github.com:justanoobcoder/dwm.git
 	git@github.com:justanoobcoder/files.git
 	git@github.com:justanoobcoder/st.git
@@ -52,19 +51,8 @@ Press $(gum style --foreground="123" "Enter") when the key has been added."
 
 git_clone() {
 	local _repo_name="$(basename ${1} | sed 's/\.git//g')"
-	if [ "${_repo_name}" == "dotfiles" ]; then
-		# gum spin can't handle git clone --bare,
-		# so we have to use a temporary script
-		echo "#!/bin/bash
-        git clone --bare ${1} ${REPO_DIR}/${_repo_name}" >/tmp/dotfiles_clone.sh
-		chmod +x /tmp/dotfiles_clone.sh
-		gum spin -s dot --title "Cloning ${_repo_name}..." \
-			/tmp/dotfiles_clone.sh
-		rm /tmp/dotfiles_clone.sh
-	else
-		gum spin -s dot --title "Cloning ${_repo_name}..." \
-			git clone ${1} ${REPO_DIR}/${_repo_name}
-	fi
+	gum spin -s dot --title "Cloning ${_repo_name}..." \
+		git clone ${1} ${REPO_DIR}/${_repo_name}
 }
 
 config_git() {
