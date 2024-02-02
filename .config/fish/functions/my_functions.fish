@@ -1,5 +1,5 @@
 function cff
-    set file (find ~/.config/fish -type f | fzf)
+    set file (find $DOTFILES_DIR/.config/fish -type f | fzf)
     [ -z "$file" ] || $EDITOR $file
 end
 
@@ -15,14 +15,8 @@ function mcd
     mkdir -p $argv[1] && cd $argv[1]
 end
 
-function cfv
-    set file (find ~/.config/nvim -type d -path ~/.config/nvim/.git -prune -o \
-        ! -type d -print | fzf)
-    [ -z "$file" ] || $EDITOR $file
-end
-
 function fb
-    set file (find ~/.local/bin -type f | fzf)
+    set file (find $DOTFILES_DIR/.local/bin -type f | fzf)
     [ -z "$file" ] || $EDITOR $file
 end
 
@@ -34,9 +28,7 @@ end
 
 function frepo
     cd ~/user/works/repos
-    set dir (ls $HOME/user/works/repos | fzf || echo .)
-    [ "$dir" = code ] && cd code && cd (ls $HOME/user/works/repos/code |
-        fzf || echo .) || cd $dir
+    cd (ls $HOME/user/works/repos | fzf || echo .)
 end
 
 
