@@ -1,3 +1,6 @@
+# You can change this to your own dotfiles directory.
+set -gx DOTFILES_DIR $HOME/user/works/repos/dotfiles
+
 # Default program.
 set -gx EDITOR nvim
 set -gx TERMINAL alacritty
