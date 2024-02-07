@@ -4,7 +4,7 @@ set -gx DOTFILES_DIR $HOME/user/works/repos/dotfiles
 # Default program.
 set -gx EDITOR nvim
 set -gx TERMINAL alacritty
-set -gx BROWSER floorp
+set -gx BROWSER firefox
 set -gx AUR_HELPER paru
 
 # Some default config directories
