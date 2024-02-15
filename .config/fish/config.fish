@@ -17,5 +17,20 @@ set fish_cursor_replace_one underscore
 # visual mode, but due to fish_cursor_default, is redundant here
 set fish_cursor_visual block
 
-fastfetch
-starship init fish | source
+if type -q fastfetch
+    fastfetch
+else
+    echo "fastfetch not found, please install it"
+end
+
+if type -q starship
+    starship init fish | source
+else
+    echo "starship not found, please install it"
+end
+
+if type -q zoxide
+    zoxide init fish | source
+else
+    echo "zoxide not found, please install it"
+end
