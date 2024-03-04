@@ -17,12 +17,12 @@ set -gx XINITRC $XDG_CONFIG_HOME/X11/xinitrc
 set -gx XSERVERRC $XDG_CONFIG_HOME/X11/xserverrc
 
 # Ibus
-set -gx GTK_IM_MODULE ibus
-set -gx XMODIFIERS @im=ibus
-set -gx QT_IM_MODULE ibus
-set -gx QT4_IM_MODULE ibus
-set -gx CLUTTER_IM_MODULE ibus
-set -gx GLFW_IM_MODULE ibus
+#set -gx GTK_IM_MODULE fcitx
+set -gx XMODIFIERS @im=fcitx
+set -gx QT_IM_MODULE fcitx
+set -gx QT4_IM_MODULE fcitx
+set -gx CLUTTER_IM_MODULE fcitx
+set -gx GLFW_IM_MODULE fcitx
 
 # Fzf
 set -gx FZF_DEFAULT_OPTS "--layout=reverse --height 40% --color=16 --border"
