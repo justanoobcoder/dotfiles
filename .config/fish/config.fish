@@ -2,7 +2,8 @@ source ~/.config/fish/functions/my_functions.fish
 
 if status is-login
     if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
-        exec startx $XINITRC
+        #exec startx $XINITRC
+        exec Hyprland
     end
 end
 
