@@ -149,6 +149,7 @@ const options = mkOptions(OPTIONS, {
                 "intellij-idea-ultimate-edition",
                 "dbeaver",
                 "postman",
+                "obs",
             ],
         ]),
     },
