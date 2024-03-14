@@ -27,14 +27,14 @@ function bwin
 end
 
 function frepo
-    cd ~/user/works/repos
-    cd (ls $HOME/user/works/repos | fzf || echo .)
+    cd ~/user/work/repo
+    cd (ls $HOME/user/work/repo | fzf || echo .)
 end
 
 
 function faur
-    cd ~/user/works/aurs
-    cd (ls $HOME/user/works/aurs | fzf || echo .)
+    cd ~/user/work/aur
+    cd (ls $HOME/user/work/aur | fzf || echo .)
 end
 
 function fparu
