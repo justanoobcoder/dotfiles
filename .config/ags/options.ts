@@ -145,7 +145,6 @@ const options = mkOptions(OPTIONS, {
         maxItem: opt(6),
         favorites: opt([
             [
-                "microsoft-edge-stable",
                 "intellij-idea-ultimate-edition",
                 "dbeaver",
                 "postman",
