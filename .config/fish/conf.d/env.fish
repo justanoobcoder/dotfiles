@@ -1,5 +1,5 @@
 # You can change this to your own dotfiles directory.
-set -gx DOTFILES_DIR $HOME/user/works/repos/dotfiles
+set -gx DOTFILES_DIR $HOME/user/work/repo/dotfiles
 
 # Default program.
 set -gx EDITOR nvim
