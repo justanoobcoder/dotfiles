@@ -3,6 +3,11 @@ function cff
     [ -z "$file" ] || $EDITOR $file
 end
 
+function cfh
+    set file (find $DOTFILES_DIR/.config/hypr -type f | fzf)
+    [ -z "$file" ] || $EDITOR $file
+end
+
 function ud
     if string match -rq '.*gentoo.*' (uname -r)
         sudo emerge --sync && sudo emerge -auDU @world
