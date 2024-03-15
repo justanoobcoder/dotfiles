@@ -18,6 +18,9 @@ set fish_cursor_replace_one underscore
 # visual mode, but due to fish_cursor_default, is redundant here
 set fish_cursor_visual block
 
+# ctrl+h for history search, ctrl+p for process search
+fzf_configure_bindings --history=\ch --processes=\cp
+
 if type -q fastfetch
     fastfetch
 else
