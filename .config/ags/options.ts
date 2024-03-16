@@ -43,8 +43,8 @@ const options = mkOptions(OPTIONS, {
         scheme: opt<"dark" | "light">("dark"),
         widget: { opacity: opt(94) },
         border: {
-            width: opt(1),
-            opacity: opt(96),
+            width: opt(2),
+            opacity: opt(100),
         },
 
         shadows: opt(true),
@@ -61,7 +61,7 @@ const options = mkOptions(OPTIONS, {
     },
 
     bar: {
-        flatButtons: opt(true),
+        flatButtons: opt(false),
         position: opt<"top" | "bottom">("top"),
         corners: opt(true),
         layout: {
