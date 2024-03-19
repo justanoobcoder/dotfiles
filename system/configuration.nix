@@ -7,7 +7,7 @@ in
 {
   imports =
     [
-      ./hardware-configuration.nix
+      ./hardware.nix
       ./packages.nix
       ./programs.nix
       ./services.nix
@@ -49,6 +49,12 @@ in
   };
 
   console.keyMap = "${keyboardLayout}";
+  services.xserver = {
+    xkb = {
+      layout = "${keyboardLayout}";
+      variant = "";
+    };
+  };
 
   nixpkgs.config.allowUnfree = true;
 
@@ -61,15 +67,6 @@ in
       ];
     }
   ];
-
-  # values: “ondemand”, “powersave”, “performance”
-  powerManagement = {
-    cpuFreqGovernor = "performance";
-    cpufreq = {
-      min = 2700000;
-      max = 2800000;
-    };
-  };
 
   hardware = {
     bluetooth = {

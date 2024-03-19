@@ -1,18 +1,8 @@
-{ pkgs, ... }:
+{ ... }:
 
-let
-  inherit (import ../options.nix)
-  keyboardLayout;
-in
 {
   services = {
     openssh.enable = true;
-    xserver = {
-      xkb = {
-        layout = "${keyboardLayout}";
-        variant = "";
-      };
-    };
     pipewire = {
       enable = true;
       alsa.enable = true;
@@ -41,4 +31,16 @@ in
     enable = true;
     enableOnBoot = false;
   };
+
+  systemd.services.warp-svc = {
+    description = "Cloudflare WARP";
+    serviceConfig = {
+      Type = "exec";
+      ExecStart = "/run/current-system/sw/bin/warp-svc";
+      ExecStop = "pkill warp-svc";
+      Restart = "on-failure";
+    };
+    wantedBy = [ "default.target" ];
+  };
+  systemd.services.warp-svc.enable = true;
 }
