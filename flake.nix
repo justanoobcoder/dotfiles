@@ -24,7 +24,7 @@
         };
       system = system;
       modules = [
-        ./system/configuration.nix
+        ./system/config.nix
 
         home-manager.nixosModules.home-manager
         {
