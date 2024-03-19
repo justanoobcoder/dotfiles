@@ -10,10 +10,6 @@
       source = ./fcitx5;
       recursive = true;
     };
-    ".config/fastfetch" = {
-      source = ./fastfetch;
-      recursive = true;
-    };
     ".config/ags" = {
       source = ./ags;
       recursive = true;
