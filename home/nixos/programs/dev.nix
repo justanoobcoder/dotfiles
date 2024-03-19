@@ -5,10 +5,9 @@
     jetbrains.idea-ultimate
     dbeaver
     postman
+    docker
     docker-compose
-    nodejs
     nodePackages.npm
-    nodePackages.pnpm
     yarn
   ];
 
@@ -21,6 +20,7 @@ set relativenumber
 let mapleader=" "
 
 " Replace all
-nnoremap <leader>s :%s//g<Left><Left>'';
+nnoremap <leader>s :%s//g<Left><Left>
+'';
 }
 

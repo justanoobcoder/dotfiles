@@ -1,12 +1,6 @@
-{
-  lib,
-  pkgs,
-  ...
-}: {
-  home.packages = with pkgs; [
-    fastfetch
-  ];
+{ pkgs, ... }:
 
+{
   programs = {
     eza = {
       enable = true;

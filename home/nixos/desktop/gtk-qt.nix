@@ -12,10 +12,6 @@
 
   xresources.path = "${config.xdg.configHome}/Xresources";
 
-  home.packages = with pkgs; [
-    nwg-look
-  ];
-
   # Theme GTK
   gtk = {
     enable = true;
