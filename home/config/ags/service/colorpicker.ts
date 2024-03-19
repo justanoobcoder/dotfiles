@@ -34,7 +34,7 @@ class ColorPicker extends Service {
         if (!color)
             return
 
-        colorpicker.wlCopy(color)
+        //colorpicker.wlCopy(color)
         const list = colorpicker.colors
         if (!list.includes(color)) {
             list.push(color)

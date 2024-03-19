@@ -2,9 +2,9 @@
 
 {
   environment.systemPackages = with pkgs; [
+    wget
     neovim
     nodejs_21
-    bun
     power-profiles-daemon
     cloudflare-warp
   ];
