@@ -29,6 +29,7 @@ in
       sd = "shutdown -h now";
       rb = "shutdown -r now";
       g = "lazygit";
+      gd = "lazygit -w ${flakeDir}";
       wget = "wget --hsts-file $XDG_CACHE_HOME/wget-hsts";
       yarn = "yarn --use-yarnrc $XDG_CONFIG_HOME/yarn/config";
     };
