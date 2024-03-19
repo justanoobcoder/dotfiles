@@ -15,6 +15,7 @@ in
       exec Hyprland
     end'';
     shellAliases = {
+      ud = "sudo nixos-rebuild switch --flake ${flakeDir}#${hostname}";
       ls = "eza --group-directories-first";
       ll = "eza -lbg --icons";
       la = "eza -a";
@@ -37,16 +38,23 @@ in
     set fish_cursor_insert line
     set fish_cursor_replace_one underscore
     set fish_cursor_visual block
-    fzf_configure_bindings --history=\ch --processes=\cp
-    '';
+    fzf_configure_bindings --history=\ch --processes=\cp'';
     shellInitLast = ''fastfetch'';
     functions = {
       frepo = ''
       set repodir $HOME/user/work/repo
       cd $repodir
-      cd (ls $repodir | fzf --layout=reverse --height 40% --border || echo .)
-      '';
-      ud = "sudo nixos-rebuild switch --flake ${flakeDir}#${hostname}";
+      cd (ls $repodir | fzf --layout=reverse --height 40% --border || echo .)'';
+
+      cfh = ''
+      set file (find $HOME/.config/hypr -type f | fzf --layout=reverse --height 40% --border)
+      [ -z "$file" ] || $EDITOR $file'';
+
+      mcd = "mkdir -p $argv[1] && cd $argv[1]";
+
+      fb = ''
+      set file (find $DOTFILES_DIR/.local/bin -type f | fzf)
+      [ -z "$file" ] || $EDITOR $file'';
     };
   };
 }
