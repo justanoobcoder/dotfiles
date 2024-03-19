@@ -9,7 +9,7 @@ in
   users.users."${username}" = {
     isNormalUser = true;
     homeMode = "755";
-    hashedPassword = "${hashedPassword}"
+    hashedPassword = "${hashedPassword}";
     description = "${gitUsername}";
     extraGroups = [ "networkmanager" "wheel" "video" "audio" "storage" "power" "docker" ];
     shell = pkgs."${shell}";
