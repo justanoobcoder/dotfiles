@@ -5,7 +5,6 @@
     jetbrains.idea-ultimate
     dbeaver
     postman
-    docker
     docker-compose
     nodePackages.npm
     yarn
