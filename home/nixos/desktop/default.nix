@@ -7,5 +7,6 @@
     ./hyprland.nix
     ./common.nix
     ./fonts.nix
+    ./user-dirs.nix
   ];
 }
