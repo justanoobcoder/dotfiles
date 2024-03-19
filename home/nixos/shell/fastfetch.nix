@@ -13,7 +13,6 @@
         "os",
         "host",
         "kernel",
-        "packages",
         "shell",
         "display",
         "de",
