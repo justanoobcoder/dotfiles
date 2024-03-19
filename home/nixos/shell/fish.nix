@@ -1,5 +1,9 @@
 { pkgs, ... }:
 
+let
+  inherit (import ../../../options.nix)
+  hostname flakeDir;
+in
 {
   home.packages = with pkgs; [
     fishPlugins.fzf-fish
@@ -42,6 +46,7 @@
       cd $repodir
       cd (ls $repodir | fzf --layout=reverse --height 40% --border || echo .)
       '';
+      ud = "sudo nixos-rebuild switch --flake ${flakeDir}#${hostname}";
     };
   };
 }
