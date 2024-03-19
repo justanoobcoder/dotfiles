@@ -5,5 +5,6 @@
     ./media.nix
     ./common.nix
     ./browsers.nix
+    ./editors.nix
   ];
 }
