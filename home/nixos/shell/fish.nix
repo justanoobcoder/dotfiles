@@ -47,13 +47,13 @@ in
       cd (ls $repodir | fzf --layout=reverse --height 40% --border || echo .)'';
 
       cfh = ''
-      set file (find $HOME/.config/hypr -type f | fzf --layout=reverse --height 40% --border)
+      set file (find ${flakeDir}/home/config/hypr -type f | fzf --layout=reverse --height 40% --border)
       [ -z "$file" ] || $EDITOR $file'';
 
       mcd = "mkdir -p $argv[1] && cd $argv[1]";
 
       fb = ''
-      set file (find $DOTFILES_DIR/.local/bin -type f | fzf)
+      set file (find ${flakeDir}/home/config/bin -type f | fzf --layout=reverse --height 40% --border)
       [ -z "$file" ] || $EDITOR $file'';
     };
   };
