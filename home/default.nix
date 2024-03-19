@@ -1,5 +1,9 @@
 { config, pkgs, ... }:
 
+let
+  inherit (import ../options.nix)
+  username;
+in 
 {
   imports = [
     ./nixos/programs
@@ -8,8 +12,8 @@
     ./config
   ];
 
-  home.username = "hiepnh";
-  home.homeDirectory = "/home/hiepnh";
+  home.username = "${username}";
+  home.homeDirectory = "/home/${username}";
 
   home.stateVersion = "23.11";
 

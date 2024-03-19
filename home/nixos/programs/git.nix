@@ -1,10 +1,14 @@
 { pkgs, ... }:
 
+let
+  inherit (import ../../../options.nix)
+  gitUsername gitEmail;
+in 
 {
   programs.git = {
     enable = true;
-    userName = "Nguyen Hong Hiep";
-    userEmail = "syaorancode@gmail.com";
+    userName = "${gitUsername}";
+    userEmail = "${gitEmail}";
   };
 
   home.packages = with pkgs; [

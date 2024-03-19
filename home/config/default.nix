@@ -1,17 +1,21 @@
 { pkgs, config, ... }:
 
+let
+  inherit (import ../../options.nix)
+  flakeDir;
+in
 {
   home.file = {
     ".config/rofi" = {
-      source = ./rofi;
+      source = config.lib.file.mkOutOfStoreSymlink "${flakeDir}/home/config/rofi";
       recursive = true;
     };
     ".config/fcitx5" = {
-      source = ./fcitx5;
+      source = config.lib.file.mkOutOfStoreSymlink "${flakeDir}/home/config/fcitx5";
       recursive = true;
     };
     ".config/ags" = {
-      source = ./ags;
+      source = config.lib.file.mkOutOfStoreSymlink "${flakeDir}/home/config/ags";
       recursive = true;
     };
     ".clang-format".text = "IndentWidth: 4";

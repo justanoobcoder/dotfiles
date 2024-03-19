@@ -1,12 +1,17 @@
 { pkgs, ... }:
 
+let
+  inherit (import ../options.nix)
+  username gitUsername shell;
+in
 {
-  users.users.hiepnh = {
+  users.mutableUsers = true;
+  users.users."${username}" = {
     isNormalUser = true;
-    description = "Nguyen Hong Hiep";
+    homeMode = "755";
+    description = "${gitUsername}";
     extraGroups = [ "networkmanager" "wheel" "video" "audio" "storage" "power" "docker" ];
-    shell = pkgs.fish;
-    packages = with pkgs; [
-    ];
+    shell = pkgs."${shell}";
+    packages = [];
   };
 }

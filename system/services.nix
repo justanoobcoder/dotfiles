@@ -1,11 +1,15 @@
 { pkgs, ... }:
 
+let
+  inherit (import ../options.nix)
+  keyboardLayout;
+in
 {
   services = {
     openssh.enable = true;
     xserver = {
       xkb = {
-        layout = "us";
+        layout = "${keyboardLayout}";
         variant = "";
       };
     };
