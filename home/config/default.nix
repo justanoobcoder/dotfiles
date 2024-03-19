@@ -18,6 +18,10 @@ in
       source = config.lib.file.mkOutOfStoreSymlink "${flakeDir}/home/config/ags";
       recursive = true;
     };
+    ".local/bin" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${flakeDir}/home/config/bin";
+      recursive = true;
+    };
     ".clang-format".text = "IndentWidth: 4";
     ".config/npm/npmrc".text = ''prefix=''${XDG_DATA_HOME}/npm
 cache=''${XDG_CACHE_HOME}/npm
