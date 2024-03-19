@@ -1,15 +1,14 @@
 let
   username = "hiepnh";
   hostname = "nixos-pc";
-  userHome = "/home/${username}";
-  flakeDir = "${userHome}/.dotfiles";
 in {
   # User settings
-  username = "hiepnh";
-  hostname = "nixos-pc";
+  username = "${username}";
+  hostname = "${hostname}";
+  hashedPassword = "$6$oZdux9tYWX4C5UvT$AS91kxEq43FPPZX/In289dgVIo6NYphArKDt5QhGMABaiS8XsO8uq/JLvHxkXKvNLe471R3ZPdL52CXMkQU5B.";
   gitUsername = "Nguyen Hong Hiep";
   gitEmail = "syaorancode@gmail.com";
-  flakeDir = "${flakeDir}";
+  flakeDir = "/home/${username}/.dotfiles";
 
   # System settings
   locale = "en_US.UTF-8";
