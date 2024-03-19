@@ -21,6 +21,7 @@
     brightnessctl
     hyprpicker
     slurp
+    grim
     wl-clipboard
     wayshot
     swappy
