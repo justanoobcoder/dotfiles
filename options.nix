@@ -15,6 +15,7 @@ in {
   keyboardLayout = "us";
   timezone = "Asia/Ho_Chi_Minh";
   shell = "fish";
+  gpu = "intel";
 
   # Enable Support For
   # Logitech Devices

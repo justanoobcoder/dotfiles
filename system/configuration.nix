@@ -13,6 +13,7 @@ in
       ./services.nix
       ./users.nix
       ./logitech.nix
+      ./intel-gpu.nix
     ];
 
   system.stateVersion = "23.11";
