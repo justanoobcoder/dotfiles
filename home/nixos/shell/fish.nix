@@ -7,7 +7,9 @@
 
   programs.fish = {
     enable = true;
-    loginShellInit = ''exec Hyprland'';
+    loginShellInit = ''if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
+      exec Hyprland
+    end'';
     shellAliases = {
       ls = "eza --group-directories-first";
       ll = "eza -lbg --icons";
