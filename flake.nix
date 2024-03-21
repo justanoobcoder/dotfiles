@@ -17,7 +17,7 @@
       inherit (import ./options.nix) username hostname;
     in
     {
-      nixosConfigurations."${hostname}" = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit system;
           inherit inputs;
@@ -33,7 +33,7 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              users."${username}" = import ./home;
+              users.${username} = import ./home;
               extraSpecialArgs = { inherit inputs; };
             };
           }
