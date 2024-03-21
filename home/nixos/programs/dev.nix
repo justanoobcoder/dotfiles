@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, ... }:
 
 {
   home.packages = with pkgs; [
@@ -8,7 +8,16 @@
     docker-compose
     nodePackages.npm
     yarn
+    cargo
   ];
+
+  programs = {
+    go = {
+      enable = true;
+      goPath = ".local/share/go";
+      goBin = ".local/share/go/bin";
+    };
+  };
 
   home.file.".config/ideavim/ideavimrc".text = ''
     set clipboard+=unnamedplus
