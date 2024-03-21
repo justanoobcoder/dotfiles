@@ -3,7 +3,8 @@
 let
   inherit (import ../options.nix)
     hostname timezone locale keyboardLayout flakeDir;
-in {
+in
+{
   imports = [
     ./hardware.nix
     ./packages.nix

@@ -1,7 +1,8 @@
 let
   username = "hiepnh";
   hostname = "nixos-pc";
-in {
+in
+{
   # User settings
   username = "${username}";
   hostname = "${hostname}";

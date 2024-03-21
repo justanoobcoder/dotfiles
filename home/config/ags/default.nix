@@ -24,7 +24,7 @@ let
   name = "asztal";
 
   ags = inputs.ags.packages.${system}.default.override {
-    extraPackages = [accountsservice];
+    extraPackages = [ accountsservice ];
   };
 
   dependencies = [
@@ -84,7 +84,8 @@ let
       cp -f greeter.js $out/greeter.js
     '';
   };
-in stdenv.mkDerivation {
+in
+stdenv.mkDerivation {
   inherit name;
   src = config;
 

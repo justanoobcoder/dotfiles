@@ -15,7 +15,8 @@
     let
       system = "x86_64-linux";
       inherit (import ./options.nix) username hostname;
-    in {
+    in
+    {
       nixosConfigurations."${hostname}" = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit system;
