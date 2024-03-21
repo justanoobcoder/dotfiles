@@ -11,7 +11,7 @@
     # utils
     ripgrep
     bat
-    nixfmt
+    nixpkgs-fmt
 
     # misc
     libnotify
