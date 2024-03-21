@@ -25,12 +25,8 @@
       package = pkgs.papirus-icon-theme;
     };
     gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
-    gtk3.extraConfig = {
-      gtk-application-prefer-dark-theme=1;
-    };
-    gtk4.extraConfig = {
-      gtk-application-prefer-dark-theme=1;
-    };
+    gtk3.extraConfig = { gtk-application-prefer-dark-theme = 1; };
+    gtk4.extraConfig = { gtk-application-prefer-dark-theme = 1; };
   };
 
   # Theme QT -> GTK
@@ -38,8 +34,8 @@
     enable = true;
     platformTheme = "gtk";
     style = {
-        name = "adwaita-dark";
-        package = pkgs.adwaita-qt;
+      name = "adwaita-dark";
+      package = pkgs.adwaita-qt;
     };
   };
 }

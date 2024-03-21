@@ -1,4 +1,4 @@
-{ pkgs, ... }: 
+{ pkgs, ... }:
 
 {
   home.packages = with pkgs; [
@@ -11,6 +11,7 @@
     # utils
     ripgrep
     bat
+    nixfmt
 
     # misc
     libnotify

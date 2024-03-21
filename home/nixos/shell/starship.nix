@@ -1,4 +1,4 @@
-{config, ...}: {
+{ config, ... }: {
   home.sessionVariables.STARSHIP_CACHE = "${config.xdg.cacheHome}/starship";
 
   programs.starship = {
@@ -13,9 +13,9 @@
       add_newline = false;
 
       format = ''
-[┌─────────](bold green)$username$hostname
-[│](bold green)$directory$git_branch$git_status
-[└─>](bold green)$character'';
+        [┌─────────](bold green)$username$hostname
+        [│](bold green)$directory$git_branch$git_status
+        [└─>](bold green)$character'';
 
       username = {
         style_user = "yellow bold";
@@ -26,7 +26,7 @@
 
       hostname = {
         ssh_only = false;
-        format =  "[$hostname](bold blue) ";
+        format = "[$hostname](bold blue) ";
       };
 
       directory = {
@@ -42,13 +42,13 @@
 
       git_status = {
         style = "bold cyan";
-        ahead = "[⇡\($count\)](yellow)";
-        behind = "[⇣\($count\)](yellow)";
-        untracked = "[?\($count\)](yellow)";
-        modified = "[!\($count\)](red)";
-        staged = "[+\($count\)](green)";
-        renamed = "[»\($count\)](white)";
-        deleted = "[\($count\)](red)";
+        ahead = "[⇡($count)](yellow)";
+        behind = "[⇣($count)](yellow)";
+        untracked = "[?($count)](yellow)";
+        modified = "[!($count)](red)";
+        staged = "[+($count)](green)";
+        renamed = "[»($count)](white)";
+        deleted = "[($count)](red)";
       };
     };
   };

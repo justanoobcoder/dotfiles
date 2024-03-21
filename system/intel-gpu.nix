@@ -1,12 +1,9 @@
 { pkgs, config, lib, ... }:
 
-let inherit (import ../options.nix) gpu; in
-lib.mkIf ("${gpu}" == "intel") {
-  nixpkgs.config.packageOverrides =
-    pkgs: {
-      vaapiIntel = pkgs.vaapiIntel.override {
-      enableHybridCodec = true;
-    };
+let inherit (import ../options.nix) gpu;
+in lib.mkIf ("${gpu}" == "intel") {
+  nixpkgs.config.packageOverrides = pkgs: {
+    vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
   };
 
   # OpenGL

@@ -2,9 +2,7 @@
 
 {
   programs = {
-    neovim = {
-      defaultEditor = true;
-    };
+    neovim = { defaultEditor = true; };
     hyprland = {
       enable = true;
       package = inputs.hyprland.packages.${pkgs.system}.hyprland;

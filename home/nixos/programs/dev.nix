@@ -1,4 +1,4 @@
-{ pkgs, config, ... }: 
+{ pkgs, config, ... }:
 
 {
   home.packages = with pkgs; [
@@ -11,15 +11,15 @@
   ];
 
   home.file.".config/ideavim/ideavimrc".text = ''
-set clipboard+=unnamedplus
-set clipboard+=ideaput
-set number
-set relativenumber
+    set clipboard+=unnamedplus
+    set clipboard+=ideaput
+    set number
+    set relativenumber
 
-let mapleader=" "
+    let mapleader=" "
 
-" Replace all
-nnoremap <leader>s :%s//g<Left><Left>
-'';
+    " Replace all
+    nnoremap <leader>s :%s//g<Left><Left>
+  '';
 }
 

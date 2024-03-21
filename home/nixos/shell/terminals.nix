@@ -1,9 +1,7 @@
 { pkgs, ... }:
 
-let
-  font = "JetBrainsMono Nerd Font";
-in
-{
+let font = "JetBrainsMono Nerd Font";
+in {
   programs.alacritty = {
     enable = true;
 
@@ -54,9 +52,7 @@ in
 
       scrolling.history = 5000;
 
-      env = {
-        TERM = "xterm-256color";
-      };
+      env = { TERM = "xterm-256color"; };
 
       font = {
         normal = {
