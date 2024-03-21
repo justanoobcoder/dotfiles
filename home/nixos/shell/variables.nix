@@ -7,11 +7,15 @@
     DOTFILES_DIR = "$HOME/user/work/repo/dotfiles";
     TERMINAL = "alacritty";
     BROWSER = "floorp";
+    XMODIFIERS = "@im=fcitx";
+    QT_IM_MODULE = "fcitx";
+    QT4_IM_MODULE = "fcitx";
+    CLUTTER_IM_MODULE = "fcitx";
+    GLFW_IM_MODULE = "fcitx";
     DOCKER_CONFIG = "$HOME/.config/docker";
     MACHINE_STORAGE_PATH = "$HOME/.local/share/docker-machine";
     CARGO_HOME = "$HOME/.local/share/cargo";
     RUSTUP_HOME = "$HOME/.local/share/rustup";
-    #GOPATH = "$HOME/.local/share/go";
     GOMODCACHE = "$HOME/.cache/go/mod";
     GRADLE_USER_HOME = "$HOME/.local/share/gradle";
     WGETRC = "$HOME/.config/wget/wgetrc";
