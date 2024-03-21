@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ ... }:
 
 let inherit (import ../options.nix) username;
 in {
