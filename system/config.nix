@@ -68,6 +68,14 @@ in
         command = "/run/current-system/sw/bin/nixos-rebuild";
         options = [ "SETENV" "NOPASSWD" ];
       }
+      {
+        command = "/run/current-system/sw/bin/nix-collect-garbage";
+        options = [ "SETENV" "NOPASSWD" ];
+      }
+      {
+        command = "/run/wrappers/bin/sudoedit";
+        options = [ "SETENV" "NOPASSWD" ];
+      }
     ];
   }];
 
