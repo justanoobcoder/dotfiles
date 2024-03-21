@@ -1,6 +1,6 @@
 { pkgs, ... }:
 
-let inherit (import ../../../options.nix) hostname flakeDir;
+let inherit (import ../../../options.nix) flakeDir;
 in {
   home.packages = with pkgs; [ fishPlugins.fzf-fish ];
 
@@ -11,7 +11,7 @@ in {
             exec Hyprland
           end'';
     shellAliases = {
-      ud = "sudo nixos-rebuild switch --flake ${flakeDir}#${hostname}";
+      ud = "sudo nixos-rebuild switch --flake ${flakeDir}";
       ls = "eza --group-directories-first";
       ll = "eza -lbg --icons";
       la = "eza -a";
