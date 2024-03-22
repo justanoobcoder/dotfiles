@@ -6,5 +6,6 @@
     ./common.nix
     ./browsers.nix
     ./editors.nix
+    ./file-managers.nix
   ];
 }

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 
 let font = "JetBrainsMono Nerd Font";
 in {

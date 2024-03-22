@@ -12,6 +12,7 @@
     ripgrep
     bat
     nixpkgs-fmt
+    udiskie
 
     # misc
     libnotify
