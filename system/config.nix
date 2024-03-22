@@ -13,6 +13,7 @@ in
     ./users.nix
     ./logitech.nix
     ./intel-gpu.nix
+    ./polkit.nix
   ];
 
   system.stateVersion = "23.11";
@@ -104,7 +105,5 @@ in
 
   environment.variables = {
     FLAKE = "${flakeDir}";
-    POLKIT_BIN =
-      "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
   };
 }

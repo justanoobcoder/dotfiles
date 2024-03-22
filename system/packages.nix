@@ -8,5 +8,4 @@
     power-profiles-daemon
     cloudflare-warp
   ];
-
 }
