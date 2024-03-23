@@ -145,7 +145,7 @@ const options = mkOptions(OPTIONS, {
         maxItem: opt(6),
         favorites: opt([
             [
-                "idea-ultimate",
+                "jetbrains-toolbox",
                 "dbeaver",
                 "postman",
                 "obs",
