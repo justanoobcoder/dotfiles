@@ -2,7 +2,7 @@
 
 {
   home.packages = with pkgs; [
-    jetbrains.idea-ultimate
+    jetbrains-toolbox
     dbeaver
     postman
     docker-compose
