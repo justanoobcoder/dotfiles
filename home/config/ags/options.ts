@@ -146,7 +146,7 @@ const options = mkOptions(OPTIONS, {
         favorites: opt([
             [
                 "jetbrains-toolbox",
-                "dbeaver",
+                "io.dbeaver.DBeaverCommunity",
                 "postman",
                 "obs",
                 "webcord",

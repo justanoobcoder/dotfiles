@@ -3,7 +3,6 @@
 {
   home.packages = with pkgs; [
     jetbrains-toolbox
-    dbeaver
     postman
     docker-compose
     nodePackages.npm

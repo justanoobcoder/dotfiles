@@ -6,6 +6,7 @@
     openssh.enable = true;
     udisks2.enable = true;
     gvfs.enable = true;
+    flatpak.enable = true;
     pipewire = {
       enable = true;
       alsa.enable = true;

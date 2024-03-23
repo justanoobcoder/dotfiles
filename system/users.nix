@@ -11,6 +11,6 @@ in {
     extraGroups =
       [ "networkmanager" "wheel" "video" "audio" "storage" "power" "docker" ];
     shell = pkgs.${shell};
-    packages = [ ];
+    packages = with pkgs; [ flatpak ];
   };
 }
