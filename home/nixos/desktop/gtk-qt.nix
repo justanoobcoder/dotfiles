@@ -4,7 +4,6 @@
   # Configure Cursor Theme
   home.pointerCursor = {
     gtk.enable = true;
-    x11.enable = true;
     package = pkgs.bibata-cursors;
     name = "Bibata-Modern-Ice";
     size = 24;
@@ -16,9 +15,12 @@
   gtk = {
     enable = true;
     font = {
-      name = "Ubuntu";
+      name = "Noto Sans";
       size = 12;
-      package = pkgs.ubuntu_font_family;
+    };
+    theme = {
+      name = "Flat-Remix-GTK-Grey-Darkest";
+      package = pkgs.flat-remix-gtk;
     };
     iconTheme = {
       name = "Papirus-Dark";
