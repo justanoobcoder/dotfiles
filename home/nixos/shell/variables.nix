@@ -24,6 +24,7 @@
     LESSHISTFILE = "-";
     NPM_CONFIG_USERCONFIG = "$HOME/.config/npm/npmrc";
     _JAVA_AWT_WM_NONREPARENTING = "1";
+    NIXOS_OZONE_WL = "1";
     PATH = ''
       $PATH:$HOME/.local/share/npm/bin:$HOME/.local/share/go/bin:$(du "$HOME/.local/bin/" | cut -f2 | paste -sd ':')'';
   };
