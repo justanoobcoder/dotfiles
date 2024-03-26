@@ -1,91 +1,25 @@
-{ pkgs, ... }:
-
-let
-  inherit (import ../options.nix)
-    hostname timezone locale keyboardLayout flakeDir;
-in
 {
   imports = [
     ./hardware.nix
-    ./packages.nix
+    ./bootloader.nix
+    ./network.nix
+    ./timezone.nix
+    ./locale.nix
+    ./security.nix
+    ./io.nix
     ./programs.nix
     ./services.nix
     ./users.nix
     ./logitech.nix
     ./intel-gpu.nix
     ./polkit.nix
+    ./packages.nix
+    ./variables.nix
   ];
 
   system.stateVersion = "23.11";
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
-  networking.hostName = "${hostname}";
-  networking.networkmanager.enable = true;
-
-  time.timeZone = "${timezone}";
-
-  i18n = {
-    defaultLocale = "${locale}";
-    extraLocaleSettings = {
-      LC_ADDRESS = "${locale}";
-      LC_IDENTIFICATION = "${locale}";
-      LC_MEASUREMENT = "${locale}";
-      LC_MONETARY = "${locale}";
-      LC_NAME = "${locale}";
-      LC_NUMERIC = "${locale}";
-      LC_PAPER = "${locale}";
-      LC_TELEPHONE = "${locale}";
-      LC_TIME = "${locale}";
-    };
-    inputMethod = {
-      enabled = "fcitx5";
-      fcitx5 = {
-        addons = [ pkgs.fcitx5-bamboo ];
-        waylandFrontend = true;
-      };
-    };
-  };
-
-  console.keyMap = "${keyboardLayout}";
-  services.xserver = {
-    xkb = {
-      layout = "${keyboardLayout}";
-      variant = "";
-    };
-  };
-
   nixpkgs.config.allowUnfree = true;
-
-  security.sudo.extraRules = [{
-    groups = [ "wheel" ];
-    commands = [
-      {
-        command = "/run/current-system/sw/bin/nvim";
-        options = [ "SETENV" "NOPASSWD" ];
-      }
-      {
-        command = "/run/current-system/sw/bin/nixos-rebuild";
-        options = [ "SETENV" "NOPASSWD" ];
-      }
-      {
-        command = "/run/current-system/sw/bin/nix-collect-garbage";
-        options = [ "SETENV" "NOPASSWD" ];
-      }
-      {
-        command = "/run/wrappers/bin/sudoedit";
-        options = [ "SETENV" "NOPASSWD" ];
-      }
-    ];
-  }];
-
-  hardware = {
-    bluetooth = {
-      enable = true;
-      powerOnBoot = true;
-    };
-  };
 
   nix = {
     settings = {
@@ -101,9 +35,5 @@ in
       dates = "weekly";
       options = "--delete-older-than 7d";
     };
-  };
-
-  environment.variables = {
-    FLAKE = "${flakeDir}";
   };
 }

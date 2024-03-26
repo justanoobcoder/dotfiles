@@ -1,6 +1,11 @@
-{ pkgs, ... }:
-
 {
+  imports = [
+    ./terminals.nix
+    ./fish.nix
+    ./fastfetch.nix
+    ./startship.nix
+  ];
+
   programs = {
     eza = {
       enable = true;
@@ -8,5 +13,8 @@
     };
     zoxide = { enable = true; };
     fzf = { enable = true; };
+    btop.enable = true;
+    jq.enable = true;
+    ssh.enable = true;
   };
 }

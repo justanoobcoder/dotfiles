@@ -5,18 +5,10 @@
     jetbrains-toolbox
     postman
     docker-compose
-    nodePackages.npm
     yarn
     cargo
+    nodejs_21
   ];
-
-  programs = {
-    go = {
-      enable = true;
-      goPath = ".local/share/go";
-      goBin = ".local/share/go/bin";
-    };
-  };
 
   home.file.".config/ideavim/ideavimrc".text = ''
     set clipboard+=unnamedplus
@@ -30,4 +22,3 @@
     nnoremap <leader>s :%s//g<Left><Left>
   '';
 }
-

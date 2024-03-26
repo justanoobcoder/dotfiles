@@ -16,7 +16,6 @@ in
   locale = "en_US.UTF-8";
   keyboardLayout = "us";
   timezone = "Asia/Ho_Chi_Minh";
-  shell = "fish";
   gpu = "intel";
   logitech = true;
 }

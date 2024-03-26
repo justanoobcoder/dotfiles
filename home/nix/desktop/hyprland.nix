@@ -1,7 +1,10 @@
 { pkgs, config, ... }:
 
-let inherit (import ../../../options.nix) flakeDir;
-in {
+let
+  inherit (import ../../../options.nix)
+    flakeDir;
+in
+{
   home.packages = with pkgs; [ hyprlock hypridle hyprcursor ];
 
   home.file.".config/hypr" = {
@@ -9,3 +12,4 @@ in {
     recursive = true;
   };
 }
+

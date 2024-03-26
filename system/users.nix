@@ -1,7 +1,10 @@
 { pkgs, ... }:
 
-let inherit (import ../options.nix) username fullname shell hashedPassword;
-in {
+let
+  inherit (import ../options.nix)
+    username fullname hashedPassword;
+in
+{
   users.mutableUsers = true;
   users.users.${username} = {
     isNormalUser = true;
@@ -10,7 +13,7 @@ in {
     description = "${fullname}";
     extraGroups =
       [ "networkmanager" "wheel" "video" "audio" "storage" "power" "docker" ];
-    shell = pkgs.${shell};
+    shell = pkgs.fish;
     packages = with pkgs; [ flatpak ];
   };
 }

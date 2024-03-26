@@ -2,16 +2,15 @@
 
 {
   programs = {
-    neovim = { defaultEditor = true; };
     hyprland = {
       enable = true;
       package = inputs.hyprland.packages.${pkgs.system}.hyprland;
       xwayland.enable = true;
     };
-    fish.enable = true;
-    java = {
+    neovim = {
       enable = true;
-      package = pkgs.jdk17;
+      defaultEditor = true;
     };
+    fish.enable = true;
   };
 }
