@@ -56,7 +56,7 @@ const options = mkOptions(OPTIONS, {
     transition: opt(200),
 
     font: {
-        size: opt(11),
+        size: opt(9),
         name: opt("JetBrains Mono Nerd Font"),
     },
 
