@@ -19,8 +19,8 @@
       size = 12;
     };
     theme = {
-      name = "Flat-Remix-GTK-Grey-Darkest";
-      package = pkgs.flat-remix-gtk;
+      name = "Dracula";
+      package = pkgs.dracula-theme;
     };
     iconTheme = {
       name = "Papirus-Dark";
