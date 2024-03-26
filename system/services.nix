@@ -7,6 +7,9 @@
     udisks2.enable = true;
     gvfs.enable = true;
     flatpak.enable = true;
+    power-profiles-daemon.enable = true;
+    blueman.enable = true;
+    upower.enable = true;
     pipewire = {
       enable = true;
       alsa.enable = true;
@@ -26,9 +29,6 @@
         };
       };
     };
-    power-profiles-daemon.enable = true;
-    blueman.enable = true;
-    upower.enable = true;
   };
 
   virtualisation.docker = {
@@ -47,4 +47,6 @@
     wantedBy = [ "default.target" ];
   };
   systemd.services.warp-svc.enable = true;
+
+  systemd.user.services.udiskie.enable = true;
 }

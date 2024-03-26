@@ -1,15 +1,18 @@
 { pkgs, ... }:
 
-let inherit (import ../../../options.nix) flakeDir;
-in {
+let
+  inherit (import ../../../options.nix)
+    flakeDir;
+in
+{
   home.packages = with pkgs; [ fishPlugins.fzf-fish ];
 
   programs.fish = {
     enable = true;
     loginShellInit = ''
       if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
-            exec Hyprland
-          end'';
+        exec Hyprland
+      end'';
     shellAliases = {
       ud = "sudo nixos-rebuild switch --flake ${flakeDir}";
       ls = "eza --group-directories-first";
@@ -56,3 +59,4 @@ in {
     };
   };
 }
+

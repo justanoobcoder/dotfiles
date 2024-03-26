@@ -18,7 +18,6 @@
   };
 
   systemd.user.services.polkit-gnome-authentication-agent-1.enable = true;
-  systemd.user.services.udiskie.enable = true;
 
   security.polkit.enable = true;
 

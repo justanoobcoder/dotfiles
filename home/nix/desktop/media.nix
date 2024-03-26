@@ -1,4 +1,6 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+
+{
   home.packages = with pkgs; [ wireplumber swayimg ];
 
   programs = {
@@ -11,3 +13,4 @@
     obs-studio.enable = true;
   };
 }
+
