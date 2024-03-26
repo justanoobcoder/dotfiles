@@ -139,7 +139,7 @@ const options = mkOptions(OPTIONS, {
     },
 
     applauncher: {
-        iconSize: opt(62),
+        iconSize: opt(50),
         width: opt(0),
         margin: opt(80),
         maxItem: opt(6),
@@ -156,7 +156,7 @@ const options = mkOptions(OPTIONS, {
 
     overview: {
         scale: opt(9),
-        workspaces: opt(7),
+        workspaces: opt(8),
         monochromeIcon: opt(true),
     },
 
