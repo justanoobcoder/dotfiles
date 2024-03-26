@@ -1,5 +1,5 @@
 { pkgs, ... }:
 
 {
-  home.packages = with pkgs; [ floorp microsoft-edge ];
+  home.packages = with pkgs; [ floorp ];
 }
