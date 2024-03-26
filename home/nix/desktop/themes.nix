@@ -19,8 +19,8 @@
       size = 12;
     };
     theme = {
-      name = "Dracula";
-      package = pkgs.dracula-theme;
+      name = "WhiteSur-Dark";
+      package = pkgs.whitesur-gtk-theme;
     };
     iconTheme = {
       name = "Papirus-Dark";
@@ -29,6 +29,10 @@
     gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
     gtk3.extraConfig = { gtk-application-prefer-dark-theme = 1; };
     gtk4.extraConfig = { gtk-application-prefer-dark-theme = 1; };
+  };
+
+  home.sessionVariables = {
+    GTK_THEME = "WhiteSur-Dark";
   };
 
   # Theme QT -> GTK
