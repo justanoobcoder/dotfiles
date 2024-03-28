@@ -17,5 +17,7 @@
     xdg-utils
     wl-clip-persist
     cliphist
+    linux-wifi-hotspot
+    wifi-qr
   ];
 }
