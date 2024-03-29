@@ -20,5 +20,10 @@
     cliphist
     linux-wifi-hotspot
     wifi-qr
+    luajitPackages.jsregexp
+    python3
+    python311Packages.pip
+    lua
+    luajitPackages.luarocks
   ];
 }
