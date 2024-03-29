@@ -2,6 +2,7 @@
 
 {
   home.packages = with pkgs; [
+    vscode
     jetbrains-toolbox
     postman
     docker-compose
