@@ -2,6 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
+    gnumake
     wget
     power-profiles-daemon
     cloudflare-warp
