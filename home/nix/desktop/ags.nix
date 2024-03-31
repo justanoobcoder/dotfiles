@@ -1,5 +1,8 @@
 { inputs, pkgs, ... }:
 
+let
+  inherit (import ../../../options.nix) system;
+in
 {
   # add the home manager module
   imports = [ inputs.ags.homeManagerModules.default ];
@@ -17,6 +20,7 @@
 
   # ags dependencies
   home.packages = with pkgs; [
+    inputs.matugen.packages.${system}.default
     bun
     swww
     dart-sass

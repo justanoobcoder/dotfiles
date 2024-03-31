@@ -9,12 +9,13 @@
     };
     hyprland.url = "github:hyprwm/Hyprland";
     ags.url = "github:Aylur/ags";
+    matugen.url = "github:/InioX/Matugen";
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
     let
-      system = "x86_64-linux";
-      inherit (import ./options.nix) username hostname;
+      inherit (import ./options.nix)
+        system username hostname;
     in
     {
       nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
