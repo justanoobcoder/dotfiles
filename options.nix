@@ -19,6 +19,7 @@ in
   keyboardLayout = "us";
   timezone = "Asia/Ho_Chi_Minh";
   gpu = "intel"; # available options: intel
+  system = "x86_64-linux"; # DO NOT CHANGE THIS OPTION
   logitech = true;
   terminal = {
     # available options: alacritty, kitty
