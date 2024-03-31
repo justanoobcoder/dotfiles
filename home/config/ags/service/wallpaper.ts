@@ -29,6 +29,7 @@ class Wallpaper extends Service {
                 "swww", "img",
                 "--transition-type", "grow",
                 "--transition-pos", pos.replace(" ", ""),
+                "--invert-y",
                 WP,
             ]).then(() => {
                 this.changed("wallpaper")
