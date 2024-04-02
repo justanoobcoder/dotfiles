@@ -10,11 +10,13 @@
     unzip
     unrar
     p7zip
+    patchelf
+    ntfs3g
     ripgrep
     bat
     nixpkgs-fmt
-    udiskie
     libnotify
+    glib
     xdg-utils
     wl-clip-persist
     cliphist
