@@ -5,9 +5,7 @@ import { icon } from "lib/utils"
 import icons from "lib/icons"
 
 const options = mkOptions(OPTIONS, {
-    autotheme: opt(false),
-
-    wallpaper: opt(`/home/${USER}/.config/background`, { persistent: true }),
+    autotheme: opt(true),
 
     theme: {
         dark: {
@@ -66,9 +64,7 @@ const options = mkOptions(OPTIONS, {
         corners: opt(true),
         layout: {
             start: opt<BarWidget[]>([
-                //"launcher",
                 "workspaces",
-                //"taskbar",
                 "expander",
                 "messages",
             ]),
@@ -95,7 +91,7 @@ const options = mkOptions(OPTIONS, {
                 colored: opt(false),
                 label: opt(""),
             },
-            action: opt(() => App.toggleWindow("applauncher")),
+            action: opt(() => App.toggleWindow("launcher")),
         },
         date: {
             format: opt("%H:%M - %a, %b %d."),
@@ -130,6 +126,7 @@ const options = mkOptions(OPTIONS, {
             monochrome: opt(true),
             preferred: opt("spotify"),
             direction: opt<"left" | "right">("right"),
+            format: opt("{artists} - {title}"),
             length: opt(40),
         },
         powermenu: {
@@ -138,20 +135,29 @@ const options = mkOptions(OPTIONS, {
         },
     },
 
-    applauncher: {
-        iconSize: opt(50),
+    launcher: {
         width: opt(0),
         margin: opt(80),
-        maxItem: opt(6),
-        favorites: opt([
-            [
-                "jetbrains-toolbox",
-                "io.dbeaver.DBeaverCommunity",
-                "postman",
-                "obs",
-                "webcord",
-            ],
-        ]),
+        nix: {
+            pkgs: opt("nixpkgs/nixos-unstable"),
+            max: opt(8),
+        },
+        sh: {
+            max: opt(16),
+        },
+        apps: {
+            iconSize: opt(50),
+            max: opt(6),
+            favorites: opt([
+                [
+                    "jetbrains-toolbox",
+                    "io.dbeaver.DBeaverCommunity",
+                    "postman",
+                    "obs",
+                    "webcord",
+                ],
+            ]),
+        },
     },
 
     overview: {
@@ -212,6 +218,7 @@ const options = mkOptions(OPTIONS, {
     hyprland: {
         gaps: opt(2.4),
         inactiveBorder: opt("333333ff"),
+        gapsWhenOnly: opt(false),
     },
 })
 

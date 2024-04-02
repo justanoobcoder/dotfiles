@@ -12,7 +12,7 @@ class Recorder extends Service {
         })
     }
 
-    #recordings = Utils.HOME + "/user/video/screencast"
+    #recordings = Utils.HOME + "/user/videos/screencast"
     #screenshots = Utils.HOME + "/user/pictures/screenshots"
     #file = ""
     #interval = 0

@@ -47,6 +47,4 @@
     wantedBy = [ "default.target" ];
   };
   systemd.services.warp-svc.enable = true;
-
-  systemd.user.services.udiskie.enable = true;
 }
