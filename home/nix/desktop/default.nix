@@ -17,5 +17,6 @@
     wpsoffice
     gnome.nautilus
     showmethekey
+    udiskie
   ];
 }

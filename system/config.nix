@@ -36,4 +36,6 @@
       options = "--delete-older-than 7d";
     };
   };
+
+  time.hardwareClockInLocalTime = true;
 }

@@ -19,7 +19,7 @@ in
   home.sessionVariables = {
     DOTFILES_DIR = "$HOME/user/work/repo/dotfiles";
     TERMINAL = "alacritty";
-    BROWSER = "floorp";
+    BROWSER = "firefox";
     XMODIFIERS = "@im=fcitx";
     QT_IM_MODULE = "fcitx";
     QT4_IM_MODULE = "fcitx";
