@@ -1,6 +1,6 @@
 {
   imports = [
-    ./hardware.nix
+    ./hardware.nix # generate by `nixos-generate-config --show-hardware-config > hardware.nix`
     ./bootloader.nix
     ./network.nix
     ./timezone.nix
