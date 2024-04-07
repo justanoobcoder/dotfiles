@@ -12,6 +12,10 @@
   ];
 
   home.packages = with pkgs; [
+    qt5.full
+    qt5.qttools
+    qt5.qtsvg
+    qt5.qtbase
     rofi-wayland
     webcord
     wpsoffice

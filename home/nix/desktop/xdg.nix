@@ -24,10 +24,10 @@
     "audio/wav" = [ "mpv.desktop" "umpv.desktop" ];
     "video/mp4" = [ "mpv.desktop" "umpv.desktop" ];
     "video/mpeg" = [ "mpv.desktop" "umpv.desktop" ];
-    "image/png" = [ "swayimg.desktop" "swappy.desktop" ];
-    "image/jpeg" = [ "swayimg.desktop" "swappy.desktop" ];
-    "image/gif" = [ "swayimg.desktop" "swappy.desktop" ];
-    "image/webp" = [ "swayimg.desktop" "swappy.desktop" ];
+    "image/png" = [ "imv.desktop" ];
+    "image/jpeg" = [ "imv.desktop" ];
+    "image/gif" = [ "imv.desktop" ];
+    "image/webp" = [ "imv.desktop" ];
     "text/plain" = [ "nvim.desktop" ];
     "text/csv" = [ "wps-office-et.desktop" ];
     "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" = [ "wps-office-et.desktop" ];
@@ -37,7 +37,7 @@
     "application/vnd.openxmlformats-officedocument.presentationml.presentation" = [ "wps-office-wpp.desktop" ];
     "application/vnd.ms-powerpoint" = [ "wps-office-wpp.desktop" ];
     "application/pdf" = [ "wps-office-pdf.desktop" ];
-    "image/svg+xml" = [ "floorp.desktop" ];
-    "text/html" = [ "floorp.desktop" ];
+    "image/svg+xml" = [ "firefox.desktop" ];
+    "text/html" = [ "firefox.desktop" ];
   };
 }
