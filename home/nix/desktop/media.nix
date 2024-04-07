@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  home.packages = with pkgs; [ wireplumber swayimg ];
+  home.packages = with pkgs; [ wireplumber imv ];
 
   programs = {
     mpv = {
