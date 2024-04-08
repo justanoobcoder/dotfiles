@@ -3,6 +3,7 @@
 {
   home.packages = with pkgs; [
     vscode
+    neovide
     jetbrains-toolbox
     postman
     docker-compose

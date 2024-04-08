@@ -69,6 +69,11 @@ in
 
     ".clang-format".text = "IndentWidth: 4";
 
+    ".config/neovide/config.toml".text = ''
+      [font]
+      normal = ["JetBrainsMono Nerd Font"]
+      size = 12'';
+
     ".config/npm/npmrc".text = ''
       prefix=''${XDG_DATA_HOME}/npm
       cache=''${XDG_CACHE_HOME}/npm
