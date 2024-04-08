@@ -28,7 +28,7 @@
     "image/jpeg" = [ "imv.desktop" ];
     "image/gif" = [ "imv.desktop" ];
     "image/webp" = [ "imv.desktop" ];
-    "text/plain" = [ "nvim.desktop" ];
+    "text/plain" = [ "neovide.desktop" ];
     "text/csv" = [ "wps-office-et.desktop" ];
     "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" = [ "wps-office-et.desktop" ];
     "application/vnd.ms-excel" = [ "wps-office-et.desktop" ];
