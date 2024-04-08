@@ -15,6 +15,7 @@
     ntfs3g
     ripgrep
     bat
+    gum
     nixpkgs-fmt
     libnotify
     glib
