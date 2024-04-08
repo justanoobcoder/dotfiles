@@ -68,7 +68,9 @@ let
 
         scrolling.history = 5000;
 
-        env = { TERM = "xterm-256color"; };
+        env = {
+          TERM = "xterm-256color";
+        };
 
         font = {
           normal = {

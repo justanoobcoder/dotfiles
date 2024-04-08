@@ -4,8 +4,7 @@ let
   fullname = "Nguyen Hong Hiep";
   hostname = "nixos-pc";
   # run `mkpasswd -m sha-512 yourpassword` to generate the hashed password
-  hashedPassword =
-    "$6$oZdux9tYWX4C5UvT$AS91kxEq43FPPZX/In289dgVIo6NYphArKDt5QhGMABaiS8XsO8uq/JLvHxkXKvNLe471R3ZPdL52CXMkQU5B.";
+  hashedPassword = "$6$oZdux9tYWX4C5UvT$AS91kxEq43FPPZX/In289dgVIo6NYphArKDt5QhGMABaiS8XsO8uq/JLvHxkXKvNLe471R3ZPdL52CXMkQU5B.";
 in
 {
   username = "${username}";

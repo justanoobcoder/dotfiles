@@ -1,6 +1,5 @@
 let
-  inherit (import ../options.nix)
-    hostname;
+  inherit (import ../options.nix) hostname;
 in
 {
   networking = {

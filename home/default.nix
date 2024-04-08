@@ -1,8 +1,7 @@
 { config, ... }:
 
 let
-  inherit (import ../options.nix)
-    username flakeDir;
+  inherit (import ../options.nix) username flakeDir;
 in
 {
   imports = [
@@ -38,32 +37,27 @@ in
     NPM_CONFIG_USERCONFIG = "$HOME/.config/npm/npmrc";
     _JAVA_AWT_WM_NONREPARENTING = "1";
     NIXOS_OZONE_WL = "1";
-    PATH = ''
-      $PATH:$HOME/.local/share/npm/bin:$HOME/.local/share/go/bin:$(du "$HOME/.local/bin/" | cut -f2 | paste -sd ':')'';
+    PATH = ''$PATH:$HOME/.local/share/npm/bin:$HOME/.local/share/go/bin:$(du "$HOME/.local/bin/" | cut -f2 | paste -sd ':')'';
   };
 
   home.file = {
     ".config/rofi" = {
-      source =
-        config.lib.file.mkOutOfStoreSymlink "${flakeDir}/home/config/rofi";
+      source = config.lib.file.mkOutOfStoreSymlink "${flakeDir}/home/config/rofi";
       recursive = true;
     };
 
     ".config/fcitx5" = {
-      source =
-        config.lib.file.mkOutOfStoreSymlink "${flakeDir}/home/config/fcitx5";
+      source = config.lib.file.mkOutOfStoreSymlink "${flakeDir}/home/config/fcitx5";
       recursive = true;
     };
 
     ".config/ags" = {
-      source =
-        config.lib.file.mkOutOfStoreSymlink "${flakeDir}/home/config/ags";
+      source = config.lib.file.mkOutOfStoreSymlink "${flakeDir}/home/config/ags";
       recursive = true;
     };
 
     ".local/bin" = {
-      source =
-        config.lib.file.mkOutOfStoreSymlink "${flakeDir}/home/bin";
+      source = config.lib.file.mkOutOfStoreSymlink "${flakeDir}/home/bin";
       recursive = true;
     };
 

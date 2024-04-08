@@ -12,10 +12,15 @@
     matugen.url = "github:/InioX/Matugen";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      ...
+    }@inputs:
     let
-      inherit (import ./options.nix)
-        system username hostname;
+      inherit (import ./options.nix) system username hostname;
     in
     {
       nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
@@ -35,10 +40,13 @@
               useGlobalPkgs = true;
               useUserPackages = true;
               users.${username} = import ./home;
-              extraSpecialArgs = { inherit inputs; };
+              extraSpecialArgs = {
+                inherit inputs;
+              };
             };
           }
         ];
       };
+      formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-rfc-style;
     };
 }

@@ -1,6 +1,5 @@
 let
-  inherit (import ../options.nix)
-    keyboardLayout;
+  inherit (import ../options.nix) keyboardLayout;
 in
 {
   console.keyMap = "${keyboardLayout}";
