@@ -28,7 +28,7 @@ in
       name = "JetBrainsMono Nerd Font"; # make sure you have this font installed
       size = 9.5;
     };
-    opacity = 0.95;
+    opacity = 0.7;
     colorScheme = {
       bright = {
         black = "#928374";
