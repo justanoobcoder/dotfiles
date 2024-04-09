@@ -1,7 +1,7 @@
 { config, ... }:
 
 let
-  inherit (import ../options.nix) username flakeDir;
+  inherit (import ../options.nix) username flakeDir terminal;
 in
 {
   imports = [
@@ -40,39 +40,48 @@ in
     PATH = ''$PATH:$HOME/.local/share/npm/bin:$HOME/.local/share/go/bin:$(du "$HOME/.local/bin/" | cut -f2 | paste -sd ':')'';
   };
 
-  home.file = {
-    ".config/rofi" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${flakeDir}/home/config/rofi";
-      recursive = true;
+  home.file =
+    let
+      configDir = "${flakeDir}/home/config";
+    in
+    {
+      ".config/rofi" = {
+        source = config.lib.file.mkOutOfStoreSymlink "${configDir}/rofi";
+        recursive = true;
+      };
+
+      ".config/fcitx5" = {
+        source = config.lib.file.mkOutOfStoreSymlink "${configDir}/fcitx5";
+        recursive = true;
+      };
+
+      ".config/ags" = {
+        source = config.lib.file.mkOutOfStoreSymlink "${configDir}/ags";
+        recursive = true;
+      };
+
+      ".config/btop" = {
+        source = config.lib.file.mkOutOfStoreSymlink "${configDir}/btop";
+        recursive = true;
+      };
+
+      ".local/bin" = {
+        source = config.lib.file.mkOutOfStoreSymlink "${flakeDir}/home/bin";
+        recursive = true;
+      };
+
+      ".clang-format".text = "IndentWidth: 4";
+
+      ".config/neovide/config.toml".text = ''
+        [font]
+        normal = ["${terminal.font.name}"]
+        size = 12'';
+
+      ".config/npm/npmrc".text = ''
+        prefix=''${XDG_DATA_HOME}/npm
+        cache=''${XDG_CACHE_HOME}/npm
+        tmp=''${XDG_RUNTIME_DIR}/npm
+        init-module=''${XDG_CONFIG_HOME}/npm/config/npm-init.js
+        color=true'';
     };
-
-    ".config/fcitx5" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${flakeDir}/home/config/fcitx5";
-      recursive = true;
-    };
-
-    ".config/ags" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${flakeDir}/home/config/ags";
-      recursive = true;
-    };
-
-    ".local/bin" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${flakeDir}/home/bin";
-      recursive = true;
-    };
-
-    ".clang-format".text = "IndentWidth: 4";
-
-    ".config/neovide/config.toml".text = ''
-      [font]
-      normal = ["JetBrainsMono Nerd Font"]
-      size = 12'';
-
-    ".config/npm/npmrc".text = ''
-      prefix=''${XDG_DATA_HOME}/npm
-      cache=''${XDG_CACHE_HOME}/npm
-      tmp=''${XDG_RUNTIME_DIR}/npm
-      init-module=''${XDG_CONFIG_HOME}/npm/config/npm-init.js
-      color=true'';
-  };
 }
