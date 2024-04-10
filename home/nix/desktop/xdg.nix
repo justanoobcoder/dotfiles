@@ -14,30 +14,51 @@
     pictures = "${config.home.homeDirectory}/user/pictures";
     publicShare = "${config.home.homeDirectory}/user/public";
     templates = "${config.home.homeDirectory}/user/templates";
+    extraConfig = {
+      XDG_SCREENSHOTS_DIR = "${config.xdg.userDirs.pictures}/screenshots";
+      XDG_SCREENCAST_DIR = "${config.xdg.userDirs.videos}/screencast";
+    };
   };
 
-  xdg.mimeApps.enable = true;
+  xdg.configFile."mimeapps.list".force = true;
 
-  xdg.mimeApps.defaultApplications = {
-    "audio/mp3" = [ "mpv.desktop" "umpv.desktop" ];
-    "audio/aac" = [ "mpv.desktop" "umpv.desktop" ];
-    "audio/wav" = [ "mpv.desktop" "umpv.desktop" ];
-    "video/mp4" = [ "mpv.desktop" "umpv.desktop" ];
-    "video/mpeg" = [ "mpv.desktop" "umpv.desktop" ];
-    "image/png" = [ "imv.desktop" ];
-    "image/jpeg" = [ "imv.desktop" ];
-    "image/gif" = [ "imv.desktop" ];
-    "image/webp" = [ "imv.desktop" ];
-    "text/plain" = [ "nvim.desktop" ];
-    "text/csv" = [ "wps-office-et.desktop" ];
-    "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" = [ "wps-office-et.desktop" ];
-    "application/vnd.ms-excel" = [ "wps-office-et.desktop" ];
-    "application/msword" = [ "wps-office-wps.desktop" ];
-    "application/vnd.openxmlformats-officedocument.wordprocessingml.document" = [ "wps-office-wps.desktop" ];
-    "application/vnd.openxmlformats-officedocument.presentationml.presentation" = [ "wps-office-wpp.desktop" ];
-    "application/vnd.ms-powerpoint" = [ "wps-office-wpp.desktop" ];
-    "application/pdf" = [ "wps-office-pdf.desktop" ];
-    "image/svg+xml" = [ "firefox.desktop" ];
-    "text/html" = [ "firefox.desktop" ];
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications =
+      let
+        broswers = [ "firefox.desktop" ];
+        videoPlayers = [
+          "mpv.desktop"
+          "umpv.desktop"
+        ];
+        imageViewers = [ "imv.desktop" ];
+        textEditors = [ "neovide.desktop" ];
+      in
+      {
+        "audio/mp3" = videoPlayers;
+        "audio/aac" = videoPlayers;
+        "audio/wav" = videoPlayers;
+        "video/mp4" = videoPlayers;
+        "video/mpeg" = videoPlayers;
+        "image/png" = imageViewers;
+        "image/jpeg" = imageViewers;
+        "image/gif" = imageViewers;
+        "image/webp" = imageViewers;
+        "text/plain" = textEditors;
+        "text/csv" = [ "wps-office-et.desktop" ];
+        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" = [ "wps-office-et.desktop" ];
+        "application/vnd.ms-excel" = [ "wps-office-et.desktop" ];
+        "application/msword" = [ "wps-office-wps.desktop" ];
+        "application/vnd.openxmlformats-officedocument.wordprocessingml.document" = [
+          "wps-office-wps.desktop"
+        ];
+        "application/vnd.openxmlformats-officedocument.presentationml.presentation" = [
+          "wps-office-wpp.desktop"
+        ];
+        "application/vnd.ms-powerpoint" = [ "wps-office-wpp.desktop" ];
+        "application/pdf" = [ "wps-office-pdf.desktop" ];
+        "image/svg+xml" = broswers;
+        "text/html" = broswers;
+      };
   };
 }

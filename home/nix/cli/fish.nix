@@ -1,8 +1,7 @@
 { pkgs, ... }:
 
 let
-  inherit (import ../../../options.nix)
-    flakeDir;
+  inherit (import ../../../options.nix) flakeDir;
 in
 {
   home.packages = with pkgs; [ fishPlugins.fzf-fish ];
@@ -59,4 +58,3 @@ in
     };
   };
 }
-

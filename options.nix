@@ -4,8 +4,7 @@ let
   fullname = "Nguyen Hong Hiep";
   hostname = "nixos-pc";
   # run `mkpasswd -m sha-512 yourpassword` to generate the hashed password
-  hashedPassword =
-    "$6$oZdux9tYWX4C5UvT$AS91kxEq43FPPZX/In289dgVIo6NYphArKDt5QhGMABaiS8XsO8uq/JLvHxkXKvNLe471R3ZPdL52CXMkQU5B.";
+  hashedPassword = "$6$oZdux9tYWX4C5UvT$AS91kxEq43FPPZX/In289dgVIo6NYphArKDt5QhGMABaiS8XsO8uq/JLvHxkXKvNLe471R3ZPdL52CXMkQU5B.";
 in
 {
   username = "${username}";
@@ -29,7 +28,7 @@ in
       name = "JetBrainsMono Nerd Font"; # make sure you have this font installed
       size = 9.5;
     };
-    opacity = 0.95;
+    opacity = 0.7;
     colorScheme = {
       bright = {
         black = "#928374";

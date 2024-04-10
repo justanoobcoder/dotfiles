@@ -1,7 +1,10 @@
 { pkgs, ... }:
 
 {
-  home.packages = with pkgs; [ wireplumber imv ];
+  home.packages = with pkgs; [
+    wireplumber
+    imv
+  ];
 
   programs = {
     mpv = {
@@ -13,4 +16,3 @@
     obs-studio.enable = true;
   };
 }
-

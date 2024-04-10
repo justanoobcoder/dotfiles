@@ -153,6 +153,7 @@ const options = mkOptions(OPTIONS, {
             max: opt(6),
             favorites: opt([
                 [
+                    "neovide",
                     "jetbrains-toolbox",
                     "io.dbeaver.DBeaverCommunity",
                     "postman",

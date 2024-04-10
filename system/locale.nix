@@ -1,8 +1,7 @@
 { pkgs, ... }:
 
 let
-  inherit (import ../options.nix)
-    locale;
+  inherit (import ../options.nix) locale;
 in
 {
   i18n = {
@@ -26,5 +25,4 @@ in
       };
     };
   };
-
 }

@@ -1,8 +1,7 @@
 { pkgs, ... }:
 
 let
-  inherit (import ../../../options.nix)
-    gitUsername gitEmail;
+  inherit (import ../../../options.nix) gitUsername gitEmail;
 in
 {
   home.packages = with pkgs; [ gh ];
@@ -18,4 +17,3 @@ in
     };
   };
 }
-
