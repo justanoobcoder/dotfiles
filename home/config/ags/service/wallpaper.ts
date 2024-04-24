@@ -90,7 +90,7 @@ class Wallpaper extends Service {
                 this.#wallpaper()
         })
 
-        Utils.execAsync("swww init")
+        Utils.execAsync("swww-daemon")
             .then(this.#wallpaper)
             .catch(() => null)
     }
