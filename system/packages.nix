@@ -29,5 +29,6 @@
     python311Packages.pip
     lua
     luajitPackages.luarocks
+    gcc
   ];
 }

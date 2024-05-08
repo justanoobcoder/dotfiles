@@ -21,9 +21,9 @@ in
   system = "x86_64-linux"; # DO NOT CHANGE THIS OPTION
   logitech = true;
   terminal = {
-    # available options: alacritty, kitty
+    # available options: foot, alacritty, kitty
     # remember to change $terminal value in `home/config/hypr/modules/binds.conf` too
-    name = "kitty";
+    name = "foot";
     font = {
       name = "JetBrainsMono Nerd Font"; # make sure you have this font installed
       size = 9.5;
@@ -31,30 +31,30 @@ in
     opacity = 0.7;
     colorScheme = {
       bright = {
-        black = "#928374";
-        blue = "#83a598";
-        cyan = "#8ec07c";
-        green = "#b8bb26";
-        magenta = "#d3869b";
-        red = "#fb4934";
-        white = "#ebdbb2";
-        yellow = "#fabd2f";
+        black = "928374";
+        blue = "83a598";
+        cyan = "8ec07c";
+        green = "b8bb26";
+        magenta = "d3869b";
+        red = "fb4934";
+        white = "ebdbb2";
+        yellow = "fabd2f";
       };
 
       normal = {
-        black = "#282828";
-        blue = "#458588";
-        cyan = "#689d6a";
-        green = "#98971a";
-        magenta = "#b16286";
-        red = "#cc241d";
-        white = "#a89984";
-        yellow = "#d79921";
+        black = "282828";
+        blue = "458588";
+        cyan = "689d6a";
+        green = "98971a";
+        magenta = "b16286";
+        red = "cc241d";
+        white = "a89984";
+        yellow = "d79921";
       };
 
       primary = {
-        background = "#282828";
-        foreground = "#ebdbb2";
+        background = "282828";
+        foreground = "ebdbb2";
       };
     };
   };

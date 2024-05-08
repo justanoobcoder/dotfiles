@@ -7,9 +7,9 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     ags.url = "github:Aylur/ags";
-    matugen.url = "github:/InioX/Matugen";
+    matugen.url = "github:/InioX/Matugen?rev=e795cda353235e503bb292f56bdd6573974f4add";
   };
 
   outputs =

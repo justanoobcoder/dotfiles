@@ -68,6 +68,7 @@ const options = mkOptions(OPTIONS, {
         corners: opt(true),
         layout: {
             start: opt<Array<import("widget/bar/Bar").BarWidget>>([
+                "launcher",
                 "workspaces",
                 "expander",
                 "messages",
@@ -88,7 +89,7 @@ const options = mkOptions(OPTIONS, {
         launcher: {
             icon: {
                 colored: opt(true),
-                icon: opt(icon(distro, icons.ui.search)),
+                icon: opt(icon(distro.logo, icons.ui.search)),
             },
             label: {
                 colored: opt(false),
@@ -198,8 +199,12 @@ const options = mkOptions(OPTIONS, {
         weather: {
             interval: opt(60_000),
             unit: opt<"metric" | "imperial" | "standard">("metric"),
-            key: opt(JSON.parse(Utils.readFile(`${App.configDir}/.weather`)).key),
-            cities: opt(JSON.parse(Utils.readFile(`${App.configDir}/.weather`)).cities),
+            key: opt<string>(
+                JSON.parse(Utils.readFile(`${App.configDir}/.weather`) || "{}")?.key || "",
+            ),
+            cities: opt<Array<number>>(
+                JSON.parse(Utils.readFile(`${App.configDir}/.weather`) || "{}")?.cities || [],
+            ),
         },
     },
 

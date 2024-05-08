@@ -17,7 +17,7 @@ in
 
   home.sessionVariables = {
     DOTFILES_DIR = "$HOME/user/work/repo/dotfiles";
-    TERMINAL = "alacritty";
+    TERMINAL = terminal.name;
     BROWSER = "firefox";
     XMODIFIERS = "@im=fcitx";
     QT_IM_MODULE = "fcitx";

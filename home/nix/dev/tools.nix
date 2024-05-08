@@ -9,7 +9,7 @@
     docker-compose
     yarn
     cargo
-    nodejs_21
+    nodejs
   ];
 
   home.file.".config/ideavim/ideavimrc".text = ''
