@@ -31,5 +31,6 @@
     lua
     luajitPackages.luarocks
     gcc
+    amber-lang
   ];
 }
