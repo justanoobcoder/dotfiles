@@ -15,6 +15,7 @@
     ntfs3g
     ripgrep
     bat
+    bc
     gum
     nixpkgs-fmt
     libnotify
@@ -30,5 +31,6 @@
     lua
     luajitPackages.luarocks
     gcc
+    amber-lang
   ];
 }
