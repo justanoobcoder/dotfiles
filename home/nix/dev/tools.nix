@@ -3,6 +3,7 @@
 {
   home.packages = with pkgs; [
     vscode
+    zed-editor
     neovide
     jetbrains-toolbox
     postman
