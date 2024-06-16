@@ -33,4 +33,11 @@
     gcc
     amber-lang
   ];
+
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  };
+
 }
