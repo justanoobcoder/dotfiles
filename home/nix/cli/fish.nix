@@ -24,7 +24,7 @@ in
       grep = "grep --color=always";
       fgrep = "fgrep --color=always";
       egrep = "egrep --color=always";
-      sd = "shutdown -h now";
+      sd = "warp-cli disconnect ; shutdown -h now";
       rb = "shutdown -r now";
       g = "lazygit";
       gd = "lazygit -w ${flakeDir}";

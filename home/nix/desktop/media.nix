@@ -4,6 +4,7 @@
   home.packages = with pkgs; [
     wireplumber
     imv
+    flameshot
   ];
 
   programs = {
