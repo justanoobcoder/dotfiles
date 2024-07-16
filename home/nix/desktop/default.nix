@@ -19,7 +19,7 @@
     rofi-wayland
     webcord
     wpsoffice
-    gnome.nautilus
+    nautilus
     showmethekey
     udiskie
   ];
