@@ -3,7 +3,7 @@ set -gx DOTFILES_DIR $HOME/user/work/repo/dotfiles
 
 # Default program.
 set -gx EDITOR nvim
-set -gx TERMINAL alacritty
+set -gx TERMINAL foot
 set -gx BROWSER firefox
 set -gx AUR_HELPER paru
 
@@ -28,7 +28,7 @@ set -gx GLFW_IM_MODULE fcitx
 set -gx FZF_DEFAULT_OPTS "--layout=reverse --height 40% --color=16 --border"
 
 # Java
-set -gx JAVA_HOME /usr/lib/jvm/java-17-openjdk
+set -gx JAVA_HOME /usr/lib/jvm/java-21-openjdk
 
 # Others
 set -gx DOCKER_CONFIG $XDG_CONFIG_HOME/docker

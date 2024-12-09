@@ -1,3 +1,0 @@
-#!/bin/bash
-
-printf " $(free -m | awk '/Mem/ { printf "%.2fGiB\n", ($3 + $5)/1024}')"
