@@ -977,7 +977,7 @@ const options = mkOptions(OPTIONS, {
             icon: opt('󰸗'),
             showIcon: opt(true),
             showTime: opt(true),
-            format: opt('%a %b %d  %I:%M:%S %p'),
+            format: opt('%a, %b %d %Y, %H:%M'),
             rightClick: opt(''),
             middleClick: opt(''),
             scrollUp: opt(''),
@@ -1235,25 +1235,25 @@ const options = mkOptions(OPTIONS, {
                 left: {
                     directory1: {
                         label: opt('󰉍 Downloads'),
-                        command: opt('bash -c "xdg-open $HOME/Downloads/"'),
+                        command: opt('bash -c "xdg-open $HOME/user/downloads/"'),
                     },
                     directory2: {
                         label: opt('󰉏 Videos'),
-                        command: opt('bash -c "xdg-open $HOME/Videos/"'),
+                        command: opt('bash -c "xdg-open $HOME/user/videos/"'),
                     },
                     directory3: {
                         label: opt('󰚝 Projects'),
-                        command: opt('bash -c "xdg-open $HOME/Projects/"'),
+                        command: opt('bash -c "xdg-open $HOME/user/documents/personal/code/"'),
                     },
                 },
                 right: {
                     directory1: {
                         label: opt('󱧶 Documents'),
-                        command: opt('bash -c "xdg-open $HOME/Documents/"'),
+                        command: opt('bash -c "xdg-open $HOME/user/documents/"'),
                     },
                     directory2: {
                         label: opt('󰉏 Pictures'),
-                        command: opt('bash -c "xdg-open $HOME/Pictures/"'),
+                        command: opt('bash -c "xdg-open $HOME/user/pictures/"'),
                     },
                     directory3: {
                         label: opt('󱂵 Home'),
@@ -1281,7 +1281,7 @@ const options = mkOptions(OPTIONS, {
 
     scalingPriority: opt<ScalingPriority>('gdk'),
 
-    terminal: opt('$TERM'),
+    terminal: opt('$TERMINAL'),
     tear: opt(false),
 
     wallpaper: {
@@ -1304,7 +1304,7 @@ const options = mkOptions(OPTIONS, {
 
     hyprpanel: {
         restartAgs: opt(true),
-        restartCommand: opt('ags -q; ags'),
+        restartCommand: opt('agsv1 -q; agsv1'),
     },
 
     dummy: opt(true),
