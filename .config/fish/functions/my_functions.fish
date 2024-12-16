@@ -79,3 +79,9 @@ function y
     end
     rm -f -- "$tmp"
 end
+
+function ts
+    sesh connect \
+        $(sesh list -i | \
+      gum filter --limit 1 --no-sort --no-fuzzy --placeholder 'Pick a session' --prompt='⚡')
+end
