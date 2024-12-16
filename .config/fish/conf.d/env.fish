@@ -1,10 +1,10 @@
 # You can change this to your own dotfiles directory.
-set -gx DOTFILES_DIR $HOME/user/work/repo/dotfiles
+set -gx DOTFILES_DIR $HOME/user/dotfiles
 
 # Default program.
 set -gx EDITOR nvim
 set -gx TERMINAL foot
-set -gx BROWSER firefox
+set -gx BROWSER zen-browser
 set -gx AUR_HELPER paru
 
 # Some default config directories

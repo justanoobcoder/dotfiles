@@ -1,5 +1,5 @@
 if type -q exa
-    alias ls 'exa --group-directories-first'
+    alias ls 'eza --group-directories-first'
     alias ll 'ls -lbg --icons'
     alias lla 'll -a'
     alias la 'ls -a'
