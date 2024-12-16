@@ -23,7 +23,9 @@ set fish_cursor_visual block
 fzf_configure_bindings --history=\cu --processes=\cp
 
 if type -q fastfetch
-    fastfetch
+    if test -z "$TMUX"
+        fastfetch
+    end
 else
     echo "fastfetch not found, please install it"
 end
