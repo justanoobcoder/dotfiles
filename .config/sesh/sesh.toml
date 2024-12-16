@@ -1,0 +1,19 @@
+[[session]]
+name = "tmux config"
+path = "~/user/dotfiles/.config/tmux"
+startup_command = "nvim tmux.conf"
+
+[[session]]
+name = "Hyprland config"
+path = "~/user/dotfiles/.config/hypr"
+startup_command = "cfh"
+
+[[session]]
+name = "Fish config"
+path = "~/user/dotfiles/.config/fish"
+startup_command = "cff"
+
+[[session]]
+name = "Scripts"
+path = "~/user/dotfiles/.local/bin"
+startup_command = "ls"
