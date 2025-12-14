@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# This script need both cliphist and cliphist-wofi-img installed
+# Note: cliphist-wofi-img can be installed with this command: go install github.com/pdf/cliphist-wofi-img@latest
+# Remember to set GOPATH variable
+
+selection=$(cliphist list | wofi --dmenu --pre-display-cmd "$GOPATH/bin/cliphist-wofi-img %s") &&
+  [ -n "$selection" ] &&
+  cliphist decode <<<"$selection" | wl-copy
+
+exit 0

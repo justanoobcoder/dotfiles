@@ -1,0 +1,5 @@
+allow_images = true
+insensitive=true
+prompt=Search...
+columns=2
+pre_display_exec=true
