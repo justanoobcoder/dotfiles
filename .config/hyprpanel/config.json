@@ -6,5 +6,6 @@
   "bar.clock.format": "%a, %b %d %Y,  %H:%M",
   "wallpaper.image": "/home/hiepnh/user/pictures/wallpapers/wallpaper-chainsawman.jpeg",
   "bar.network.label": false,
-  "bar.network.showWifiInfo": false
+  "bar.network.showWifiInfo": false,
+  "menus.dashboard.stats.enable_gpu": true
 }
