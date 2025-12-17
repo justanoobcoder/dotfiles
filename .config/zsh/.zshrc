@@ -1,6 +1,6 @@
 alias cl=clear
 alias v=nvim
-alias ud="paru -Syyu"
+alias ud="yay -Syyu"
 alias ls='eza --group-directories-last'
 alias ll='ls -lbg --icons'
 alias la='ls -a'
@@ -14,6 +14,12 @@ alias cfz='$EDITOR $ZDOTDIR/.zshrc'
 alias cfzp='$EDITOR $ZDOTDIR/.zprofile'
 alias cfze='$EDITOR $ZDOTDIR/.zshenv'
 alias g='lazygit'
+
+bwin() {
+  winboot=$(efibootmgr | grep "Windows Boot Manager" |
+        cut -d'*' -f1 | cut -d't' -f2)
+  sudo efibootmgr --bootnext $winboot && shutdown -r now
+}
 
 # Automatically cd into typed directory
 setopt autocd
