@@ -1,0 +1,5 @@
+bwin() {
+  winboot=$(efibootmgr | grep "Windows Boot Manager" |
+        cut -d'*' -f1 | cut -d't' -f2)
+  sudo efibootmgr --bootnext $winboot && shutdown -r now
+}
