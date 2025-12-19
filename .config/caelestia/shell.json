@@ -161,7 +161,7 @@
         },
         "tray": {
             "background": false,
-            "compact": false,
+            "compact": true,
             "iconSubs": [],
             "recolour": false
         },
