@@ -1,5 +1,23 @@
 bwin() {
-  winboot=$(efibootmgr | grep "Windows Boot Manager" |
+  local winboot=$(efibootmgr | grep "Windows Boot Manager" |
         cut -d'*' -f1 | cut -d't' -f2)
   sudo efibootmgr --bootnext $winboot && shutdown -r now
+}
+
+cfh() {
+  local file="$(find $DOTFILES_DIR/.config/hypr -type f | fzf)"
+  [ -z "$file" ] || $EDITOR $file
+}
+
+cfz() {
+  local file="$(find $DOTFILES_DIR/.config/zsh -type f | fzf)"
+  [ -z "$file" ] || $EDITOR $file
+}
+
+y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+  return 0
 }

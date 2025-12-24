@@ -11,7 +11,7 @@ export DOCKER_CONFIG=$XDG_CONFIG_HOME/docker
 export MACHINE_STORAGE_PATH=$XDG_DATA_HOME/docker-machine
 export GRADLE_USER_HOME=$XDG_DATA_HOME/gradle
 
-export PATH="$PATH:$(find ~/.local/bin -type d | paste -sd ':' -):$GOPATH/bin"
+export PATH="$PATH:$GOPATH/bin:$(du "$HOME/.local/bin/" | cut -f2 | paste -sd ':')"
 
 #export GTK_IM_MODULE=fcitx
 export SDL_IM_MODULE=fcitx
