@@ -22,6 +22,8 @@ export CLUTTER_IM_MODULE=fcitx
 export GLFW_IM_MODULE=fcitx
 
 export EDITOR=nvim
+export BROWSER=zen-browser
+export TERMINAL=foot
 
 export FZF_DEFAULT_OPTS="--layout=reverse --height 40% --color=16 --border"
 
