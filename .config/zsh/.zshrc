@@ -1,5 +1,11 @@
-source $ZDOTDIR/zalias
-source $ZDOTDIR/zfunctions
+if command -v fastfetch >/dev/null 2>&1; then
+	fastfetch
+fi
+
+autoload -U compinit; compinit
+
+# Preview directory's content with eza when completing cd
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1a --color=always --group-directories-last $realpath'
 
 # Automatically cd into typed directory
 setopt autocd
@@ -56,12 +62,15 @@ bindkey -M vicmd '^[[P' vi-delete-char
 bindkey -M vicmd '^e' edit-command-line
 bindkey -M visual '^[[P' vi-delete
 
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh  2>/dev/null
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
 
 eval "$(zoxide init zsh)"  2>/dev/null
 eval "$(starship init zsh)" 2>/dev/null
 
-if command -v fastfetch >/dev/null 2>&1; then
-	fastfetch
-fi
+source $ZDOTDIR/zalias
+source $ZDOTDIR/zfunctions
+source <(fzf --zsh)
+source ~/.local/share/zsh/fzf-tab.plugin.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh  2>/dev/null

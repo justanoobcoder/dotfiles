@@ -1,6 +1,6 @@
 alias cl=clear
 alias v=nvim
-alias ud="yay -Syyu"
+alias ud='yay -Syyu'
 alias ls='eza --group-directories-last'
 alias ll='ls -lbg --icons'
 alias la='ls -a'
@@ -12,3 +12,4 @@ alias sd='shutdown -h now'
 alias rb='shutdown -r now'
 alias g='lazygit'
 alias gd='lazygit -w $DOTFILES_DIR'
+alias ts='tmux-sessionizer'
