@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# This script opens webcam through mpv, and closes it if webcam is already running
+
+webcam_pid=$(ps ax | grep webcam-mpv | grep title | awk '{print $1}')
+if [[ -n $webcam_pid ]]; then
+  kill -9 $webcam_pid
+else
+  mpv av://v4l2:$(ls /dev/video* | cut -f1 -d' ') --profile=low-latency --untimed --vf-toggle=hflip --title=webcam-mpv
+fi
