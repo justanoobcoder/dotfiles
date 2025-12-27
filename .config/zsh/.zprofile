@@ -1,3 +1,3 @@
-if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
-    start-hyprland
+if uwsm check may-start; then
+    exec uwsm start hyprland.desktop
 fi
