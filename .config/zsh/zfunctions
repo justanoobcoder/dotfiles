@@ -5,17 +5,17 @@ bwin() {
 }
 
 cfh() {
-  local file="$(find $DOTFILES_DIR/.config/hypr -type f | fzf)"
+  local file="$(find $DOTFILES_DIR/.config/hypr -type f | fzf --exact)"
   [ -z "$file" ] || $EDITOR $file
 }
 
 cfz() {
-  local file="$(find $DOTFILES_DIR/.config/zsh -type f | fzf)"
+  local file="$(find $DOTFILES_DIR/.config/zsh -type f | fzf --exact)"
   [ -z "$file" ] || $EDITOR $file
 }
 
 fb() {
-  local file="$(find $DOTFILES_DIR/.local/bin -type f | fzf)"
+  local file="$(find $DOTFILES_DIR/.local/bin -type f | fzf --exact)"
   [ -z "$file" ] || $EDITOR $file
 }
 

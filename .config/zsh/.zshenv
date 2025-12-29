@@ -13,6 +13,6 @@ export EDITOR=nvim
 export BROWSER=zen-browser
 export TERMINAL=kitty
 
-export FZF_DEFAULT_OPTS="--layout=reverse --height 40% --color=16 --border"
+export FZF_DEFAULT_OPTS="--layout=reverse --height 40% --color=16 --border --tmux=center"
 
 export DOTFILES_DIR=$HOME/user/dotfiles
