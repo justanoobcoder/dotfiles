@@ -1,0 +1,26 @@
+#!/usr/bin/env amber
+
+import * from "std/fs"
+import * from "std/env"
+import * from "std/text"
+
+main(args) {
+    if not is_command("hyprctl"): echo_error("This script only works on Hyprland system")
+    if not is_command("swww"): echo_error("This script needs swww (or awww) to run, install it first")
+
+    if len(args) != 2: echo_error("Expect an argument which is wallpaper path")
+
+    const state_dir = env_var_get("XDG_STATE_HOME")?
+    const wall_dir = "{state_dir}/caelestia/wallpaper"
+    const img_path = args[1]
+
+    if not file_exists(img_path): echo_error("Can not find image at {img_path}")
+    if not dir_exists(wall_dir): echo_error("Wallpaper folder for caelestia does not exist")
+
+    let res = split(trust $ hyprctl monitors | grep -m1 -oP '^\s*\K\d+x\d+' | tr 'x' ',' $, ",")
+    let x_rand = trust $ shuf -i 0-{res[0]} -n 1 $
+    let y_rand = trust $ shuf -i 0-{res[1]} -n 1 $
+
+    trust $ swww img {img_path} --transition-type grow --transition-fps 120 --transition-pos {x_rand},{y_rand} $
+    trust $ echo {img_path} > {wall_dir}/path.txt $
+}

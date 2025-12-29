@@ -1,0 +1,48 @@
+#!/usr/bin/env amber
+
+import * from "std/env"
+
+fun is_tmux_running(): Bool {
+    let result = true
+    if not env_var_test("TMUX") {
+        let tmux_pid = $ pgrep tmux $ failed {
+            result = false
+        }
+    }
+    return result
+}
+
+fun has_session(name: Text): Bool {
+    let result = true
+    silent $ tmux has-session -t={name} $ failed {
+        result = false
+    }
+    return result;
+}
+
+main(args) {
+    let selected = ""
+    if len(args) > 1 {
+        selected = args[1]
+    } else {
+        selected = $ find ~/user/dotfiles/.config ~/user/projects/ -mindepth 1 -maxdepth 1 -type d | fzf $ failed {
+            exit 0
+        }
+    }
+
+    let name = trust $ basename {selected} | tr . _ $
+
+    if {
+        not is_tmux_running() {
+            trust $ tmux new-session -s {name} -c {selected} $
+            exit 0
+        }
+        not has_session(name) {
+            trust $ tmux new-session -ds {name} -c {selected} $
+            exit 0
+        }
+
+    }
+
+    trust $ tmux switch-client -t {name} $
+}
