@@ -1,6 +1,13 @@
 #!/usr/bin/env amber
 
 import * from "std/env"
+import * from "std/fs"
+import * from "std/text"
+
+let workdirs = [
+    "~/user/dotfiles/.config",
+    "~/user/projects"
+]
 
 fun is_tmux_running(): Bool {
     let result = true
@@ -20,12 +27,31 @@ fun has_session(name: Text): Bool {
     return result;
 }
 
+fun normalize_workdirs(ref dirs: [Text]) {
+    let home = trust env_var_get("HOME")
+    for i, dir in dirs {
+        if {
+            starts_with(dir, "~/") {
+                dirs[i] = replace(dir, "~", home)
+            }
+            starts_with(dir, "$HOME") {
+                dirs[i] = replace(dir, "$HOME", home)
+            }
+        }
+        if not dir_exists(dirs[i]): echo_error("Can not find directory: {dir}")
+    }
+}
+
 main(args) {
+    if not is_command("tmux"): echo_error("This script needs tmux to run, install it first")
+
+    normalize_workdirs(workdirs)
+
     let selected = ""
     if len(args) > 1 {
         selected = args[1]
     } else {
-        selected = $ find ~/user/dotfiles/.config ~/user/projects/ -mindepth 1 -maxdepth 1 -type d | fzf $ failed {
+        selected = $ find {workdirs} -mindepth 1 -maxdepth 1 -type d | fzf $ failed {
             exit 0
         }
     }
