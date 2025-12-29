@@ -18,7 +18,7 @@ if [ ! -d "$ZCACHEDIR" ]; then
   mkdir -p $ZCACHEDIR
 fi
 HISTFILE="$ZCACHEDIR/history"
-HISTORY_IGNORE="(ls|pwd|cd||la|ll|lla|cl|z|clear|cd ..)"
+HISTORY_IGNORE="(ls|pwd|cd|la|ll|lla|cl|z|g|v|clear|cd ..|cfz|cfh|fb)"
 setopt inc_append_history
 
 # Basic auto/tab complete:
