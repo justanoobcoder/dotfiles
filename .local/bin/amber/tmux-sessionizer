@@ -70,5 +70,7 @@ main(args) {
 
     }
 
-    trust $ tmux switch-client -t {name} $
+    $ tmux switch-client -t {name} $ failed {
+        trust $ tmux attach -t {name} $
+    }
 }
