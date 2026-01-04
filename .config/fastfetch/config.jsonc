@@ -6,7 +6,6 @@
         "os",
         "host",
         "kernel",
-        "packages",
         "shell",
         "display",
         "de",
@@ -21,7 +20,6 @@
         "cpu",
         "gpu",
         "memory",
-	"swap",
         {
             "type": "disk",
             "folders": "/"
