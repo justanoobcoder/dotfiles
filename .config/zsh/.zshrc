@@ -28,6 +28,19 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots)   # Include hidden files.
 
+clear-keep-buffer() {
+  zle clear-screen
+}
+zle -N clear-keep-buffer
+bindkey '^Xl' clear-keep-buffer
+
+copy-buffer() {
+  printf $BUFFER | wl-copy
+  zle -M "Copied to clipboard"
+}
+zle -N copy-buffer
+bindkey '^Xc' copy-buffer
+
 # vi mode
 bindkey -v
 export KEYTIMEOUT=1
