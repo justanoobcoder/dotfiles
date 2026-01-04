@@ -3,11 +3,18 @@ export XDG_DATA_HOME=$HOME/.local/share
 export XDG_CACHE_HOME=$HOME/.cache
 export XDG_STATE_HOME=$HOME/.local/state
 
-export XCURSOR_SIZE=24
-export LIBVA_DRIVER_NAME=nvidia
+export NIXCFG_DIR=$HOME/.nixcfg
+export DOTFILES_DIR=$HOME/.dotfiles
+
+export EDITOR=nvim
+export BROWSER=firefox
+export TERMINAL=kitty
+export TERM=kitty
+
 export HYPRCURSOR_SIZE=24
-export HYPRLAND_TRACE=1
 export XDG_CURRENT_DESKTOP=Hyprland
+export LIBVA_DRIVER_NAME=nvidia
+export HYPRLAND_TRACE=1
 export GBM_BACKEND=nvidia-drm
 export __GLX_VENDOR_LIBRARY_NAME=nvidia 
 export NVD_BACKEND=direct
@@ -21,5 +28,3 @@ export QT_IM_MODULES=fcitx
 export QT4_IM_MODULE=fcitx
 export CLUTTER_IM_MODULE=fcitx
 export GLFW_IM_MODULE=fcitx
-
-export ZDOTDIR=$HOME/.config/zsh
