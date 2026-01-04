@@ -25,7 +25,7 @@
    },
    "theme": {
       "light": {
-         "name": "vicinae-light",
+         "name": "gruvbox-dark",
          "icon_theme": "auto"
       },
       "dark": {
@@ -43,13 +43,6 @@
       "size": {
          "width": 770,
          "height": 480
-      },
-      "dim_around": true,
-      "blur": {
-         "enabled": true
-      },
-      "compact_mode": {
-         "enabled": true
       },
       "layer_shell": {
          "layer": "top",
