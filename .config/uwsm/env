@@ -1,0 +1,25 @@
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_DATA_HOME=$HOME/.local/share
+export XDG_CACHE_HOME=$HOME/.cache
+export XDG_STATE_HOME=$HOME/.local/state
+
+export XCURSOR_SIZE=24
+export LIBVA_DRIVER_NAME=nvidia
+export HYPRCURSOR_SIZE=24
+export HYPRLAND_TRACE=1
+export XDG_CURRENT_DESKTOP=Hyprland
+export GBM_BACKEND=nvidia-drm
+export __GLX_VENDOR_LIBRARY_NAME=nvidia 
+export NVD_BACKEND=direct
+export APP2UNIT_SLICES='a=app-graphical.slice b=background-graphical.slice s=session-graphical.slice'
+export QT_QPA_PLATFORMTHEME=gtk3
+
+#export GTK_IM_MODULE=fcitx
+export SDL_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export QT_IM_MODULES=fcitx
+export QT4_IM_MODULE=fcitx
+export CLUTTER_IM_MODULE=fcitx
+export GLFW_IM_MODULE=fcitx
+
+export ZDOTDIR=$HOME/.config/zsh
