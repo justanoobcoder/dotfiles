@@ -9,3 +9,5 @@ export DOCKER_CONFIG=$XDG_CONFIG_HOME/docker
 export MACHINE_STORAGE_PATH=$XDG_DATA_HOME/docker-machine
 export GRADLE_USER_HOME=$XDG_DATA_HOME/gradle
 export FZF_DEFAULT_OPTS="--layout=reverse --height 40% --color=16 --border --tmux=center"
+
+export XDG_VIDEOS_DIR=$HOME/xdg/videos # for caelestia
