@@ -15,4 +15,4 @@ export TERMINAL=kitty
 
 export FZF_DEFAULT_OPTS="--layout=reverse --height 40% --color=16 --border --tmux=center"
 
-export DOTFILES_DIR=$HOME/user/dotfiles
+export DOTFILES_DIR=$HOME/.dotfiles
