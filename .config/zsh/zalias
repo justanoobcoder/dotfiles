@@ -1,6 +1,6 @@
 alias cl=clear
 alias v=nvim
-alias ud='yay -Syyu'
+alias ud='sudo nixos-rebuild switch --flake $NIXCFG_DIR'
 alias ls='eza --group-directories-last'
 alias ll='ls -lbg --icons'
 alias la='ls -a'

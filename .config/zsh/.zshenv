@@ -17,4 +17,5 @@ export QT_QPA_PLATFORMTHEME=gtk3
 
 export FZF_DEFAULT_OPTS="--layout=reverse --height 40% --color=16 --border --tmux=center"
 
+export NIXCFG_DIR=$HOME/.nixcfg
 export DOTFILES_DIR=$HOME/.dotfiles
