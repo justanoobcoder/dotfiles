@@ -29,7 +29,7 @@
          "icon_theme": "auto"
       },
       "dark": {
-         "name": "vicinae-dark",
+         "name": "gruvbox-dark",
          "icon_theme": "auto"
       }
    },
@@ -43,6 +43,9 @@
       "size": {
          "width": 770,
          "height": 480
+      },
+      "compact_mode": {
+         "enabled": true
       },
       "layer_shell": {
          "layer": "top",
