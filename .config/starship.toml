@@ -1,7 +1,7 @@
 add_newline = false
 
 format = """
-[┌─────────](bold green)$username$hostname
+[┌─────────](bold green)$username$hostname${env_var.CONTAINER_ID}
 [│](bold green)$directory$git_branch$git_status
 [└─>](bold green)$character"""
 
@@ -10,6 +10,9 @@ style_user = "yellow bold"
 style_root = "red bold"
 format = "[┤](bold green)[$user]($style)[│](bold green)"
 show_always = true
+
+[env_var.CONTAINER_ID]
+format = "📦 [$env_value](bold red)"
 
 [hostname]
 ssh_only = false
