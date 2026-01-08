@@ -7,7 +7,7 @@ export NIXCFG_DIR=$HOME/.nixcfg
 export DOTFILES_DIR=$HOME/.dotfiles
 
 export EDITOR=nvim
-export BROWSER=firefox
+export BROWSER=zen
 export TERMINAL=kitty
 export TERM=kitty
 
