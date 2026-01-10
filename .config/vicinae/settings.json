@@ -9,6 +9,7 @@
 // Learn more about configuration at https://docs.vicinae.com/config
 
 {
+   "$schema": "https://vicinae.com/schemas/config.json",
    "imports": [],
    "close_on_focus_loss": true,
    "consider_preedit": false,
@@ -29,7 +30,7 @@
          "icon_theme": "auto"
       },
       "dark": {
-         "name": "gruvbox-dark",
+         "name": "catppuccin-mocha",
          "icon_theme": "auto"
       }
    },
@@ -82,7 +83,23 @@
    "providers": {
       "applications": {
          "preferences": {
-            "launchPrefix": "app2unit"
+            "launchPrefix": "app2unit",
+            "paths": [
+               "/home/hiepnh/.local/share/applications",
+               "/nix/store/1yaxpi3av7nj0dd7xszjsbafg1r6q4k1-vicinae-0.18.2/share/applications",
+               "/nix/store/mb21ms8w67f16j4nxdsrzk7ivf8d20yy-cups-2.4.16/share/applications",
+               "/etc/profiles/per-user/hiepnh/share/applications",
+               "/run/current-system/sw/share/applications"
+            ]
+         }
+      },
+      "clipboard": {
+         "entrypoints": {
+            "history": {
+               "preferences": {
+                  "defaultAction": "copy"
+               }
+            }
          }
       }
    }
