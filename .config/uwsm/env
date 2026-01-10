@@ -1,25 +1,17 @@
-export XDG_CONFIG_HOME=$HOME/.config
-export XDG_DATA_HOME=$HOME/.local/share
-export XDG_CACHE_HOME=$HOME/.cache
-export XDG_STATE_HOME=$HOME/.local/state
-
-export NIXCFG_DIR=$HOME/.nixcfg
-export DOTFILES_DIR=$HOME/.dotfiles
-
 export EDITOR=nvim
-export BROWSER=zen
+export BROWSER=firefox
 export TERMINAL=kitty
 export TERM=kitty
 
-export HYPRCURSOR_SIZE=30
-export XDG_CURRENT_DESKTOP=Hyprland
 export LIBVA_DRIVER_NAME=nvidia
 export HYPRLAND_TRACE=1
 export GBM_BACKEND=nvidia-drm
 export __GLX_VENDOR_LIBRARY_NAME=nvidia 
 export NVD_BACKEND=direct
 export APP2UNIT_SLICES='a=app-graphical.slice b=background-graphical.slice s=session-graphical.slice'
+export QT_QPA_PLATFORM=wayland
 export QT_QPA_PLATFORMTHEME=gtk3
+export QT_QPA_PLATFORMTHEME_QT6=gtk3
 
 #export GTK_IM_MODULE=fcitx
 export SDL_IM_MODULE=fcitx
