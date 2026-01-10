@@ -1,0 +1,29 @@
+input {
+    keyboard {
+        repeat-delay 300
+        repeat-rate 50
+        xkb {
+            layout "us"
+        }
+
+        numlock
+    }
+
+    touchpad {
+        tap
+        natural-scroll
+        accel-speed 0.5
+    }
+
+    mouse {
+    }
+
+    trackpoint {
+    }
+
+    mod-key "Alt"
+    mod-key-nested "Super"
+
+    focus-follows-mouse max-scroll-amount="0%"
+}
+

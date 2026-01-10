@@ -1,0 +1,6 @@
+cursor {
+    xcursor-theme "Qogir-Dark"
+    xcursor-size 28
+    hide-when-typing
+    hide-after-inactive-ms 5000
+}

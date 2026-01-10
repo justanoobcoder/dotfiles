@@ -1,0 +1,27 @@
+prefer-no-csd
+
+hotkey-overlay {
+    skip-at-startup
+}
+
+screenshot-path "~/xdg/pictures/screenshots/screenshot-%Y-%m-%d_%H-%M-%S.png"
+
+overview {
+    zoom 0.3
+    backdrop-color "#92a7bc"
+}
+switch-events {
+    //lid-close { spawn "bash" "-c" "loginctl lock-session; powerprofilesctl set power-saver; systemctl suspend"; }
+    lid-close { spawn "bash" "-c" "systemctl suspend"; }
+    //lid-open { spawn "bash" "-c" "powerprofilesctl set balanced"; }
+}
+
+include "modules/startup.kdl"
+//include "modules/monitors.kdl"
+include "modules/layout.kdl"
+include "modules/input.kdl"
+include "modules/cursor.kdl"
+include "modules/rules.kdl"
+include "modules/keybinds.kdl"
+
+include "dms/outputs.kdl"

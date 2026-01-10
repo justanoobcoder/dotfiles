@@ -1,0 +1,5 @@
+spawn-at-startup "hypridle"
+spawn-at-startup "fcitx5"
+
+spawn-sh-at-startup "vicinae server"
+spawn-sh-at-startup "~/.config/niri/scripts/fix-webcam-mpv"
