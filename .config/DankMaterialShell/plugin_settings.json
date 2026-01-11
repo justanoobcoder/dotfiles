@@ -16,6 +16,36 @@
         "visibilityInterval": 0,
         "id": "variant_1767961702573",
         "name": "WARP"
+      },
+      {
+        "icon": "screen_record",
+        "displayText": "",
+        "displayCommand": "",
+        "clickCommand": "screenrec -- -o -f 144",
+        "middleClickCommand": "screenrec -- -io -f 144",
+        "rightClickCommand": "",
+        "updateInterval": 0,
+        "showIcon": true,
+        "showText": true,
+        "visibilityCommand": "",
+        "visibilityInterval": 0,
+        "id": "variant_1768128331755",
+        "name": "Screencast"
+      },
+      {
+        "icon": "stop",
+        "displayText": "",
+        "displayCommand": "",
+        "clickCommand": "screenrec -- -s",
+        "middleClickCommand": "",
+        "rightClickCommand": "",
+        "updateInterval": 0,
+        "showIcon": true,
+        "showText": true,
+        "visibilityCommand": "",
+        "visibilityInterval": 0,
+        "id": "variant_1768133105086",
+        "name": "Stop Screencast"
       }
     ]
   },

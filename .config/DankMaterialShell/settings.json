@@ -341,10 +341,24 @@
       ],
       "showOnLastDisplay": true,
       "leftWidgets": [
-        "launcherButton",
-        "workspaceSwitcher",
+        {
+          "id": "launcherButton",
+          "enabled": true
+        },
+        {
+          "id": "workspaceSwitcher",
+          "enabled": true
+        },
         {
           "id": "colorPicker",
+          "enabled": true
+        },
+        {
+          "id": "dankActions:variant_1768128331755",
+          "enabled": true
+        },
+        {
+          "id": "dankActions:variant_1768133105086",
           "enabled": true
         }
       ],
@@ -354,8 +368,14 @@
           "enabled": true,
           "mediaSize": 0
         },
-        "clock",
-        "weather"
+        {
+          "id": "clock",
+          "enabled": true
+        },
+        {
+          "id": "weather",
+          "enabled": true
+        }
       ],
       "rightWidgets": [
         {
