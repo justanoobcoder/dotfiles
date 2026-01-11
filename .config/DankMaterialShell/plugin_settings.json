@@ -1,0 +1,37 @@
+{
+  "dankActions": {
+    "enabled": true,
+    "variants": [
+      {
+        "icon": "cloud",
+        "displayText": "",
+        "displayCommand": "",
+        "clickCommand": "warp-cli connect",
+        "middleClickCommand": "",
+        "rightClickCommand": "warp-cli disconnect",
+        "updateInterval": 0,
+        "showIcon": true,
+        "showText": true,
+        "visibilityCommand": "",
+        "visibilityInterval": 0,
+        "id": "variant_1767961702573",
+        "name": "WARP"
+      }
+    ]
+  },
+  "emojiLauncher": {
+    "enabled": true
+  },
+  "alarmClock": {
+    "enabled": true
+  },
+  "calculator": {
+    "enabled": true,
+    "trigger": "="
+  },
+  "niriWindows": {
+    "enabled": true,
+    "trigger": ".",
+    "noTrigger": false
+  }
+}

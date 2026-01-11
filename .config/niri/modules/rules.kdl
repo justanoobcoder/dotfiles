@@ -33,6 +33,7 @@ window-rule {
     match app-id="firefox"
     match app-id="zalo-for-linux"
     match app-id="discord"
+    match app-id="gimp" title="GNU Image Manipulation Program"
     open-maximized true
 }
 

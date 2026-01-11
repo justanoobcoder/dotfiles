@@ -9,6 +9,11 @@ cfh() {
   [ -z "$file" ] || $EDITOR $file
 }
 
+cfn() {
+  local file="$(find $DOTFILES_DIR/.config/niri -type f | fzf --exact)"
+  [ -z "$file" ] || $EDITOR $file
+}
+
 cfz() {
   local file="$(find $DOTFILES_DIR/.config/zsh -type f | fzf --exact)"
   [ -z "$file" ] || $EDITOR $file
