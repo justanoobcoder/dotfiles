@@ -1,0 +1,90 @@
+#!/usr/bin/env amber
+
+import * from "std/env"
+import * from "std/array"
+import * from "std/text"
+import * from "std/fs"
+
+const RECORD_DIR = env_var_test("XDG_VIDEOS_DIR") then trust env_var_get("XDG_VIDEOS_DIR") + "/recordings" else trust env_var_get("HOME") + "/xdg/videos/recordings"
+const CACHE_DIR = env_var_test("XDG_CACHE_HOME") then trust env_var_get("XDG_CACHE_HOME") else trust env_var_get("HOME") + "/.cache"
+
+fun record(audio: Text, fps: Text, name: Text) {
+    let time = trust $ date +'%H-%M-%S_%d-%m-%Y' $
+    let file_name = len(name) == 0 then "screenrec-" + "{time}" else name
+    let output = "{RECORD_DIR}/{file_name}.mp4"
+    let options = len(fps) != 0 then "-f {fps} " else ""
+    options += len(audio) != 0 then "-a {audio} " else ""
+    $ gpu-screen-recorder -w portal {options} -o {output} $ failed {
+        echo_error("Failed to run gpu-screen-recorder")
+    }
+}
+
+main(args) {
+    if not is_command("gpu-screen-recorder"): echo_error("Missing dependency: gpu-screen-recorder")
+    if trust env_var_get("XDG_SESSION_TYPE") != "wayland": echo_error("This script only works on wayland session")
+    silent trust $ rm -f {CACHE_DIR}/.screenrec_paused $
+    if array_contains(args, "-s") {
+        silent $ pidof gpu-screen-recorder $ failed {
+            echo_error("gpu-screen-recorder is not running")
+        }
+        $ pkill -SIGINT -f gpu-screen-recorder $ failed {
+            echo_error("Failed to stop gpu-screen-recorder")
+        }
+        silent trust $ rm -f {CACHE_DIR}/.screenrec_paused $
+        trust $ notify-send -a "Screencast" "Screen recording is STOP" -i media-playback-stop $
+        exit
+    }
+    if array_contains(args, "-p") {
+        silent $ pidof gpu-screen-recorder $ failed {
+            echo_error("gpu-screen-recorder is not running")
+        }
+
+        $ pkill -SIGUSR2 -f gpu-screen-recorder $ failed {
+            echo_error("Failed to pause/unpause gpu-screen-recorder")
+        }
+        if file_exists("{CACHE_DIR}/.screenrec_paused") {
+            trust $ notify-send -a "Screencast" "Screen recording is UNPAUSED" -i media-playback-play $
+        } else {
+            silent trust $ touch {CACHE_DIR}/.screenrec_paused $
+            trust $ notify-send -a "Screencast" "Screen recording is PAUSED" -i media-playback-pause $
+        }
+        exit
+    }
+    let arg_num = len(args)
+    let i = 1
+    let audio = ""
+    let fps = ""
+    let name = ""
+    while i < arg_num {
+        let val = args[i]
+        if {
+            val == "-i" {
+                if text_contains(audio, "input"): echo_error("Too many -i option")
+                audio += len(audio) == 0 then "default_input" else "|default_input"
+            }
+            val == "-o" {
+                if text_contains(audio, "output"): echo_error("Too many -o option")
+                audio += len(audio) == 0 then "default_output" else "|default_output"
+            }
+            val == "-io" or val == "-oi" {
+                if text_contains(audio, "input"): echo_error("Too many -i option")
+                if text_contains(audio, "output"): echo_error("Too many -o option")
+                audio += "default_output|default_input"
+            }
+            val == "-f" {
+                if i + 1 >= arg_num: echo_error("Missing FPS value for option -f")
+                let n = parse_int(args[i+1]) failed: echo_error("Invalid FPS number: {args[i+1]}")
+                if n <= 0: echo_error("Invalid FPS: {n}")
+                fps = args[i+1]
+                i += 1
+            }
+            val == "-n" {
+                if i + 1 >= arg_num: echo_error("Missing file name value for option -n")
+                name = args[i+1]
+                i += 1
+            }
+        }
+        i += 1
+    }
+    record(audio, fps, name)
+}
