@@ -38,6 +38,19 @@ window-rule {
 }
 
 window-rule {
+    match app-id="showmethekey-gtk" title="Floating Window - Show Me The Key"
+    open-floating true
+    open-focused false
+    shadow {
+        off
+    }
+    border {
+        off
+    }
+    default-floating-position x=5 y=5 relative-to="bottom-right"
+}
+
+window-rule {
     match app-id="org.quickshell"
     match title="Settings"
     open-floating true
