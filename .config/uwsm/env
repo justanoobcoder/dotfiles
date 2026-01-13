@@ -1,7 +1,7 @@
 export EDITOR=nvim
-export BROWSER=firefox
+export BROWSER=zen
 export TERMINAL=kitty
-export TERM=kitty
+#export TERM=kitty
 
 export LIBVA_DRIVER_NAME=nvidia
 export HYPRLAND_TRACE=1
