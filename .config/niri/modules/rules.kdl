@@ -31,8 +31,10 @@ window-rule {
 
 window-rule {
     match app-id="firefox"
+    match app-id="zen"
     match app-id="zalo-for-linux"
     match app-id="discord"
+    match app-id="jetbrains-rustrover"
     match app-id="gimp" title="GNU Image Manipulation Program"
     open-maximized true
 }
@@ -53,11 +55,8 @@ window-rule {
 window-rule {
     match app-id="org.quickshell"
     match title="Settings"
-    open-floating true
-}
-
-window-rule {
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    match app-id="zen" title="Sign in - Google Accounts — Zen Browser"
     open-floating true
 }
 
