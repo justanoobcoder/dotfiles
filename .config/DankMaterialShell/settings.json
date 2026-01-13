@@ -101,7 +101,7 @@
       "width": 50
     },
     {
-      "id": "nightMode",
+      "id": "battery",
       "enabled": true,
       "width": 50
     },
@@ -111,12 +111,12 @@
       "width": 50
     },
     {
-      "id": "idleInhibitor",
+      "id": "nightMode",
       "enabled": true,
       "width": 50
     },
     {
-      "id": "builtin_vpn",
+      "id": "idleInhibitor",
       "enabled": true,
       "width": 50
     }
