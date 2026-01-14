@@ -4,6 +4,7 @@ binds {
     Mod+Return hotkey-overlay-title="Open a Terminal: Kitty" { spawn "kitty"; }
     Mod+P hotkey-overlay-title="Open App Launcher" { spawn-sh "dms ipc call spotlight toggle"; }
     Mod+W hotkey-overlay-title="Run an Application: Zen Browser" { spawn-sh "app2unit zen"; }
+    Mod+Shift+R hotkey-overlay-title="Restart DMS" { spawn-sh "dms restart"; }
     Super+V hotkey-overlay-title="Open Clipboard History: Vicinae" { spawn-sh "vicinae vicinae://extensions/vicinae/clipboard/history"; }
     Super+L hotkey-overlay-title="Lock the Screen" { spawn-sh "loginctl lock-session"; }
     Super+X hotkey-overlay-title="Open Power Menu" { spawn-sh "dms ipc call powermenu toggle"; }
@@ -126,9 +127,9 @@ binds {
     Mod+Comma  { consume-window-into-column; }
     Mod+Period { expel-window-from-column; }
 
-    Mod+R { switch-preset-column-width; }
-    Mod+Shift+R { switch-preset-window-height; }
-    Mod+Ctrl+R { reset-window-height; }
+    Mod+T { switch-preset-column-width; }
+    Mod+Shift+T { switch-preset-window-height; }
+    Mod+Ctrl+T { reset-window-height; }
     Mod+F { maximize-column; }
     Mod+Shift+F { fullscreen-window; }
 
