@@ -1,0 +1,67 @@
+{
+  "dankActions": {
+    "enabled": true,
+    "variants": [
+      {
+        "icon": "cloud",
+        "displayText": "",
+        "displayCommand": "",
+        "clickCommand": "",
+        "middleClickCommand": "warp-cli connect",
+        "rightClickCommand": "warp-cli disconnect",
+        "updateInterval": 0,
+        "showIcon": true,
+        "showText": true,
+        "visibilityCommand": "",
+        "visibilityInterval": 0,
+        "id": "variant_1768473848011",
+        "name": "Warp"
+      },
+      {
+        "icon": "screen_record",
+        "displayText": "",
+        "displayCommand": "",
+        "clickCommand": "screenrec -- -o -f 144",
+        "middleClickCommand": "screenrec -- -io -f 144",
+        "rightClickCommand": "screenrec",
+        "updateInterval": 0,
+        "showIcon": true,
+        "showText": true,
+        "visibilityCommand": "",
+        "visibilityInterval": 0,
+        "id": "variant_1768473938385",
+        "name": "Screencast"
+      },
+      {
+        "icon": "stop",
+        "displayText": "",
+        "displayCommand": "",
+        "clickCommand": "screenrec -- -s",
+        "middleClickCommand": "",
+        "rightClickCommand": "",
+        "updateInterval": 0,
+        "showIcon": true,
+        "showText": true,
+        "visibilityCommand": "",
+        "visibilityInterval": 0,
+        "id": "variant_1768473969307",
+        "name": "Stop Screencast"
+      }
+    ]
+  },
+  "alarmClock": {
+    "enabled": true
+  },
+  "emojiLauncher": {
+    "enabled": true
+  },
+  "niriWindows": {
+    "enabled": true,
+    "trigger": ".",
+    "noTrigger": false
+  },
+  "calculator": {
+    "enabled": true,
+    "trigger": "="
+  }
+}

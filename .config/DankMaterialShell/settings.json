@@ -337,6 +337,14 @@
         {
           "id": "colorPicker",
           "enabled": true
+        },
+        {
+          "id": "dankActions:variant_1768473938385",
+          "enabled": true
+        },
+        {
+          "id": "dankActions:variant_1768473969307",
+          "enabled": true
         }
       ],
       "centerWidgets": [
@@ -353,6 +361,10 @@
       ],
       "rightWidgets": [
         {
+          "id": "privacyIndicator",
+          "enabled": true
+        },
+        {
           "id": "systemTray",
           "enabled": true
         },
@@ -366,6 +378,10 @@
         },
         {
           "id": "battery",
+          "enabled": true
+        },
+        {
+          "id": "alarmClock",
           "enabled": true
         },
         {
