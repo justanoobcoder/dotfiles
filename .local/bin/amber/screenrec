@@ -14,8 +14,8 @@ fun record(audio: Text, fps: Text, name: Text) {
     let file_name = len(name) == 0 then "screenrec-" + "{time}" else name
     let output = "{RECORD_DIR}/{file_name}.mp4"
     let options = len(fps) != 0 then "-f {fps} " else ""
-    options += len(audio) != 0 then "-a {audio} " else ""
-    $ script -q -c "gpu-screen-recorder -w portal {options} -o {output}" $ failed {
+    options += len(audio) != 0 then "-a '{audio}' " else ""
+    $ script -q -c "gpu-screen-recorder -w portal {options} -o {output}" /dev/null $ failed {
         echo_error("Failed to run gpu-screen-recorder")
     }
 }
