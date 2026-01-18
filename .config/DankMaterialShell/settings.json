@@ -58,7 +58,6 @@
   "controlCenterShowMicPercent": true,
   "controlCenterShowBatteryIcon": false,
   "controlCenterShowPrinterIcon": false,
-  "controlCenterShowScreenSharingIcon": true,
   "showPrivacyButton": true,
   "privacyShowMicIcon": false,
   "privacyShowCameraIcon": false,
@@ -367,6 +366,10 @@
         },
         {
           "id": "systemTray",
+          "enabled": true
+        },
+        {
+          "id": "dankActions:variant_1768473848011",
           "enabled": true
         },
         {
