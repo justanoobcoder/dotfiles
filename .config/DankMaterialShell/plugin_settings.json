@@ -63,5 +63,11 @@
   "calculator": {
     "enabled": true,
     "trigger": "="
+  },
+  "dankDesktopWeather": {
+    "enabled": true
+  },
+  "dankLauncherKeys": {
+    "enabled": true
   }
 }
