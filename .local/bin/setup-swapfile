@@ -1,0 +1,60 @@
+#!/usr/bin/env bash
+
+# This script is meant to be run one time after a fresh NixOS installation only!!!
+# DO NOT RUN IT IF YOU ARE NOT ME :D
+
+set -euo pipefail
+
+HW_CFG="/etc/nixos/hardware-configuration.nix"
+TARGET_FILE="$HOME/.nixcfg/hosts/nixos-pc/modules/suspend-hibernate.nix"
+SWAPFILE="/swap/swapfile"
+
+if [[ ! -f "$TARGET_FILE" ]]; then
+  echo "Error: cannot find $TARGET_FILE"
+  exit 1
+fi
+
+cp "$TARGET_FILE" "$TARGET_FILE.bak"
+
+if [[ ! -f "$HW_CFG" ]]; then
+  echo "Error: cannot find $HW_CFG"
+  exit 1
+fi
+
+if [[ ! -d "$HOME/.nixcfg/hosts/nixos-pc" ]]; then
+  echo "Error: cannot find nixcfg folder"
+  exit 1
+fi
+
+cp "$HW_CFG" "$HOME/.nixcfg/hosts/nixos-pc/hardware-configuration.nix"
+
+ROOT_DEVICE=$(
+  awk '
+    $0 ~ /fileSystems\."\/"/ { in_root=1 }
+    in_root && $0 ~ /device *=/ {
+      gsub(/.*device *= *"|";.*/, "", $0)
+      print $0
+      exit
+    }
+  ' "$HW_CFG"
+)
+
+if [[ -z "$ROOT_DEVICE" ]]; then
+  echo "Error: cannot find root filesystem device"
+  exit 1
+fi
+
+RESUME_OFFSET=$(sudo btrfs inspect-internal map-swapfile -r "$SWAPFILE")
+
+if [[ -z "$RESUME_OFFSET" ]]; then
+  echo "Error: cannot determine resume_offset"
+  exit 1
+fi
+
+sed -i \
+  "s|resumeDevice *= *\"[^\"]*\";|resumeDevice = \"$ROOT_DEVICE\";|" \
+  "$TARGET_FILE"
+
+sed -i \
+  "s|resume_offset=[0-9]\+|resume_offset=$RESUME_OFFSET|" \
+  "$TARGET_FILE"
