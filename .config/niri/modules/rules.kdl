@@ -1,11 +1,6 @@
 workspace "browser"
 
 window-rule {
-    geometry-corner-radius 10
-    clip-to-geometry true
-}
-
-window-rule {
     open-maximized-to-edges false
 }
 
@@ -63,11 +58,6 @@ window-rule {
 /-window-rule {
     match app-id=r#"^org\.keepassxc\.KeePassXC$"#
     block-out-from "screen-capture"
-}
-
-/-window-rule {
-    geometry-corner-radius 12
-    clip-to-geometry true
 }
 
 layer-rule {
