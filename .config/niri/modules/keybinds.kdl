@@ -8,6 +8,7 @@ binds {
     Super+V hotkey-overlay-title="Open Clipboard History: Vicinae" { spawn-sh "vicinae vicinae://extensions/vicinae/clipboard/history"; }
     Super+L hotkey-overlay-title="Lock the Screen" { spawn-sh "loginctl lock-session"; }
     Super+X hotkey-overlay-title="Open Power Menu" { spawn-sh "dms ipc call powermenu toggle"; }
+    Super+O hotkey-overlay-title="Activate OCR" { spawn "ocr"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02+ -l 1.0"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02-"; }
