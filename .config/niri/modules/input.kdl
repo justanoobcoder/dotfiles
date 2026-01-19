@@ -16,6 +16,7 @@ input {
     }
 
     mouse {
+        accel-speed 0.7
     }
 
     trackpoint {
