@@ -383,6 +383,10 @@
           "enabled": true
         },
         {
+          "id": "clipboard",
+          "enabled": true
+        },
+        {
           "id": "alarmClock",
           "enabled": true
         },
@@ -421,7 +425,7 @@
       "visible": true,
       "popupGapsAuto": true,
       "popupGapsManual": 4,
-      "maximizeDetection": true,
+      "maximizeDetection": false,
       "scrollEnabled": true,
       "scrollXBehavior": "column",
       "scrollYBehavior": "workspace",
@@ -532,10 +536,10 @@
       },
       "positions": {
         "eDP-1": {
-          "width": 457.08203125,
-          "height": 465.26953125,
-          "x": 1435.48828125,
-          "y": 70.12109375
+          "width": 462.734375,
+          "height": 328.82421875,
+          "x": 1441.85546875,
+          "y": 62.90625
         }
       }
     }
