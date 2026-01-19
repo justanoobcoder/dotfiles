@@ -12,7 +12,7 @@
    "$schema": "https://vicinae.com/schemas/config.json",
    "imports": [],
    "close_on_focus_loss": true,
-   "consider_preedit": false,
+   "consider_preedit": true,
    "pop_to_root_on_close": true,
    "escape_key_behavior": "close_window",
    "favicon_service": "twenty",
@@ -30,8 +30,8 @@
          "icon_theme": "auto"
       },
       "dark": {
-         "name": "catppuccin-mocha",
-         "icon_theme": "auto"
+         "name": "gruvbox-dark",
+         "icon_theme": "Tela circle dark"
       }
    },
    "launcher_window": {
