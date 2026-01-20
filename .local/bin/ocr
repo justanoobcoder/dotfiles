@@ -18,10 +18,6 @@ escape() {
 
 preview="$(echo "$content" | cut -c1-200 | escape)"
 
-notify-send \
-  -a "OCR" \
-  -i info \
-  -h string:x-canonical-private-synchronous:ocr \
-  -h string:markup-body:1 \
-  "OCR copied" \
-  "<tt>$preview</tt>"
+dms notify "ORC copied" "<tt>$preview</tt>" \
+    --app "ORC" \
+    --icon info

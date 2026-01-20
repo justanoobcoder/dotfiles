@@ -8,6 +8,10 @@ import * from "std/fs"
 const RECORD_DIR = env_var_test("XDG_VIDEOS_DIR") then trust env_var_get("XDG_VIDEOS_DIR") + "/recordings" else trust env_var_get("HOME") + "/xdg/videos/recordings"
 const CACHE_DIR = env_var_test("XDG_CACHE_HOME") then trust env_var_get("XDG_CACHE_HOME") else trust env_var_get("HOME") + "/.cache"
 
+fun notify(body: Text, icon: Text) {
+    trust $ dms notify "{body}" --app "Screencast" --icon {icon} $
+}
+
 fun record(audio: Text, fps: Text, name: Text) {
     silent trust $ rm -f {CACHE_DIR}/.screenrec_paused $
     let time = trust $ date +'%H-%M-%S_%d-%m-%Y' $
@@ -31,7 +35,7 @@ main(args) {
             echo_error("Failed to stop gpu-screen-recorder")
         }
         silent trust $ rm -f {CACHE_DIR}/.screenrec_paused $
-        trust $ notify-send -a "Screencast" "Screen recording is STOP" -i media-playback-stop $
+        notify("Screen recording is STOP", "media-playback-stop")
         exit
     }
     if array_contains(args, "-p") {
@@ -40,10 +44,10 @@ main(args) {
         }
         if file_exists("{CACHE_DIR}/.screenrec_paused") {
             silent trust $ rm -f {CACHE_DIR}/.screenrec_paused $
-            trust $ notify-send -a "Screencast" "Screen recording is UNPAUSED" -i media-playback-start $
+            notify("Screen recording is UNPAUSED", "media-playback-start")
         } else {
             silent trust $ touch {CACHE_DIR}/.screenrec_paused $
-            trust $ notify-send -a "Screencast" "Screen recording is PAUSED" -i media-playback-pause $
+            notify("Screen recording is PAUSED", "media-playback-pause")
         }
         trust $ pkill -SIGUSR2 -f gpu-screen-recorder $
         exit
