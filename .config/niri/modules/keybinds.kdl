@@ -10,6 +10,11 @@ binds {
     Super+X hotkey-overlay-title="Open Power Menu" { spawn-sh "dms ipc call powermenu toggle"; }
     Super+O hotkey-overlay-title="Activate OCR" { spawn "ocr"; }
 
+    Super+Shift+S { spawn-sh "dms screenshot --stdout | swappy -f -"; }
+    Super+Ctrl+S { spawn-sh "dms screenshot -d ~/xdg/pictures/screenshots"; }
+    Print { spawn-sh "dms screenshot full --no-file --no-notify"; }
+    Ctrl+Print { spawn-sh "dms screenshot full -d ~/xdg/pictures/screenshots"; }
+
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02+ -l 1.0"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02-"; }
     XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
@@ -148,10 +153,6 @@ binds {
 
     Mod+V       { toggle-window-floating; }
     Mod+Shift+V { switch-focus-between-floating-and-tiling; }
-
-    Super+Shift+S { screenshot; }
-    Print { screenshot-screen write-to-disk=false; }
-    Ctrl+Print { screenshot-window write-to-disk=false; }
 
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
