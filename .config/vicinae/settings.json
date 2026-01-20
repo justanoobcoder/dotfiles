@@ -30,7 +30,7 @@
          "icon_theme": "auto"
       },
       "dark": {
-         "name": "gruvbox-dark",
+         "name": "matugen",
          "icon_theme": "Tela circle dark"
       }
    },
@@ -81,6 +81,13 @@
       "files:search"
    ],
    "providers": {
+      "@leonkohli/store.vicinae.process-manager": {
+         "entrypoints": {
+            "processes": {
+               "alias": "!"
+            }
+         }
+      },
       "applications": {
          "preferences": {
             "launchPrefix": "app2unit",
@@ -99,6 +106,20 @@
                "preferences": {
                   "defaultAction": "copy"
                }
+            }
+         }
+      },
+      "core": {
+         "entrypoints": {
+            "search-emojis": {
+               "alias": ":"
+            }
+         }
+      },
+      "wm": {
+         "entrypoints": {
+            "switch-windows": {
+               "alias": "."
             }
          }
       }
