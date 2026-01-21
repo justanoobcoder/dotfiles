@@ -1,7 +1,7 @@
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
-    Mod+Return hotkey-overlay-title="Open a Terminal: Kitty" { spawn "kitty"; }
+    Mod+Return hotkey-overlay-title="Open a Terminal: Kitty" { spawn-sh "app2unit kitty"; }
     Mod+P hotkey-overlay-title="Open App Launcher" { spawn-sh "vicinae toggle"; }
     Mod+W hotkey-overlay-title="Run an Application: Zen Browser" { spawn-sh "app2unit zen"; }
     Mod+Shift+R hotkey-overlay-title="Restart DMS" { spawn-sh "dms restart"; }
