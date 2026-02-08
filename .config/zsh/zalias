@@ -8,8 +8,8 @@ alias lla='ll -a'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-alias sd="shutdown -h now"
-alias rb="shutdown -r now"
+alias sd="ps aux | grep Zalo | grep -v grep | awk '{print $2}' | xargs kill -9 2>/dev/null; shutdown -h now"
+alias rb="ps aux | grep Zalo | grep -v grep | awk '{print $2}' | xargs kill -9 2>/dev/null; shutdown -r now"
 alias g='lazygit'
 alias gd='lazygit -w $DOTFILES_DIR'
 alias ts='tmux-sessionizer'
