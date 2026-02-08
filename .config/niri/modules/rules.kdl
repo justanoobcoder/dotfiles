@@ -25,7 +25,7 @@ window-rule {
 window-rule {
     match app-id="firefox"
     match app-id="zen"
-    match app-id="zalo-for-linux"
+    match app-id="zalo.exe"
     match app-id="discord"
     match app-id="jetbrains-rustrover"
     match app-id="gimp" title="GNU Image Manipulation Program"
@@ -43,6 +43,11 @@ window-rule {
         off
     }
     default-floating-position x=5 y=5 relative-to="bottom-right"
+}
+
+window-rule {
+    match app-id="explorer.exe"
+    default-floating-position x=5 y=5 relative-to="top-right"
 }
 
 window-rule {

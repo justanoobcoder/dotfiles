@@ -7,7 +7,8 @@ binds {
     Mod+Shift+R hotkey-overlay-title="Restart DMS" { spawn-sh "dms restart"; }
     Super+V hotkey-overlay-title="Open Clipboard History: Vicinae" { spawn-sh "vicinae vicinae://extensions/vicinae/clipboard/history"; }
     Super+L hotkey-overlay-title="Lock the Screen" { spawn-sh "loginctl lock-session"; }
-    Super+X hotkey-overlay-title="Open Power Menu" { spawn-sh "dms ipc call powermenu toggle"; }
+    Super+X hotkey-overlay-title="Open Power Menu" { spawn-sh "ps aux | grep Zalo | grep -v grep | awk '{print $2}' | xargs kill -9 2>/dev/null; dms ipc call powermenu toggle"; }
+    Mod+Shift+Q { spawn-sh "ps aux | grep Zalo | grep -v grep | awk '{print $2}' | xargs kill -9 2>/dev/null; dms ipc call powermenu toggle"; }
     Super+O hotkey-overlay-title="Activate OCR" { spawn "ocr"; }
 
     Mod+S { spawn-sh "niri-sticky-window toggle --float"; } 
@@ -156,7 +157,6 @@ binds {
 
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
-    Mod+Shift+Q { quit; }
     Ctrl+Alt+Delete { quit; }
 
     Mod+Shift+P { power-off-monitors; }
