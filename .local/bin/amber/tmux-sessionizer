@@ -6,6 +6,7 @@ import * from "std/text"
 
 let workdirs = [
     "~/.dotfiles/.config",
+    "~/proj",
 ]
 
 fun is_tmux_running(): Bool {
