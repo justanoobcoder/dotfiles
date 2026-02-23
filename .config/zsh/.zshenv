@@ -16,4 +16,5 @@ export GRADLE_USER_HOME=$XDG_DATA_HOME/gradle
 export FZF_DEFAULT_OPTS="--layout=reverse --height 40% --color=16 --border --tmux=center"
 
 export NIXCFG_DIR=$HOME/.nixcfg
+export NH_FLAKE=$NIXCFG_DIR
 export DOTFILES_DIR=$HOME/.dotfiles

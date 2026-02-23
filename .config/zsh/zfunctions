@@ -33,7 +33,8 @@ y() {
 }
 
 clean-up() {
-  sudo nix profile wipe-history --older-than 7d --profile /nix/var/nix/profiles/system
-  sudo nix-collect-garbage --delete-old
-  nix-collect-garbage --delete-old
+  nh clean all -a --keep 2
+  # sudo nix profile wipe-history --older-than 7d --profile /nix/var/nix/profiles/system
+  # sudo nix-collect-garbage --delete-old
+  # nix-collect-garbage --delete-old
 }
