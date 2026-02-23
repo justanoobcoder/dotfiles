@@ -1,6 +1,6 @@
 bwin() {
   local winboot=$(efibootmgr | grep "Windows Boot Manager" |
-        cut -d'*' -f1 | cut -d't' -f2)
+        cut -d'*' -f1 | cut -d't' -f2 | head -n1)
   sudo efibootmgr --bootnext $winboot && rb
 }
 
