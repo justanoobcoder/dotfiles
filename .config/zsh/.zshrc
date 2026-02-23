@@ -1,5 +1,9 @@
 if command -v fastfetch >/dev/null 2>&1; then
-	fastfetch
+  if [[ (-n "$DISPLAY" || -n "$WAYLAND_DISPLAY") && -f ~/.face ]]; then
+	  fastfetch --logo ~/.face --logo-padding-top 3
+  else
+    fastfetch
+  fi
 fi
 
 autoload -U compinit; compinit
