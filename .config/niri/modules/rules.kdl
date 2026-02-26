@@ -46,6 +46,12 @@ window-rule {
 }
 
 window-rule {
+    match title="Blobdrop"
+    open-floating true
+    default-floating-position x=5 y=5 relative-to="top-right"
+}
+
+window-rule {
     match app-id="explorer.exe"
     default-floating-position x=5 y=5 relative-to="top-right"
 }
