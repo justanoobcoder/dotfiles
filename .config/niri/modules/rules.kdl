@@ -60,6 +60,7 @@ window-rule {
     match app-id="org.quickshell"
     match title="Settings"
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    match app-id="imv"
     open-floating true
 }
 
