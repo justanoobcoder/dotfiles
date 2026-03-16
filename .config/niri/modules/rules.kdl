@@ -29,11 +29,12 @@ window-rule {
     match app-id="discord"
     match app-id="jetbrains-rustrover"
     match app-id="gimp" title="GNU Image Manipulation Program"
+    match app-id="org.kde.okular"
     open-maximized true
 }
 
 window-rule {
-    match app-id="showmethekey-gtk" title="Floating Window - Show Me The Key"
+    match app-id="one.alynx.showmethekey" title="Floating Window - Show Me The Key"
     open-floating true
     open-focused false
     shadow {
