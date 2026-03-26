@@ -1,3 +1,6 @@
 .zcompdump
 .config/hypr/scheme/
 .config/DankMaterialShell/plugins/
+
+.config/obsidian/*
+!.config/obsidian/user-flag.conf
