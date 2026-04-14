@@ -14,7 +14,7 @@ fun notify(body: Text, icon: Text) {
 
 fun record(audio: Text, fps: Text, name: Text) {
     silent trust $ rm -f {CACHE_DIR}/.screenrec_paused $
-    let time = trust $ date +'%H-%M-%S_%d-%m-%Y' $
+    let time = trust $ date +'%Y-%m-%d_%H-%M-%S' $
     let file_name = len(name) == 0 then "screenrec-" + "{time}" else name
     let output = "{RECORD_DIR}/{file_name}.mp4"
     let options = len(fps) != 0 then "-f {fps} " else ""
