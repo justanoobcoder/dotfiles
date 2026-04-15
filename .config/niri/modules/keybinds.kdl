@@ -37,6 +37,7 @@ binds {
     Mod+Q repeat=false { close-window; }
 
     Mod+F1 repeat=false { spawn "webcam-mpv"; }
+    Mod+F2 repeat=false { spawn-sh "pkill keypop || keypop"; }
     Mod+F4 repeat=false { close-window; }
 
     Mod+Left  { focus-column-left; }

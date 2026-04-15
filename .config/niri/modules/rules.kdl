@@ -3,6 +3,19 @@ window-rule {
 }
 
 window-rule {
+    match app-id="keypop"
+    open-floating true
+    default-floating-position x=5 y=5 relative-to="bottom-right"
+    open-focused false
+    shadow {
+        off
+    }
+    border {
+        off
+    }
+}
+
+window-rule {
     match is-floating=true
     shadow {
         on
