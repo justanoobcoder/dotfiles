@@ -24,7 +24,7 @@ window-rule {
 
 // Need niri/scripts/fix-webcam-mpv to work
 window-rule {
-    match title="^webcam-mpv$"
+    match title="^video0 - mpv$"
     open-floating true
     open-focused false
     shadow {

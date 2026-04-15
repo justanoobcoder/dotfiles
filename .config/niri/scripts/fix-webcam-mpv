@@ -52,7 +52,7 @@ class Rule:
 RULES = [
     # window-rule {} with one match.
     #Rule([Match(title="Bitwarden", app_id="firefox")]),
-    Rule([Match(title="webcam-mpv", app_id="mpv")]),
+    Rule([Match(title="video0 - mpv", app_id="mpv")]),
 
     # window-rule {} with one match and one exclude.
     # Rule(
