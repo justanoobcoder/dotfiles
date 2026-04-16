@@ -21,6 +21,7 @@ include "modules/rules.kdl"
 include "modules/keybinds.kdl"
 include "modules/animation.kdl"
 include "modules/gestures.kdl"
+include "modules/blur.kdl"
 
 include "dms/outputs.kdl"
 include "dms/layout.kdl"
