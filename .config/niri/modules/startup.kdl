@@ -1,6 +1,3 @@
-spawn-at-startup "hypridle"
-spawn-sh-at-startup "vicinae server"
 spawn-sh-at-startup "~/.config/niri/scripts/fix-webcam-mpv"
 spawn-sh-at-startup "niri-float-sticky -app-id keypop"
 spawn-sh-at-startup "niri-float-sticky -title 'video0 - mpv'"
-spawn-sh-at-startup "wayvibes ~/proj/wayvibes/soundpacks/cherrymx-red-abs -v 10"
