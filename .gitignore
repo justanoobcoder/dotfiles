@@ -4,3 +4,5 @@
 
 .config/obsidian/*
 !.config/obsidian/user-flag.conf
+
+.config/hypr/hypridle.conf
