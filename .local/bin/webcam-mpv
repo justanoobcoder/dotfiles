@@ -6,5 +6,5 @@ webcam_pid=$(ps ax | grep mpv | grep video0 | awk '{print $1}')
 if [[ -n $webcam_pid ]]; then
   kill -9 $webcam_pid
 else
-  mpv av://v4l2:$(ls /dev/video* | cut -f1 -d' ') --profile=low-latency --untimed --vf-toggle=hflip
+  mpv av://v4l2:$(ls /dev/video* | cut -f1 -d' ') --profile=low-latency --untimed --vf-toggle=hflip --title=webcam-mpv
 fi
