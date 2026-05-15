@@ -31,7 +31,7 @@ main(args) {
         silent $ pidof gpu-screen-recorder $ failed {
             echo_error("gpu-screen-recorder is not running")
         }
-        $ pkill -SIGINT -f gpu-screen-recorder $ failed {
+        $ killall gpu-screen-recorder $ failed {
             echo_error("Failed to stop gpu-screen-recorder")
         }
         silent trust $ rm -f {CACHE_DIR}/.screenrec_paused $
