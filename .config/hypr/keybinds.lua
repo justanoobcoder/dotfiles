@@ -67,6 +67,8 @@ hl.bind(mainMod .. " + SHIFT + M", hl.dsp.window.move({ workspace = "e+1" }))
 hl.bind(mainMod .. " + SHIFT + I", hl.dsp.window.move({ workspace = "e-1" }))
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
+hl.bind(mainMod .. " + mouse_left", hl.dsp.focus({ direction = "left" }))
+hl.bind(mainMod .. " + mouse_right", hl.dsp.focus({ direction = "right" }))
 
 hl.bind(mainMod .. " + SHIFT + H", hl.dsp.layout("swapcol l"))
 hl.bind(mainMod .. " + SHIFT + L", hl.dsp.layout("swapcol r"))
