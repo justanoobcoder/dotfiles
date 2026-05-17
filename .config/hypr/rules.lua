@@ -20,13 +20,20 @@ local suppressMaximizeRule = hl.window_rule({
 })
 suppressMaximizeRule:set_enabled(true)
 
+local float_windows = {
+	{ class = "imv" },
+	{ title = "jcm" },
+	{ title = "Select what to share" },
+	{ title = "Lotus Settings" },
+	{ title = "Fcitx Configuration" },
+	{ title = "Settings" },
+}
+
+for _, match in ipairs(float_windows) do
+	hl.window_rule({ match = match, float = true })
+end
+
 hl.window_rule({ match = { class = "kitty" }, scrolling_width = 0.5 })
-hl.window_rule({ match = { title = "jcm" }, float = true })
-hl.window_rule({ match = { class = "imv" }, float = true })
-hl.window_rule({ match = { title = "Select what to share" }, float = true })
-hl.window_rule({ match = { title = "Lotus Settings" }, float = true })
-hl.window_rule({ match = { title = "Fcitx Configuration" }, float = true })
-hl.window_rule({ match = { title = "Settings" }, float = true })
 hl.window_rule({ match = { class = "zen" }, workspace = "2" })
 hl.window_rule({ match = { class = "keypop" }, no_anim = true })
 hl.window_rule({ match = { class = "org.keepassxc.KeePassXC" }, workspace = "special:keepass", no_screen_share = true })
