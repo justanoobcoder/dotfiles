@@ -46,7 +46,7 @@ hl.config({
 })
 
 hl.plugin.hyprwinview.configure({
-	toggle_bar_cmd = "dms ipc call bar toggle index 0; dms ipc desktopWidget toggleEnabled dw_1768471905118_1d8eecmzz",
+	toggle_bar_cmd = "noctalia-shell ipc call bar toggle",
 	ignore_titles = { "Wine System Tray", "webcam-mpv" },
 	ignore_classes = { "keypop" },
 	keys = {

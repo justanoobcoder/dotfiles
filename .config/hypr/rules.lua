@@ -21,6 +21,7 @@ local suppressMaximizeRule = hl.window_rule({
 suppressMaximizeRule:set_enabled(true)
 
 local float_windows = {
+  { class = "com.gabm.satty" },
 	{ class = "imv" },
 	{ title = "jcm" },
 	{ title = "Select what to share" },
@@ -68,5 +69,3 @@ hl.window_rule({
 	pin = true,
 	move = { "monitor_w-window_w-10", "monitor_h-window_h-10" },
 })
-
-hl.layer_rule({ match = { namespace = "dms.*" }, no_anim = true })

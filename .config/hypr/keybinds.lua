@@ -1,23 +1,21 @@
 local terminal = "app2unit kitty"
 local browser = "app2unit zen"
-local menu = "dms ipc call launcher open"
+local menu = "noctalia-shell ipc call launcher toggle"
 local clipboardManager = "jcm"
 local powerMenu =
-	"ps aux | grep Zalo | grep -v grep | awk '{print $2}' | xargs kill -9 2>/dev/null; dms ipc call powermenu toggle"
+	"ps aux | grep Zalo | grep -v grep | awk '{print $2}' | xargs kill -9 2>/dev/null; noctalia-shell ipc call sessionMenu toggle"
 local webcam = "/home/hiepnh/.local/bin/webcam-mpv"
-local screenshotEdit = "dms screenshot --stdout | swappy -f -"
-local screenshotSave = "dms screenshot -d ~/xdg/pictures/screenshots"
-local screenshotFull = "dms screenshot full --no-file --no-notify"
-local screenshotFullSave = "dms screenshot full -d ~/xdg/pictures/screenshots"
-local lockScreen = "loginctl lock-session"
-local toggleBar = "dms ipc call bar toggle index 0"
+local screenshotEdit = "HQF_ACTION=edit hyprquickframe -n"
+local screenshotWindowEdit = "HQF_ACTION=edit HQF_MODE=window hyprquickframe -n"
+local lockScreen = "noctalia-shell ipc call lockScreen lock"
+local toggleBar = "noctalia-shell ipc call bar toggle"
 
-local raiseVolume = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02+ -l 1.0"
-local lowerVolume = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02-"
-local muteVolume = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-local micMuteVolume = "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
-local brightnessUp = "brightnessctl --class=backlight set +5%"
-local brightnessDown = "brightnessctl --class=backlight set 5%-"
+local raiseVolume = "noctalia-shell ipc call volume increase"
+local lowerVolume = "noctalia-shell ipc call volume decrease"
+local muteVolume = "noctalia-shell ipc call volume muteOutput"
+local micMuteVolume = "noctalia-shell ipc call volume muteInput"
+local brightnessUp = "noctalia-shell ipc call brightness increase"
+local brightnessDown = "noctalia-shell ipc call brightness decrease"
 
 local mainMod = "ALT"
 local winMod = "SUPER"
@@ -35,17 +33,16 @@ hl.bind(mainMod .. " + F1", hl.dsp.exec_cmd(webcam))
 hl.bind(mainMod .. " + F2", hl.dsp.exec_cmd("pkill keypop || keypop"))
 hl.bind(mainMod .. " + R", hl.dsp.layout("colresize +conf"))
 hl.bind(mainMod .. " + TAB", hl.dsp.focus({ workspace = "previous" }))
-hl.bind(winMod .. " + TAB", hl.dsp.focus({ last = true }))
-
 hl.bind(mainMod .. " + SHIFT + B", hl.dsp.exec_cmd(toggleBar))
+
+hl.bind(winMod .. " + TAB", hl.dsp.focus({ last = true }))
 
 hl.bind(winMod .. " + V", hl.dsp.exec_cmd(clipboardManager))
 hl.bind(winMod .. " + L", hl.dsp.exec_cmd(lockScreen))
 
 hl.bind(winMod .. " + SHIFT + S", hl.dsp.exec_cmd(screenshotEdit))
-hl.bind(winMod .. " + CTRL + S", hl.dsp.exec_cmd(screenshotSave))
-hl.bind("Print", hl.dsp.exec_cmd(screenshotFull))
-hl.bind("CTRL + Print", hl.dsp.exec_cmd(screenshotFullSave))
+hl.bind(winMod .. " + CTRL + S", hl.dsp.exec_cmd(screenshotWindowEdit))
+hl.bind("Print", hl.dsp.exec_cmd(screenshotEdit))
 
 hl.bind(mainMod .. " + H", hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + L", hl.dsp.focus({ direction = "right" }))
