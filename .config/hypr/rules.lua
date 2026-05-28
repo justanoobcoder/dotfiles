@@ -21,7 +21,7 @@ local suppressMaximizeRule = hl.window_rule({
 suppressMaximizeRule:set_enabled(true)
 
 local float_windows = {
-  { class = "com.gabm.satty" },
+	{ class = "com.gabm.satty" },
 	{ class = "imv" },
 	{ title = "jcm" },
 	{ title = "Select what to share" },
@@ -34,7 +34,9 @@ for _, match in ipairs(float_windows) do
 	hl.window_rule({ match = match, float = true })
 end
 
+hl.window_rule({ match = { focus = false }, no_blur = true })
 hl.window_rule({ match = { class = "kitty" }, scrolling_width = 0.5 })
+hl.window_rule({ match = { class = "footclient" }, scrolling_width = 0.5 })
 hl.window_rule({ match = { class = "zen" }, workspace = "2" })
 hl.window_rule({ match = { class = "keypop" }, no_anim = true })
 hl.window_rule({ match = { class = "org.keepassxc.KeePassXC" }, workspace = "special:keepass", no_screen_share = true })
