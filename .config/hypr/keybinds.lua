@@ -1,4 +1,4 @@
-local terminal = "app2unit kitty"
+local terminal = "app2unit footclient"
 local browser = "app2unit zen"
 local menu = "noctalia-shell ipc call launcher toggle"
 local clipboardManager = "jcm"
@@ -39,6 +39,8 @@ hl.bind(winMod .. " + TAB", hl.dsp.focus({ last = true }))
 
 hl.bind(winMod .. " + V", hl.dsp.exec_cmd(clipboardManager))
 hl.bind(winMod .. " + L", hl.dsp.exec_cmd(lockScreen))
+hl.bind(winMod .. " + C", hl.dsp.exec_cmd("hyprpicker -an"))
+hl.bind(winMod .. " + X", hl.dsp.exec_cmd(powerMenu))
 
 hl.bind(winMod .. " + SHIFT + S", hl.dsp.exec_cmd(screenshotEdit))
 hl.bind(winMod .. " + CTRL + S", hl.dsp.exec_cmd(screenshotWindowEdit))
@@ -100,4 +102,10 @@ hl.bind(mainMod .. " + O", function()
 end)
 hl.bind(mainMod .. " + SHIFT + TAB", function()
 	hwv.overview({ action = "toggle", include_current_workspace = false })
+end)
+
+local cv = hl.plugin.scrolloverview
+
+hl.bind(mainMod .. " + Y", function()
+	cv.overview({ action = "toggle" })
 end)
