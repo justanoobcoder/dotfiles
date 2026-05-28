@@ -1,0 +1,27 @@
+{
+  "id": "screen-recorder",
+  "name": "Screen Recorder",
+  "version": "1.0.0",
+  "minNoctaliaVersion": "4.4.1",
+  "author": "Noctalia",
+  "license": "MIT",
+  "repository": "https://github.com/noctalia-dev/noctalia-plugins",
+  "description": "Record screen with screenrec",
+  "tags": ["Bar"],
+  "entryPoints": {
+    "barWidget": "BarWidget.qml",
+    "main": "Main.qml",
+    "settings": "Settings.qml"
+  },
+  "dependencies": {
+    "plugins": []
+  },
+  "metadata": {
+    "defaultSettings": {
+      "iconColor": "none",
+      "cmdWithSound": "screenrec -- -oi -f 144",
+      "cmdWithoutSound": "screenrec -- -o -f 144",
+      "cmdStop": "screenrec -- -s"
+    }
+  }
+}

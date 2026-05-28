@@ -1,0 +1,24 @@
+{
+  "widget": {
+    "tooltip": "Screen Recorder"
+  },
+  "menu": {
+    "record_with_sound": "Record with sound",
+    "record_without_sound": "Record without sound",
+    "settings": "Widget Settings"
+  },
+  "settings": {
+    "cmdWithSound": {
+      "label": "Record with sound command",
+      "desc": "The shell command to execute when recording with sound"
+    },
+    "cmdWithoutSound": {
+      "label": "Record without sound command",
+      "desc": "The shell command to execute when recording without sound"
+    },
+    "cmdStop": {
+      "label": "Stop command",
+      "desc": "The shell command to execute to stop recording"
+    }
+  }
+}
