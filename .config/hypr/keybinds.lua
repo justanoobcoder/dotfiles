@@ -1,21 +1,23 @@
 local terminal = "app2unit footclient"
 local browser = "app2unit zen"
-local menu = "noctalia-shell ipc call launcher toggle"
+local menu = "noctalia msg panel-toggle launcher"
 local clipboardManager = "jcm"
 local powerMenu =
-	"ps aux | grep Zalo | grep -v grep | awk '{print $2}' | xargs kill -9 2>/dev/null; noctalia-shell ipc call sessionMenu toggle"
+	"ps aux | grep Zalo | grep -v grep | awk '{print $2}' | xargs kill -9 2>/dev/null; noctalia msg panel-toggle session"
 local webcam = "/home/hiepnh/.local/bin/webcam-mpv"
+local screenshotFull = "noctalia msg screenshot-fullscreen"
+local screenshotRegion = "noctalia msg screenshot-region"
 local screenshotEdit = "HQF_ACTION=edit hyprquickframe -n"
-local screenshotWindowEdit = "HQF_ACTION=edit HQF_MODE=window hyprquickframe -n"
-local lockScreen = "noctalia-shell ipc call lockScreen lock"
-local toggleBar = "noctalia-shell ipc call bar toggle"
+local lockScreen = "noctalia msg session lock"
+local toggleBar = "noctalia msg bar-toggle"
 
-local raiseVolume = "noctalia-shell ipc call volume increase"
-local lowerVolume = "noctalia-shell ipc call volume decrease"
-local muteVolume = "noctalia-shell ipc call volume muteOutput"
-local micMuteVolume = "noctalia-shell ipc call volume muteInput"
-local brightnessUp = "noctalia-shell ipc call brightness increase"
-local brightnessDown = "noctalia-shell ipc call brightness decrease"
+local raiseVolume = "noctalia msg volume-up 2"
+local lowerVolume = "noctalia msg volume-down 2"
+local muteVolume = "noctalia msg volume-mute"
+local micMuteVolume = "noctalia msg mic-mute"
+local brightnessUp = "noctalia msg brightness-up 2"
+local brightnessDown = "noctalia msg brightness-down 2"
+local settings = "noctalia msg settings-toggle"
 
 local mainMod = "ALT"
 local winMod = "SUPER"
@@ -41,10 +43,11 @@ hl.bind(winMod .. " + V", hl.dsp.exec_cmd(clipboardManager))
 hl.bind(winMod .. " + L", hl.dsp.exec_cmd(lockScreen))
 hl.bind(winMod .. " + C", hl.dsp.exec_cmd("hyprpicker -an"))
 hl.bind(winMod .. " + X", hl.dsp.exec_cmd(powerMenu))
+hl.bind(winMod .. " + I", hl.dsp.exec_cmd(settings))
 
-hl.bind(winMod .. " + SHIFT + S", hl.dsp.exec_cmd(screenshotEdit))
-hl.bind(winMod .. " + CTRL + S", hl.dsp.exec_cmd(screenshotWindowEdit))
-hl.bind("Print", hl.dsp.exec_cmd(screenshotEdit))
+hl.bind(winMod .. " + SHIFT + S", hl.dsp.exec_cmd(screenshotRegion))
+hl.bind("Print", hl.dsp.exec_cmd(screenshotFull))
+hl.bind("CTRL + Print", hl.dsp.exec_cmd(screenshotEdit))
 
 hl.bind(mainMod .. " + H", hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + L", hl.dsp.focus({ direction = "right" }))
@@ -59,11 +62,11 @@ for i = 1, 10 do
 	hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
 
-hl.bind(mainMod .. " + M", hl.dsp.focus({ workspace = "r+1" }))
-hl.bind(mainMod .. " + I", hl.dsp.focus({ workspace = "r-1" }))
+hl.bind(mainMod .. " + M", hl.dsp.focus({ workspace = "e+1" }))
+hl.bind(mainMod .. " + I", hl.dsp.focus({ workspace = "e-1" }))
 
-hl.bind(mainMod .. " + SHIFT + M", hl.dsp.window.move({ workspace = "e+1" }))
-hl.bind(mainMod .. " + SHIFT + I", hl.dsp.window.move({ workspace = "e-1" }))
+hl.bind(mainMod .. " + SHIFT + M", hl.dsp.window.move({ workspace = "r+1" }))
+hl.bind(mainMod .. " + SHIFT + I", hl.dsp.window.move({ workspace = "r-1" }))
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
 hl.bind(mainMod .. " + mouse_left", hl.dsp.focus({ direction = "left" }))
@@ -91,21 +94,13 @@ hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = tr
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
 
+hl.bind(winMod .. " + A", hl.dsp.workspace.toggle_special("antigravity"))
 hl.bind(winMod .. " + K", hl.dsp.workspace.toggle_special("keepass"))
 
 hl.gesture({ fingers = 3, direction = "horizontal", action = "workspace" })
 
-local hwv = hl.plugin.hyprwinview
-
-hl.bind(mainMod .. " + O", function()
-	hwv.overview({ action = "toggle" })
-end)
-hl.bind(mainMod .. " + SHIFT + TAB", function()
-	hwv.overview({ action = "toggle", include_current_workspace = false })
-end)
-
-local cv = hl.plugin.scrolloverview
-
-hl.bind(mainMod .. " + Y", function()
-	cv.overview({ action = "toggle" })
-end)
+if hl.plugin and hl.plugin.scrolloverview then
+	hl.bind(mainMod .. " + O", function()
+		hl.plugin.scrolloverview.overview("toggle")
+	end)
+end

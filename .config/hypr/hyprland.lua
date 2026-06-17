@@ -9,3 +9,6 @@ require("input")
 require("keybinds")
 require("rules")
 require("plugins")
+
+-- For Noctalia Color templates
+require("noctalia")
