@@ -1,0 +1,141 @@
+[bar.default]
+background_opacity = 0.56999998725950718
+capsule = true
+capsule_fill = "on_primary"
+capsule_foreground = "primary"
+center = [ "audio_visualizer", "weather", "clock", "cpu", "ram" ]
+end = [ "Warp", "tray", "volume", "battery", "network", "notifications" ]
+margin_edge = 3
+margin_ends = 5
+padding = 5
+shadow = false
+start = [ "workspaces", "screen_recorder" ]
+
+[location]
+address = "Quy Nhơn, Gia Lai"
+
+[lockscreen_widgets]
+enabled = false
+schema_version = 1
+widget_order = [ "lockscreen-login-box@eDP-1" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    cx = 960.0
+    cy = 957.0
+    output = "eDP-1"
+    rotation = 0.0
+    scale = 1.0
+    type = "login_box"
+
+[shell]
+avatar_path = "/home/hiepnh/.face.png"
+clipboard_enabled = false
+font_family = "JetBrainsMono Nerd Font"
+password_style = "random"
+polkit_agent = true
+settings_show_advanced = true
+telemetry_enabled = false
+
+    [shell.panel]
+    borders = false
+    session_placement = "centered"
+    shadow = false
+    transparency_mode = "glass"
+
+    [shell.screenshot]
+    pipe_command = "swappy -f -"
+    save_to_file = false
+
+    [[shell.session.actions]]
+    action = "lock"
+    enabled = true
+    shortcut = "l"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "logout"
+    enabled = true
+    shortcut = "o"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "suspend"
+    enabled = true
+    shortcut = "s"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "reboot"
+    enabled = true
+    shortcut = "r"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "shutdown"
+    enabled = true
+    shortcut = "u"
+    variant = "destructive"
+
+[theme]
+builtin = "m3-content"
+community_palette = "m3-content"
+custom_palette = "ADW"
+mode = "dark"
+source = "wallpaper"
+wallpaper_scheme = "m3-content"
+
+    [theme.templates]
+    builtin_ids = [ "hyprland" ]
+
+[wallpaper]
+directory = "/home/hiepnh/xdg/pictures/wallpapers"
+transition_on_startup = true
+
+    [wallpaper.default]
+    path = "/home/hiepnh/xdg/pictures/wallpapers/wallpaper-gate.jpeg"
+
+    [wallpaper.last]
+    path = "/home/hiepnh/xdg/pictures/wallpapers/wallpaper-gate.jpeg"
+
+[widget.Warp]
+command = "warp-cli connect"
+glyph = "cloud"
+right_command = "warp-cli disconnect"
+tooltip = "Cloudflare Warp"
+type = "custom_button"
+
+[widget.bongocat]
+script = "scripts/bongocat.lua"
+type = "scripted"
+
+[widget.clock]
+anchor = true
+format = "{:%H:%M, %a %b %d}"
+
+[widget.cpu]
+display = "text"
+
+[widget.media]
+hide_when_no_media = true
+title_scroll = "on_hover"
+
+[widget.network]
+show_label = false
+
+[widget.ram]
+display = "text"
+show_label = false
+
+[widget.screen_recorder]
+audio_source = "both"
+directory = "/home/hiepnh/xdg/videos/recordings"
+script = "scripts/screen_recorder.lua"
+type = "scripted"
+
+[widget.weather]
+show_condition = false
