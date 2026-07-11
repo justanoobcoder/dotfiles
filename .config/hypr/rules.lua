@@ -28,15 +28,6 @@ for _, name in ipairs(no_anim_layers) do
 	hl.layer_rule({ match = { namespace = name }, no_anim = true })
 end
 
-local blur_layers = {
-	"noctalia-panel",
-	"noctalia-bar-default",
-	"noctalia-attached-panel",
-}
-for _, name in ipairs(blur_layers) do
-	hl.layer_rule({ match = { namespace = name }, blur = true, ignore_alpha = 0.5 })
-end
-
 local float_windows = {
 	{ class = "com.gabm.satty" },
 	{ class = "imv" },
@@ -93,4 +84,15 @@ hl.window_rule({
 	no_initial_focus = true,
 	pin = true,
 	move = { "monitor_w-window_w-10", "monitor_h-window_h-10" },
+})
+
+hl.layer_rule({
+	name = "noctalia",
+	match = {
+		namespace = "^noctalia-(bar-.+|notification|dock|panel|attached-panel|osd)$",
+	},
+  no_anim = true,
+	ignore_alpha = 0.5,
+	blur = true,
+	blur_popups = true,
 })
