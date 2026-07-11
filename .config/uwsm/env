@@ -18,3 +18,7 @@ export QT_IM_MODULES=fcitx
 export QT4_IM_MODULE=fcitx
 export CLUTTER_IM_MODULE=fcitx
 export GLFW_IM_MODULE=fcitx
+
+# https://gitlab.com/Pummelfisch/future-cyan-hyprcursor
+export HYPRCURSOR_THEME=Future-Cyan-Hyprcursor_Theme
+export HYPRCURSOR_SIZE=32
