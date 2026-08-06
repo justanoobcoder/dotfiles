@@ -5,9 +5,11 @@ require("decorations")
 require("animations")
 require("layouts")
 require("misc")
+require("cursor")
 require("input")
 require("keybinds")
 require("rules")
+require("ecosystem")
 require("plugins")
 
 -- For Noctalia Color templates
