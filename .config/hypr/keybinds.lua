@@ -1,5 +1,6 @@
-local terminal = "app2unit footclient"
-local browser = "app2unit zen"
+local terminal = "app2unit ghostty"
+local browser =
+	"app2unit brave --enable-features=AcceleratedVideoDecodeLinuxGL,VaapiOnNvidiaGPUs --ignore-gpu-blocklist --use-gl=angle --use-angle=gl"
 local menu = "noctalia msg panel-toggle launcher"
 local clipboardManager = "jcm"
 local powerMenu =
@@ -97,10 +98,38 @@ hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true 
 hl.bind(winMod .. " + A", hl.dsp.workspace.toggle_special("antigravity"))
 hl.bind(winMod .. " + K", hl.dsp.workspace.toggle_special("keepass"))
 
-hl.gesture({ fingers = 3, direction = "horizontal", action = "workspace" })
+hl.gesture({ fingers = 3, direction = "vertical", action = "workspace" })
+hl.gesture({ fingers = 2, direction = "pinch", action = "cursorZoom", zoom_level = 1, mode = "live" })
 
 if hl.plugin and hl.plugin.scrolloverview then
 	hl.bind(mainMod .. " + O", function()
 		hl.plugin.scrolloverview.overview("toggle")
 	end)
 end
+
+hl.bind("SUPER + F1", function()
+	local game_mode = (hl.get_config("animations.enabled") == false)
+
+	if game_mode then
+		hl.exec_cmd("hyprctl reload")
+		return
+	end
+
+	hl.config({
+		general = {
+			gaps_in = 0,
+			gaps_out = 0,
+			border_size = 0,
+		},
+
+		animations = {
+			enabled = false,
+		},
+
+		decoration = {
+			shadow = { enabled = false },
+			blur = { enabled = false },
+			rounding = 0,
+		},
+	})
+end)
