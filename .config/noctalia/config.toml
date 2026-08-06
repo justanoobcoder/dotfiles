@@ -3,17 +3,29 @@ background_opacity = 0.56999998725950718
 capsule = true
 capsule_fill = "on_primary"
 capsule_foreground = "primary"
-center = [ "audio_visualizer", "weather", "clock", "cpu", "ram" ]
-end = [ "Warp", "tray", "volume", "battery", "network", "notifications" ]
+center = [ "audio_visualizer", "temp", "weather", "clock", "cpu", "ram" ]
+end = [ "privacy", "Warp", "tray", "volume", "battery", "network", "notifications" ]
 margin_edge = 3
 margin_ends = 5
 padding = 5
 shadow = false
-start = [ "workspaces", "recorder" ]
+start = [ "workspaces", "recorder", "widget", "screenshot" ]
 
-    [bar.default.dead_zone]
-    scroll_down_command = "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e+1\" })'"
-    scroll_up_command = "hyprctl dispatch 'hl.dsp.focus({ workspace = \"r-1\" })'"
+    [bar.default.dead_zone.actions]
+    scroll_down = "workspace-switch next"
+    scroll_left = "exec hyprctl dispatch 'hl.dsp.focus({ direction = \"left\" })'"
+    scroll_right = "exec hyprctl dispatch 'hl.dsp.focus({ direction = \"right\" })'"
+    scroll_up = "workspace-switch prev"
+
+[battery.device."/org/freedesktop/UPower/devices/battery_hidpp_battery_0"]
+warning_threshold = 10
+
+[calendar]
+enabled = true
+
+    [calendar.account.991862888219]
+    name = "Justanoobcoder Calendar"
+    type = "google"
 
 [location]
 address = "Quy Nhơn, Gia Lai"
@@ -48,7 +60,7 @@ media = false
 directory = "~/xdg/videos/recordings"
 
 [plugins]
-enabled = [ "noctalia/screen_recorder", "noctalia/timer" ]
+enabled = [ "noctalia/screen_recorder", "oldirtty/color_picker" ]
 
 [shell]
 avatar_path = "/home/hiepnh/.face.png"
@@ -101,7 +113,7 @@ telemetry_enabled = false
 
 [theme]
 builtin = "m3-content"
-community_palette = "m3-content"
+community_palette = "ADW"
 custom_palette = "ADW"
 mode = "dark"
 source = "wallpaper"
@@ -124,11 +136,13 @@ transition_on_startup = true
     path = "/home/hiepnh/xdg/pictures/wallpapers/wallpaper-gate.jpeg"
 
 [widget.Warp]
-command = "warp-cli connect"
 glyph = "cloud"
-right_command = "warp-cli disconnect"
 tooltip = "Cloudflare Warp"
 type = "custom_button"
+
+    [widget.Warp.actions]
+    left = "exec warp-cli connect"
+    right = "exec warp-cli disconnect"
 
 [widget.bongocat]
 script = "scripts/bongocat.lua"
@@ -142,6 +156,7 @@ format = "{:%H:%M, %a %b %d}"
 display = "text"
 
 [widget.media]
+album_art_only = true
 hide_when_no_media = true
 title_scroll = "on_hover"
 
@@ -162,4 +177,8 @@ script = "scripts/screen_recorder.lua"
 type = "scripted"
 
 [widget.weather]
+enabled = false
 show_condition = false
+
+[widget.widget]
+type = "oldirtty/color_picker:widget"
