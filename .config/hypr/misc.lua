@@ -1,7 +1,8 @@
 hl.config({
 	misc = {
-		force_default_wallpaper = -1, -- Set to 0 or 1 to disable the anime mascot wallpapers
+		force_default_wallpaper = -1,
 		disable_hyprland_logo = true,
+		disable_splash_rendering = true,
 		enable_swallow = true,
 	},
 })
