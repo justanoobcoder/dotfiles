@@ -45,7 +45,9 @@ hl.window_rule({ match = { focus = false }, no_blur = true })
 hl.window_rule({ match = { class = "kitty" }, scrolling_width = 0.5 })
 hl.window_rule({ match = { class = "footclient" }, scrolling_width = 0.5 })
 hl.window_rule({ match = { class = "foot" }, scrolling_width = 0.5 })
+hl.window_rule({ match = { class = "com.mitchellh.ghostty" }, scrolling_width = 0.5 })
 hl.window_rule({ match = { class = "zen" }, workspace = "2" })
+hl.window_rule({ match = { class = "brave-browser" }, workspace = "2" })
 hl.window_rule({ match = { class = "keypop" }, no_anim = true })
 hl.window_rule({ match = { class = "org.keepassxc.KeePassXC" }, workspace = "special:keepass", no_screen_share = true })
 hl.window_rule({ match = { class = "antigravity" }, workspace = "special:antigravity" })
@@ -91,7 +93,7 @@ hl.layer_rule({
 	match = {
 		namespace = "^noctalia-(bar-.+|notification|dock|panel|attached-panel|osd)$",
 	},
-  no_anim = true,
+	no_anim = true,
 	ignore_alpha = 0.5,
 	blur = true,
 	blur_popups = true,
