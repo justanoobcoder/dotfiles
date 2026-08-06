@@ -3,8 +3,8 @@ if hl.plugin and hl.plugin.scrolloverview then
 		gesture_distance = 300, -- how far is the "max" for the gesture
 		scale = 0.3,
 		workspace_gap = 10,
-		wallpaper = 0, -- 0: global only, 1: per-workspace only, 2: both
-		blur = false,
+		wallpaper = 2, -- 0: global only, 1: per-workspace only, 2: both
+		blur = true,
 
 		shadow = {
 			enabled = false,
@@ -12,8 +12,5 @@ if hl.plugin and hl.plugin.scrolloverview then
 			render_power = 3,
 			color = 0xee1a1a1a,
 		},
-
-		bar_open_cmd = "noctalia msg bar-show",
-		bar_close_cmd = "noctalia msg bar-hide",
 	})
 end
