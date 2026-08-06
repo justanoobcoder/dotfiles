@@ -1,5 +1,5 @@
 hl.on("hyprland.start", function()
-  hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
-  hl.exec_cmd("noctalia")
-	hl.exec_cmd("hyprctl plugin load /home/hiepnh/Projects/hyprland-scroll-overview/scrolloverview.so")
+	hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
+	hl.exec_cmd("noctalia")
+	hl.exec_cmd("hyprctl plugin load /run/current-system/sw/lib/libscrolloverview.so")
 end)
