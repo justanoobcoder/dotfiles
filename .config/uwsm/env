@@ -1,12 +1,8 @@
 export EDITOR=nvim
-export BROWSER=zen
-export TERMINAL=kitty
+export BROWSER=brave
+export TERMINAL=ghostty
 
-export LIBVA_DRIVER_NAME=nvidia
 export HYPRLAND_TRACE=1
-export GBM_BACKEND=nvidia-drm
-export __GLX_VENDOR_LIBRARY_NAME=nvidia 
-export NVD_BACKEND=direct
 export APP2UNIT_SLICES='a=app-graphical.slice b=background-graphical.slice s=session-graphical.slice'
 export QT_QPA_PLATFORM=wayland
 export QT_QPA_PLATFORMTHEME=qt6ct
@@ -18,6 +14,8 @@ export QT_IM_MODULES=fcitx
 export QT4_IM_MODULE=fcitx
 export CLUTTER_IM_MODULE=fcitx
 export GLFW_IM_MODULE=fcitx
+
+export ELECTRON_OZONE_PLATFORM_HINT=auto
 
 # https://gitlab.com/Pummelfisch/future-cyan-hyprcursor
 export HYPRCURSOR_THEME=Future-Cyan-Hyprcursor_Theme
