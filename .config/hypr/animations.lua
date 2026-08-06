@@ -7,11 +7,11 @@ hl.curve("menu_decel", { type = "bezier", points = { { 0.1, 1 }, { 0, 1 } } })
 hl.curve("menu_accel", { type = "bezier", points = { { 0.38, 0.04 }, { 1, 0.07 } } })
 
 -- Spring Curves
-hl.curve("spring_menu", { type = "spring", mass = 1, stiffness = 80, dampening = 14 })
-hl.curve("spring_window", { type = "spring", mass = 1, stiffness = 30, dampening = 8 })
-hl.curve("spring_open", {type="spring",mass=1,stiffness=30,dampening=8})
-hl.curve("spring_workspace", { type = "spring", mass = 1.2, stiffness = 30, dampening = 10 })
-hl.curve("spring_special", { type = "spring", mass = 1, stiffness = 30, dampening = 8 })
+hl.curve("spring_menu", { type = "spring", mass = 1, stiffness = 380, dampening = 26 })
+hl.curve("spring_window", { type = "spring", mass = 1, stiffness = 160, dampening = 16 })
+hl.curve("spring_open", { type = "spring", mass = 1, stiffness = 160, dampening = 16 })
+hl.curve("spring_workspace", { type = "spring", mass = 1, stiffness = 160, dampening = 19 })
+hl.curve("spring_special", { type = "spring", mass = 1, stiffness = 160, dampening = 16 })
 
 -- Window animations
 hl.animation({ leaf = "windows", enabled = true, speed = 1, spring = "spring_window" })
@@ -36,4 +36,10 @@ hl.animation({ leaf = "fadeLayersOut", enabled = true, speed = 1.6, bezier = "me
 
 -- Workspace animations
 hl.animation({ leaf = "workspaces", enabled = true, speed = 1, spring = "spring_workspace", style = "slidevert" })
-hl.animation({ leaf = "specialWorkspace", enabled = true, speed = 1, spring = "spring_special", style = "slidefadevert 40%" })
+hl.animation({
+	leaf = "specialWorkspace",
+	enabled = true,
+	speed = 1,
+	spring = "spring_special",
+	style = "slidefadevert 40%",
+})
