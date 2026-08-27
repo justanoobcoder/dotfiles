@@ -1,20 +1,30 @@
 [bar.default]
 background_opacity = 0.56999998725950718
-capsule = true
+capsule = false
 capsule_fill = "on_primary"
 capsule_foreground = "primary"
-center = [ "audio_visualizer", "temp", "weather", "clock", "cpu", "ram" ]
-end = [ "privacy", "Warp", "tray", "volume", "battery", "network", "notifications" ]
+center = [
+    "left_bracket",
+    "audio_visualizer",
+    "bar",
+    "middle_separator",
+    "clock",
+    "middle_separator",
+    "cpu",
+    "ram",
+    "right_bracket"
+]
+end = [ "left_bracket", "privacy", "Warp", "tray", "volume", "battery", "network", "notifications", "right_bracket" ]
 margin_edge = 3
 margin_ends = 5
 padding = 5
 shadow = false
-start = [ "workspaces", "recorder", "widget", "screenshot" ]
+start = [ "left_bracket", "workspaces", "middle_separator", "recorder", "widget", "bar_2", "right_bracket" ]
 
     [bar.default.dead_zone.actions]
     scroll_down = "workspace-switch next"
-    scroll_left = "exec hyprctl dispatch 'hl.dsp.focus({ direction = \"left\" })'"
-    scroll_right = "exec hyprctl dispatch 'hl.dsp.focus({ direction = \"right\" })'"
+    scroll_left = "exec umbriel msg window-focus-left"
+    scroll_right = "exec umbriel msg window-focus-right"
     scroll_up = "workspace-switch prev"
 
 [battery.device."/org/freedesktop/UPower/devices/battery_hidpp_battery_0"]
@@ -27,31 +37,142 @@ enabled = true
     name = "Justanoobcoder Calendar"
     type = "google"
 
+[desktop_widgets]
+schema_version = 2
+widget_order = [ "desktop-widget-0000000000000003", "desktop-widget-0000000000000001", "desktop-widget-0000000000000002" ]
+
+    [desktop_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget.desktop-widget-0000000000000001]
+    box_height = 288.0
+    box_width = 288.0
+    cx = 320.0
+    cy = 217.04689025878906
+    output = "eDP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "clock"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000001.settings]
+        background = true
+        background_opacity = 0.0
+        circle = true
+        clock_style = "analog"
+
+    [desktop_widgets.widget.desktop-widget-0000000000000002]
+    box_height = 96.0
+    box_width = 816.0
+    cx = 1663.3046875
+    cy = 828.1171875
+    output = "eDP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = -0.7942887544631958
+    type = "audio_visualizer"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000002.settings]
+        background_opacity = 0.5
+        bands = 128
+        centered = true
+        mirrored = true
+        reversed = false
+        show_when_idle = false
+
+    [desktop_widgets.widget.desktop-widget-0000000000000003]
+    box_height = 752.0
+    box_width = 976.0
+    cx = 320.0
+    cy = 217.04689025878906
+    output = "eDP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "fancy_audio_visualizer"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000003.settings]
+        background = false
+        background_color = "surface"
+        background_opacity = 0.80000000000000004
+        background_padding = 10
+        background_radius = 12
+        bar_width = 0.59999999999999998
+        bloom_intensity = 0.5
+        fade_when_idle = true
+        inner_diameter = 0.69999999999999996
+        primary_color = "primary"
+        ring_opacity = 0.80000000000000004
+        rotation_speed = 0.5
+        secondary_color = "secondary"
+        sensitivity = 1.5
+        visualization_mode = "rings"
+        wave_thickness = 1.0
+
 [location]
 address = "Quy Nhơn, Gia Lai"
 
 [lockscreen_widgets]
 enabled = true
 schema_version = 1
-widget_order = [ "lockscreen-login-box@eDP-1" ]
+widget_order = [ "lockscreen-login-box@WL-1", "lockscreen-login-box@eDP-1" ]
 
     [lockscreen_widgets.grid]
     cell_size = 16
     major_interval = 4
     visible = true
 
+    [lockscreen_widgets.widget."lockscreen-login-box@WL-1"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 950.0
+    cy = 841.0
+    output = "WL-1"
+    placement_height = 1023.0
+    placement_width = 1900.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@WL-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
     [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
-    box_height = 0.0
-    box_width = 0.0
+    box_height = 196.0
+    box_width = 810.0
     cx = 960.0
     cy = 957.0
     output = "eDP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
     rotation = 0.0
     scale = 1.0
     type = "login_box"
 
         [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        center_password_text = false
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
         show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
 
 [osd.kinds]
 media = false
@@ -59,17 +180,25 @@ media = false
 [plugin_settings."noctalia/screen_recorder"]
 directory = "~/xdg/videos/recordings"
 
+[plugin_settings."yuuto/calculator"]
+angle_unit = "deg"
+panel_position = "center"
+
 [plugins]
-enabled = [ "noctalia/screen_recorder", "oldirtty/color_picker" ]
+enabled = [ "noctalia/screen_recorder", "oldirtty/color_picker", "noctalia/timer", "yuuto/calculator" ]
 
 [shell]
 avatar_path = "/home/hiepnh/.face.png"
-clipboard_enabled = false
+clipboard_enabled = true
+clipboard_image_action_command = "imv {path}"
 font_family = "JetBrainsMono Nerd Font"
 password_style = "random"
 polkit_agent = true
 settings_show_advanced = true
 telemetry_enabled = false
+
+    [shell.launcher.providers.windows]
+    prefix = ""
 
     [shell.panel]
     borders = false
@@ -78,7 +207,10 @@ telemetry_enabled = false
     transparency_mode = "glass"
 
     [shell.screenshot]
+    confirm_region = true
+    directory = "/home/hiepnh/xdg/pictures/screenshots"
     pipe_command = "swappy -f -"
+    remember_last_region = true
     save_to_file = false
 
     [[shell.session.actions]]
@@ -112,28 +244,28 @@ telemetry_enabled = false
     variant = "destructive"
 
 [theme]
-builtin = "m3-content"
+builtin = "Kanagawa"
 community_palette = "ADW"
 custom_palette = "ADW"
 mode = "dark"
-source = "wallpaper"
+source = "builtin"
 wallpaper_scheme = "m3-content"
 
     [theme.templates]
-    builtin_ids = [ "gtk3", "gtk4", "hyprland", "qt" ]
+    builtin_ids = [ "gtk3", "gtk4", "hyprland", "niri", "qt", "umbriel" ]
 
 [wallpaper]
 directory = "/home/hiepnh/xdg/pictures/wallpapers"
 transition_on_startup = true
 
     [wallpaper.default]
-    path = "/home/hiepnh/xdg/pictures/wallpapers/wallpaper-gate.jpeg"
+    path = "/home/hiepnh/xdg/pictures/wallpapers/anime_skull.png"
 
     [wallpaper.last]
-    path = "/home/hiepnh/xdg/pictures/wallpapers/wallpaper-gate.jpeg"
+    path = "/home/hiepnh/xdg/pictures/wallpapers/anime_skull.png"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/hiepnh/xdg/pictures/wallpapers/wallpaper-gate.jpeg"
+    path = "/home/hiepnh/xdg/pictures/wallpapers/anime_skull.png"
 
 [widget.Warp]
 glyph = "cloud"
@@ -143,6 +275,15 @@ type = "custom_button"
     [widget.Warp.actions]
     left = "exec warp-cli connect"
     right = "exec warp-cli disconnect"
+
+[widget.audio_visualizer]
+show_when_idle = true
+
+[widget.bar]
+type = "noctalia/timer:bar"
+
+[widget.bar_2]
+type = "yuuto/calculator:bar"
 
 [widget.bongocat]
 script = "scripts/bongocat.lua"
@@ -155,10 +296,18 @@ format = "{:%H:%M, %a %b %d}"
 [widget.cpu]
 display = "text"
 
+[widget.left_bracket]
+text = "「"
+type = "text"
+
 [widget.media]
 album_art_only = true
 hide_when_no_media = true
 title_scroll = "on_hover"
+
+[widget.middle_separator]
+text = "|"
+type = "text"
 
 [widget.network]
 show_label = false
@@ -169,6 +318,10 @@ show_label = false
 
 [widget.recorder]
 type = "noctalia/screen_recorder:recorder"
+
+[widget.right_bracket]
+text = "」"
+type = "text"
 
 [widget.screen_recorder]
 audio_source = "both"
