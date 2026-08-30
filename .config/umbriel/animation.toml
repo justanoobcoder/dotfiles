@@ -1,0 +1,56 @@
+[animation]
+enabled = true
+duration_ms = 300
+curve = "snappy"
+
+[animation.springs]
+softBounce = { damping = 0.7, stiffness = 180 }
+
+[animation.windows_in]
+enabled = true
+duration_ms = 340
+curve = "softBounce"
+style = "popin"
+scale = 0.88
+
+[animation.windows_out]
+enabled = true
+duration_ms = 220
+curve = "easeout"
+style = "fade"
+
+[animation.windows_move]
+enabled = true
+duration_ms = 300
+curve = "softBounce"
+
+[animation.workspaces]
+enabled = true
+duration_ms = 380
+curve = "softBounce"
+
+[animation.scratchpad]
+enabled = true
+duration_ms = 320
+curve = "softBounce"
+dim = 0.15
+blur = false
+scale = 0.92
+maximize = false
+fullscreen = false
+
+[animation.border]
+enabled = true
+duration_ms = 180
+curve = "ease"
+
+[animation.dim_unfocused]
+enabled = true
+duration_ms = 220
+curve = "ease"
+dim = 0.08
+
+[animation.layers]
+enabled = true
+duration_ms = 220
+curve = "easeout"

@@ -1,0 +1,14 @@
+[include]
+files = [
+  "output.toml",
+  "autostart.toml",
+  "general.toml",
+  "appearance.toml",
+  "animation.toml",
+  "input.toml",
+  "layout.toml",
+  "keybinds.toml",
+  "rules.toml",
+  "env.toml",
+  "noctalia.toml",
+]

@@ -1,0 +1,5 @@
+[general]
+mod_key = "Alt"
+show_cheatsheet = false
+xwayland = true
+focus_on_activate = false

@@ -1,0 +1,23 @@
+[input.cursor]
+theme = "Bibata-Modern-Ice"
+size = 24
+hide_when_typing = true
+hide_timeout_ms = 5000
+
+[input.touchpad]
+tap = true
+natural_scroll = true
+accel_profile = "adaptive"
+sensitivity = 0.8
+
+[input.keyboard]
+repeat_rate = 50
+repeat_delay = 300
+
+[input.mouse]
+natural_scroll = false
+accel_profile = "adaptive"
+sensitivity = 0.5
+
+[input.focus]
+follows_mouse = false

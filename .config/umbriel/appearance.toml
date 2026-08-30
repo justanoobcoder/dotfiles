@@ -1,0 +1,11 @@
+[appearance]
+prefer_no_csd = true
+border_width = 1
+
+[appearance.blur]
+enabled = true
+optimized = false
+passes = 2
+noise = 0.02
+brightness = 0.85
+contrast = 0.9

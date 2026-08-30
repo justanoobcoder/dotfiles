@@ -1,0 +1,83 @@
+[keybinds]
+"Mod+Return" = { action = "spawn:ghostty", repeat = false }
+"Mod+W" = { action = "spawn:brave --enable-features=AcceleratedVideoDecodeLinuxGL,VaapiOnNvidiaGPUs --ignore-gpu-blocklist --use-gl=angle --use-angle=gl", repeat = false }
+"Mod+P" = { action = "spawn:noctalia msg panel-toggle launcher", repeat = false }
+"Mod+Shift+B" = { action = "spawn:noctalia msg bar-toggle", repeat = false }
+"Mod+Shift+Q" = { action = "spawn:noctalia msg panel-toggle session", repeat = false }
+"Super+X" = { action = "spawn:noctalia msg panel-toggle session", repeat = false }
+"Mod+F1" = { action = "spawn:/home/hiepnh/.local/bin/webcam-mpv", repeat = false }
+"Mod+F2" = { action = "spawn:pkill keypop || keypop", repeat = false }
+"Super+I" = { action = "spawn:noctalia msg settings-toggle", repeat = false }
+"Super+L" = "spawn:noctalia msg session lock"
+"Super+V" = { action = "spawn:noctalia msg panel-toggle clipboard", repeat = false }
+"Super+Shift+S" = { action = "spawn:noctalia msg screenshot-region", repeat = false }
+"Print" = { action = "spawn:noctalia msg screenshot-fullscreen", repeat = false }
+"Mod+Shift+R" = "config-reload"
+"Mod+O" = "overview-toggle"
+"Mod+Q" = "window-close"
+
+"Mod+1" = "workspace-switch:1"
+"Mod+2" = "workspace-switch:2"
+"Mod+3" = "workspace-switch:3"
+"Mod+4" = "workspace-switch:4"
+"Mod+5" = "workspace-switch:5"
+"Mod+6" = "workspace-switch:6"
+"Mod+7" = "workspace-switch:7"
+"Mod+8" = "workspace-switch:8"
+"Mod+9" = "workspace-switch:9"
+
+"Mod+Shift+1" = "window-move-to-workspace:1"
+"Mod+Shift+2" = "window-move-to-workspace:2"
+"Mod+Shift+3" = "window-move-to-workspace:3"
+"Mod+Shift+4" = "window-move-to-workspace:4"
+"Mod+Shift+5" = "window-move-to-workspace:5"
+"Mod+Shift+6" = "window-move-to-workspace:6"
+"Mod+Shift+7" = "window-move-to-workspace:7"
+"Mod+Shift+8" = "window-move-to-workspace:8"
+"Mod+Shift+9" = "window-move-to-workspace:9"
+
+"Mod+I" = "workspace-previous"
+"Mod+M" = "workspace-next"
+"Mod+H" = "window-focus-left"
+"Mod+J" = "window-focus-down"
+"Mod+K" = "window-focus-up"
+"Mod+L" = "window-focus-right"
+
+"Mod+Shift+H" = "column-move-left"
+"Mod+Shift+L" = "column-move-right"
+"Mod+Shift+J" = "window-move-down"
+"Mod+Shift+K" = "window-move-up"
+"Mod+Shift+I" = "window-move-to-workspace-previous"
+"Mod+Shift+M" = "window-move-to-workspace-next"
+
+"Mod+Comma" = "window-consume-left"
+"Mod+Period" = "window-expel-right"
+
+"Mod+WheelUp" = "workspace-previous"
+"Mod+WheelDown" = "workspace-next"
+"Mod+WheelLeft" = "window-focus-left"
+"Mod+WheelRight" = "window-focus-right"
+
+"Mod+Tab" = "workspace-back-and-forth"
+"Mod+Shift+Tab" = "window-move-to-workspace-back-and-forth"
+
+"Super+Shift+K" = "window-toggle-scratchpad"
+"Super+K" = "scratchpad-toggle"
+"Super+Tab" = "scratchpad-focus-next"
+
+"Mod+R" = "window-cycle-width"
+"Mod+F" = "window-toggle-maximize"
+"Mod+Shift+F" = "window-toggle-fullscreen"
+"Mod+V" = "window-toggle-floating"
+"Mod+Shift+P" = "window-toggle-pinned"
+
+"XF86AudioRaiseVolume" = "spawn:noctalia msg volume-up 2%"
+"XF86AudioLowerVolume" = "spawn:noctalia msg volume-down 2%"
+"XF86AudioMute" = "spawn:noctalia msg volume-mute"
+
+"XF86AudioPlay" = "spawn:playerctl play-pause"
+"XF86AudioNext" = "spawn:playerctl next"
+"XF86AudioPrev" = "spawn:playerctl previous"
+
+"XF86MonBrightnessUp" = "spawn:noctalia msg brightness-up 5"
+"XF86MonBrightnessDown" = "spawn:noctalia msg brightness-down 5"
