@@ -3,7 +3,6 @@ hl.config({
 		repeat_rate = 50,
 		repeat_delay = 300,
 		kb_layout = "us",
-		numlock_by_default = true,
 
 		follow_mouse = 1,
 
