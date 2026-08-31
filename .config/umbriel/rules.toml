@@ -60,6 +60,12 @@ match.app_id = "^it.catboy.ripdrag$"
 default_pinned = true
 default_position = { x = 10, y = 10, anchor = "bottom_right" }
 
+[[window_rule]]
+match.title = "^(Picture-in-Picture|Picture in picture)$"
+default_floating = true
+default_maximize = false
+default_position = { x = 20, y = 20, anchor = "bottom_right" }
+
 [[layer_rule]]
 match.namespace = "^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd|desktop-widget-[^\"]*)$"
 blur = true
