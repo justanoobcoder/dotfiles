@@ -51,7 +51,9 @@
 "Mod+Shift+M" = "window-move-to-workspace-next"
 
 "Mod+Comma" = "window-consume-left"
-"Mod+Period" = "window-expel-right"
+"Mod+Ctrl+Comma" = "window-consume-or-expel-left"
+"Mod+Period" = "window-consume-right"
+"Mod+Ctrl+Period" = "window-consume-or-expel-right"
 
 "Mod+WheelUp" = "workspace-previous"
 "Mod+WheelDown" = "workspace-next"
