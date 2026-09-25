@@ -188,7 +188,7 @@ panel_position = "center"
 enabled = [ "noctalia/screen_recorder", "oldirtty/color_picker", "noctalia/timer", "yuuto/calculator" ]
 
 [shell]
-avatar_path = "/home/hiepnh/.face.png"
+avatar_path = "/home/hiepnh/xdg/pictures/avatar.png"
 clipboard_enabled = true
 clipboard_image_action_command = "imv {path}"
 font_family = "JetBrainsMono Nerd Font"
