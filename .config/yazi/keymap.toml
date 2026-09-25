@@ -6,3 +6,8 @@ run = [ 'shell -- for path in "$@"; do echo "file://$path"; done | wl-copy -t te
 on = [ "g", "r" ]
 run = 'shell -- ya emit cd "$(git rev-parse --show-toplevel)"'
 desc = "Go to root folder of git repository"
+
+[[mgr.prepend_keymap]]
+on   = "<C-n>"
+run  = "shell -- ripdrag %s -x 2>/dev/null &"
+desc = "Drag and Drop"
