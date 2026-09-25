@@ -10,5 +10,7 @@ files = [
   "keybinds.toml",
   "rules.toml",
   "env.toml",
-  "noctalia.toml",
-]
+  ]
+
+[include.optional]
+files = ["noctalia.toml"]

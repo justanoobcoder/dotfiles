@@ -1,56 +1,53 @@
 [animation]
 enabled = true
-duration_ms = 300
-curve = "snappy"
-
-[animation.springs]
-softBounce = { damping = 0.7, stiffness = 180 }
+curve = "spring:1,900"
 
 [animation.windows_in]
 enabled = true
-duration_ms = 340
-curve = "softBounce"
+curve = "spring:0.8,900"
 style = "popin"
-scale = 0.88
+scale = 0.6
 
 [animation.windows_out]
 enabled = true
-duration_ms = 220
-curve = "easeout"
-style = "fade"
+curve = "spring:1,1200"
+style = "popin"
+scale = 0.8
 
 [animation.windows_move]
 enabled = true
-duration_ms = 300
-curve = "softBounce"
+curve = "spring:0.9,850"
 
 [animation.workspaces]
 enabled = true
-duration_ms = 380
-curve = "softBounce"
+curve = "spring:0.85,750"
+
+[animation.overview]
+enabled = true
+curve = "spring:1,800"
+workspace_curve = "spring:0.9,900"
 
 [animation.scratchpad]
 enabled = true
-duration_ms = 320
-curve = "softBounce"
-dim = 0.15
-blur = false
-scale = 0.92
+curve = "spring:0.9,800"
+dim = 0.8
+blur = true
+scale = 0.1
 maximize = false
 fullscreen = false
 
 [animation.border]
 enabled = true
-duration_ms = 180
-curve = "ease"
+curve = "spring:1,900"
 
 [animation.dim_unfocused]
 enabled = true
-duration_ms = 220
-curve = "ease"
-dim = 0.08
+dim = 0.15
 
 [animation.layers]
 enabled = true
-duration_ms = 220
-curve = "easeout"
+
+[animation.springs]
+snappy = { damping = 1, stiffness = 1000 }
+bouncy = { damping = 0.6, stiffness = 700 }
+smooth = { damping = 0.9, stiffness = 800 }

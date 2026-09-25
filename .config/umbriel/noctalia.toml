@@ -6,15 +6,20 @@ accent_primary = "#76946aFF"
 accent_secondary = "#c0a36eFF"
 warning = "#7e9cd8FF"
 error = "#c34043FF"
+insert_hint = "#7e9cd880"
+backdrop = "#2a2a37FF"
 
-[appearance]
-border_focused = "#76946aFF"
-border_unfocused = "#2a2a37FF"
-scratchpad_border_focused = "#7e9cd8FF"
-scratchpad_border_unfocused = "#204183FF"
-outer_border_color = "#1f1f28FF"
-insert_hint_color = "#7e9cd880"
-backdrop_color = "#2a2a37FF"
+[colors.border]
+focused = "#76946aFF"
+unfocused = "#2a2a37FF"
+outer = "#1f1f28FF"
 
-[overview]
+[colors.overview]
 background_tint = "#1f1f2888"
+badge = "#76946aFF"
+workspace_background = "#1f1f28FF"
+
+[[window_rule]]
+match.is_scratchpad = true
+border_color_focused = "#7e9cd8FF"
+border_color_unfocused = "#204183FF"

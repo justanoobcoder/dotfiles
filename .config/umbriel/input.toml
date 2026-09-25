@@ -1,6 +1,6 @@
 [input.cursor]
 theme = "Bibata-Modern-Ice"
-size = 24
+size = 20
 hide_when_typing = true
 hide_timeout_ms = 5000
 

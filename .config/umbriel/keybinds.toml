@@ -1,20 +1,25 @@
+[[scratchpad]]
+name = "keepass"
+
 [keybinds]
-"Mod+Return" = { action = "spawn:ghostty", repeat = false }
+"Mod+Return" = { action = "spawn:kitty --single-instance", repeat = false }
 "Mod+W" = { action = "spawn:brave --enable-features=AcceleratedVideoDecodeLinuxGL,VaapiOnNvidiaGPUs --ignore-gpu-blocklist --use-gl=angle --use-angle=gl", repeat = false }
+#"Mod+W" = { action = "spawn:firefox", repeat = false }
 "Mod+P" = { action = "spawn:noctalia msg panel-toggle launcher", repeat = false }
 "Mod+Shift+B" = { action = "spawn:noctalia msg bar-toggle", repeat = false }
 "Mod+Shift+Q" = { action = "spawn:noctalia msg panel-toggle session", repeat = false }
 "Super+X" = { action = "spawn:noctalia msg panel-toggle session", repeat = false }
 "Mod+F1" = { action = "spawn:/home/hiepnh/.local/bin/webcam-mpv", repeat = false }
-"Mod+F2" = { action = "spawn:pkill keypop || keypop", repeat = false }
+"Mod+F2" = { action = "spawn:pkill wayshadow || wayshadow", repeat = false }
 "Super+I" = { action = "spawn:noctalia msg settings-toggle", repeat = false }
 "Super+L" = "spawn:noctalia msg session lock"
 "Super+V" = { action = "spawn:noctalia msg panel-toggle clipboard", repeat = false }
 "Super+Shift+S" = { action = "spawn:noctalia msg screenshot-region", repeat = false }
 "Print" = { action = "spawn:noctalia msg screenshot-fullscreen", repeat = false }
 "Mod+Shift+R" = "config-reload"
-"Mod+O" = "overview-toggle"
+"Mod+O" = { action = "overview-toggle", repeat = false }
 "Mod+Q" = "window-close"
+"Mod+Escape" = "session-quit"
 
 "Mod+1" = "workspace-switch:1"
 "Mod+2" = "workspace-switch:2"
@@ -60,17 +65,16 @@
 "Mod+WheelLeft" = "window-focus-left"
 "Mod+WheelRight" = "window-focus-right"
 
-"Mod+Tab" = "workspace-back-and-forth"
-"Mod+Shift+Tab" = "window-move-to-workspace-back-and-forth"
+"Mod+Tab" = { action = "workspace-focus-last", repeat = false }
 
-"Super+Shift+K" = "window-toggle-scratchpad"
-"Super+K" = "scratchpad-toggle"
-"Super+Tab" = "scratchpad-focus-next"
+"Super+Shift+K" = "window-toggle-scratchpad:keepass"
+"Super+K" = "scratchpad-toggle:keepass"
 
-"Mod+R" = "window-cycle-width"
+"Mod+R" = "window-cycle-primary-extent-back"
 "Mod+F" = "window-toggle-maximize"
 "Mod+Shift+F" = "window-toggle-fullscreen"
 "Mod+V" = "window-toggle-floating"
+"Mod+Shift+V" = "window-focus-switch-floating"
 "Mod+Shift+P" = "window-toggle-pinned"
 
 "XF86AudioRaiseVolume" = "spawn:noctalia msg volume-up 2%"

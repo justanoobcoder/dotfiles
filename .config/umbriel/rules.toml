@@ -2,33 +2,32 @@
 blur = true
 
 [[window_rule]]
-match.app_id = "^(kitty|com\\.mitchellh\\.ghostty)$"
-default_width = 0.5
+match.app_id = "^(foot|footclient|kitty|com\\.mitchellh\\.ghostty)$"
+default_scrolling_extent = 0.5
 
 [[window_rule]]
-match.title = "^(jcm|Fcitx Configuration|Lotus Settings|Zed — Settings)$"
+match.title = "^(jcm|Fcitx Configuration|Lotus Settings|Areca Settings|Zed — Settings)$"
 default_floating = true
 
 [[window_rule]]
 match.app_id = "^(xdg-desktop-portal-gtk)$"
 default_floating = true
-default_size = [1200, 800]
+default_floating_size_px = { width = 1020, height = 900 }
 
 [[window_rule]]
-match.app_id = "^(zen|brave-browser)$"
+match.app_id = "^(zen|brave-browser|org\\.ladybird\\.Ladybird)$"
 default_workspace = 2
-default_width = 1.0
+default_scrolling_extent = 1.0
 
 [[window_rule]]
 match.app_id = "^dev.noctalia.Noctalia$"
 default_floating = true
-default_size = [1200, 900]
-blur_popups = false
+default_floating_size_px = { width = 1020, height = 900 }
 
 [[window_rule]]
 match.app_id = "^dev.noctalia.UmbrielSharePicker$"
 default_floating = true
-default_size = [800, 600]
+default_floating_size_px = { width = 800, height = 600 }
 
 [[window_rule]]
 match.is_focused = false
@@ -39,7 +38,11 @@ match.is_focused = true
 opacity = 1.0
 
 [[window_rule]]
-match.app_id = "keypop"
+match.is_alone = true
+default_scrolling_extent = 1.0
+
+[[window_rule]]
+match.app_id = "wayshadow"
 opacity = 0.8
 blur = false
 default_focused = false
@@ -47,17 +50,9 @@ default_pinned = true
 default_position = { x = 10, y = 10, anchor = "bottom_right" }
 
 [[window_rule]]
-match.app_id = "mpv"
-default_floating = true
-default_size = [1280, 720]
-
-[[window_rule]]
-match.title = "webcam-mpv"
-default_pinned = true
-
-[[window_rule]]
 match.app_id = "^it.catboy.ripdrag$"
 default_pinned = true
+default_focused = false
 default_position = { x = 10, y = 10, anchor = "bottom_right" }
 
 [[window_rule]]
@@ -66,8 +61,35 @@ default_floating = true
 default_maximize = false
 default_position = { x = 20, y = 20, anchor = "bottom_right" }
 
+[[window_rule]]
+match.title = "^notificationtoasts_.+_desktop"
+default_position = { x = 0, y = 0, anchor = "bottom_right" }
+default_focused = false
+default_pinned = true
+
+[[window_rule]]
+match.app_id = "^org\\.keepassxc\\.KeePassXC$"
+default_scratchpad = "keepass"
+
+[[window_rule]]
+match.app_id = "^webcam-mpv$"
+default_focused = false
+focus_on_activate = false
+default_floating = true
+default_pinned = true
+border_width = 0
+default_floating_size = { width = 0.15, height = 0.15 }
+default_position = { x = 10, y = 0, anchor = "right" }
+
+[[window_rule]]
+match.title = "(Bitwarden|Extension.*Bitwarden.*)"
+default_floating = true
+default_floating_size = { width = 0.3, height = 0.8 }
+default_position = { x = 0, y = 0, anchor = "center" }
+
 [[layer_rule]]
 match.namespace = "^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd|desktop-widget-[^\"]*)$"
 blur = true
 blur_ignore_alpha = 0.5
 blur_popups = true
+blur_optimized = false
