@@ -72,6 +72,11 @@ match.app_id = "^org\\.keepassxc\\.KeePassXC$"
 default_scratchpad = "keepass"
 
 [[window_rule]]
+match.app_id = "^Godot$"
+match.title = ".*\\(DEBUG\\)$"
+default_floating = true
+
+[[window_rule]]
 match.app_id = "^webcam-mpv$"
 default_focused = false
 focus_on_activate = false
