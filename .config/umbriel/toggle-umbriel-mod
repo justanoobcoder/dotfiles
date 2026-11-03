@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+f="$HOME/.config/umbriel/mod-override.toml"
+
+if [ -e "$f" ]; then
+    rm "$f"
+else
+    printf '[general]\nmod_key = "Super"\n' >"$f"
+fi

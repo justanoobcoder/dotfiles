@@ -1,5 +1,6 @@
 [include]
 files = [
+  "mod.toml",
   "output.toml",
   "autostart.toml",
   "general.toml",
@@ -10,7 +11,11 @@ files = [
   "keybinds.toml",
   "rules.toml",
   "env.toml",
-  ]
+]
 
 [include.optional]
-files = ["noctalia.toml"]
+files = ["mod-override.toml", "noctalia.toml"]
+
+# Overrides noctalia.toml, which Noctalia regenerates.
+[colors]
+background = "#1f1f28FF"

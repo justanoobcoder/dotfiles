@@ -2,12 +2,13 @@
 blur = true
 
 [[window_rule]]
-match.app_id = "^(foot|footclient|kitty|com\\.mitchellh\\.ghostty)$"
+match.app_id = "^(foot|footclient|kitty|com\\.mitchellh\\.ghostty|jotty)$"
 default_scrolling_extent = 0.5
 
 [[window_rule]]
-match.title = "^(jcm|Fcitx Configuration|Lotus Settings|Areca Settings|Zed — Settings)$"
+match.title = "^(Fcitx Configuration|Lotus Settings|Areca Settings|Zed — Settings|Jot Settings)$"
 default_floating = true
+default_floating_size_px = { width = 1020, height = 900 }
 
 [[window_rule]]
 match.app_id = "^(xdg-desktop-portal-gtk)$"
@@ -20,9 +21,13 @@ default_workspace = 2
 default_scrolling_extent = 1.0
 
 [[window_rule]]
-match.app_id = "^dev.noctalia.Noctalia$"
+match.app_id = "^(dev.noctalia.Noctalia|unda-settings)$"
 default_floating = true
 default_floating_size_px = { width = 1020, height = 900 }
+
+[[window_rule]]
+match.app_id = "^unda-editor$"
+default_floating = true
 
 [[window_rule]]
 match.app_id = "^dev.noctalia.UmbrielSharePicker$"
@@ -94,7 +99,7 @@ default_position = { x = 0, y = 0, anchor = "center" }
 
 [[layer_rule]]
 match.namespace = "^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd|desktop-widget-[^\"]*)$"
-blur = true
+blur = false
 blur_ignore_alpha = 0.5
 blur_popups = true
 blur_optimized = false
