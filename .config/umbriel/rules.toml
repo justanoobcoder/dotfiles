@@ -2,7 +2,7 @@
 blur = true
 
 [[window_rule]]
-match.app_id = "^(foot|footclient|kitty|com\\.mitchellh\\.ghostty|jotty)$"
+match.app_id = "^(foot|footclient|kitty|com\\.mitchellh\\.ghostty|jotty|rio)$"
 default_scrolling_extent = 0.5
 
 [[window_rule]]
@@ -97,9 +97,24 @@ default_floating = true
 default_floating_size = { width = 0.3, height = 0.8 }
 default_position = { x = 0, y = 0, anchor = "center" }
 
+[[window_rule]]
+match.app_id = "^unda-(settings|editor)$"
+blur = true
+
 [[layer_rule]]
 match.namespace = "^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd|desktop-widget-[^\"]*)$"
 blur = false
 blur_ignore_alpha = 0.5
 blur_popups = true
+blur_optimized = false
+
+[[layer_rule]]
+match.namespace = ["^unda-bar$", "^unda-tip$", "^unda-popup$", "^unda-notifications$", "^unda-osd$"]
+blur = true
+blur_ignore_alpha = 0.3
+
+[[layer_rule]]
+match.namespace = ["^unda-popup$", "^unda-notifications$", "^unda-osd$"]
+blur = true
+blur_ignore_alpha = 0.3
 blur_optimized = false

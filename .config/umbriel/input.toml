@@ -20,4 +20,4 @@ accel_profile = "adaptive"
 sensitivity = 0.5
 
 [input.focus]
-follows_mouse = false
+follows_mouse = "off"

@@ -2,17 +2,19 @@
 name = "keepass"
 
 [keybinds]
-"Mod+Return" = { action = "spawn jotty", repeat = false }
-"Mod+W" = { action = "spawn brave --enable-features=AcceleratedVideoDecodeLinuxGL,VaapiOnNvidiaGPUs --ignore-gpu-blocklist --use-gl=angle --use-angle=gl", repeat = false }
+"Mod+Return" = { action = "spawn jotty --single-instance", repeat = false }
+"Mod+W" = { action = "spawn helium --enable-features=AcceleratedVideoDecodeLinuxGL,VaapiOnNvidiaGPUs --ignore-gpu-blocklist --use-gl=angle --use-angle=gl", repeat = false }
 "Mod+P" = { action = "spawn unda msg toggle launcher", repeat = false }
 "Mod+Shift+B" = { action = "spawn unda msg toggle bar", repeat = false }
 "Mod+Shift+Q" = { action = "spawn unda msg toggle session-menu", repeat = false }
 "Super+X" = { action = "spawn unda msg toggle session-menu", repeat = false }
 "Mod+F1" = { action = "spawn /home/hiepnh/.local/bin/webcam-mpv", repeat = false }
-"Mod+F2" = { action = "spawn pkill wayshadow || wayshadow", repeat = false }
+"Mod+F2" = { action = "spawn unda msg toggle keystrokes", repeat = false }
+"Mod+F12" = { action = "spawn unda msg toggle calculator", repeat = false }
 "Super+I" = { action = "spawn unda msg toggle settings", repeat = false }
 "Super+L" = "spawn unda msg lock"
 "Super+V" = { action = "spawn unda msg toggle clipboard", repeat = false }
+"Super+C" = { action = "spawn unda msg toggle color-picker", repeat = false }
 "Super+Shift+S" = { action = "spawn unda msg screenshot region", repeat = false }
 "Print" = { action = "spawn unda msg screenshot full", repeat = false }
 "Ctrl+Print" = { action = "spawn unda msg screenshot window", repeat = false }
