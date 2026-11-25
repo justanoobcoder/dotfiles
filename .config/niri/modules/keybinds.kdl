@@ -1,14 +1,13 @@
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
-    Mod+Return hotkey-overlay-title="Open a Terminal: Kitty" { spawn-sh "app2unit kitty"; }
-    Mod+P hotkey-overlay-title="Open App Launcher" { spawn-sh "dms ipc call launcher open"; }
-    Mod+W hotkey-overlay-title="Run an Application: Zen Browser" { spawn-sh "app2unit zen"; }
-    Mod+Shift+R hotkey-overlay-title="Restart DMS" { spawn-sh "dms restart"; }
-    Super+V hotkey-overlay-title="Open Clipboard History: jcm" { spawn "jcm"; }
-    Super+L hotkey-overlay-title="Lock the Screen" { spawn-sh "loginctl lock-session"; }
-    Super+X hotkey-overlay-title="Open Power Menu" { spawn-sh "ps aux | grep Zalo | grep -v grep | awk '{print $2}' | xargs kill -9 2>/dev/null; dms ipc call powermenu toggle"; }
-    Mod+Shift+Q { spawn-sh "ps aux | grep Zalo | grep -v grep | awk '{print $2}' | xargs kill -9 2>/dev/null; dms ipc call powermenu toggle"; }
+    Mod+Return hotkey-overlay-title="Open a Terminal: Ghostty" { spawn-sh "app2unit ghostty"; }
+    Mod+P hotkey-overlay-title="Open App Launcher" { spawn-sh "noctalia msg panel-toggle launcher"; }
+    Mod+W hotkey-overlay-title="Run an Application: Zen Browser" { spawn-sh "app2unit brave --enable-features=AcceleratedVideoDecodeLinuxGL,VaapiOnNvidiaGPUs --ignore-gpu-blocklist --use-gl=angle --use-angle=gl"; }
+    Super+V hotkey-overlay-title="Open Clipboard History" { spawn "noctalia msg panel-toggle clipboard"; }
+    Super+L hotkey-overlay-title="Lock the Screen" { spawn-sh "noctalia msg session lock"; }
+    Super+X hotkey-overlay-title="Open Power Menu" { spawn-sh "noctalia msg panel-toggle session"; }
+    Mod+Shift+Q { spawn-sh "noctalia msg panel-toggle session"; }
     Super+O hotkey-overlay-title="Activate OCR" { spawn "ocr"; }
 
     Mod+S { spawn-sh "niri-sticky-window toggle --float"; } 
