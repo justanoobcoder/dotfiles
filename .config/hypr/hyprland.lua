@@ -12,5 +12,3 @@ require("rules")
 require("ecosystem")
 require("plugins")
 
--- For Noctalia Color templates
-require("noctalia").apply_theme()

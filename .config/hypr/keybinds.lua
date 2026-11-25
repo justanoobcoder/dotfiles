@@ -2,7 +2,7 @@ local terminal = "app2unit ghostty"
 local browser =
 	"app2unit brave --enable-features=AcceleratedVideoDecodeLinuxGL,VaapiOnNvidiaGPUs --ignore-gpu-blocklist --use-gl=angle --use-angle=gl"
 local menu = "noctalia msg panel-toggle launcher"
-local clipboardManager = "jcm"
+local clipboardManager = "noctalia msg panel-toggle clipboard"
 local powerMenu =
 	"ps aux | grep Zalo | grep -v grep | awk '{print $2}' | xargs kill -9 2>/dev/null; noctalia msg panel-toggle session"
 local webcam = "/home/hiepnh/.local/bin/webcam-mpv"
@@ -78,6 +78,8 @@ hl.bind(mainMod .. " + SHIFT + L", hl.dsp.layout("swapcol r"))
 
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
+
+-- hl.bind(mainMod .. " + O", hl.dsp.overview.toggle("overview"))
 
 hl.bind(winMod .. " + End", hl.dsp.pass({ window = "class:^(com.obsproject.Studio)$" }))
 hl.bind(winMod .. " + Home", hl.dsp.pass({ window = "class:^(com.obsproject.Studio)$" }))
