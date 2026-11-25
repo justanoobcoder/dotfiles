@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=zalo
+Comment=zalostartup script
+Exec=/nix/store/37m1yxf2jk5pddmzf8hk4mjl8yr35qx2-zalo-26.10.20-extracted/zalo --hidden
+StartupNotify=false
+Terminal=false
