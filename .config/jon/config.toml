@@ -1,0 +1,11 @@
+colorscheme = "gruvbox"
+indentanimation = 25
+
+[diagnostic.signs]
+error = ""
+warn = ""
+info = ""
+hint = ""
+
+[terminal]
+shell = "fish"
