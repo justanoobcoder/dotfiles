@@ -6,3 +6,8 @@
 !.config/obsidian/user-flag.conf
 
 .config/hypr/hypridle.conf
+
+.config/fcitx5/crash.log
+.config/fcitx5/conf/cached_layouts
+.config/fcitx5/conf/lotus-emoji-history.conf
+.config/fish/conf.d/*.bak
