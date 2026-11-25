@@ -1,0 +1,178 @@
+# unda configuration; see docs/configuration.md
+
+terminal = "jotty"
+
+[activate_linux]
+enabled = false
+opacity = 0.5
+
+[liquid]
+reduce_motion = false
+wave_height = 1.0
+wave_fade = 4.0
+opacity = 0.9
+popup = "drop"
+
+[bar]
+margin = 6
+capsules = false
+spacing = 6
+hide_in_overview = true
+opacity = 0.8
+
+[bar.widgets]
+center = ["text:2", "visualizer", "text:9", "clock", "text:8", "weather", "recorder", "calculator", "text:5"]
+start = ["text:1", "workspaces", "text:4"]
+end = ["text:3", "cpu", "ram", "privacy", "tray", "button:1", "volume", "network", "battery", "notifications", "text:6"]
+
+[bar.texts.1]
+name = "Left Seperator"
+text = "「"
+size = 19
+weight = "regular"
+
+[bar.texts.2]
+name = "Left Seperator (copy)"
+text = "「"
+size = 19
+weight = "regular"
+
+[bar.texts.3]
+name = "Left Seperator (copy)"
+text = "「"
+size = 19
+weight = "regular"
+
+[bar.texts.4]
+name = "Right Seperator"
+text = "」"
+size = 19
+weight = "regular"
+
+[bar.texts.5]
+name = "Right Seperator (copy)"
+text = "」"
+size = 19
+weight = "regular"
+
+[bar.texts.6]
+name = "Right Seperator (copy)"
+text = "」"
+size = 19
+weight = "regular"
+
+[bar.texts.8]
+name = "Middle Seperator (copy)"
+text = "|"
+size = 15
+weight = "regular"
+
+[bar.texts.9]
+name = "Middle Seperator (copy)"
+text = "|"
+size = 15
+weight = "regular"
+
+[bar.buttons.1]
+name = "Cloudflare Warp"
+text = "󰯅"
+size = 15
+weight = "regular"
+command = """warp-cli status | grep -q 'Status update: Connected' && echo "󰯄" || echo "󰯅""""
+left = "warp-cli connect"
+right = "warp-cli disconnect"
+interval = 5
+click_wait = 2000
+
+[bar.widget_spacing.volume]
+padding_left = 0
+
+[bar.widget_spacing.tray]
+margin_left = 5
+margin_right = 5
+
+[bar.visualizer]
+width = 90
+gap = 1
+mirror = true
+symmetric = true
+
+[control_center]
+avatar = "/home/hiepnh/xdg/pictures/avatar.png"
+
+[battery]
+warning = 20
+
+[battery.devices]
+"Logitech M585/M590" = 0
+
+[osd]
+opacity = 0.8
+
+[lock]
+dim = 0.1
+blur = 4.0
+random_shapes = true
+random_colors = true
+
+[screenshot]
+folder = "/home/hiepnh/xdg/pictures/screenshots"
+
+[clipboard]
+auto_paste = true
+
+[recorder]
+folder = "/home/hiepnh/xdg/videos/recordings"
+system_audio = false
+microphone = false
+input = "alsa_input.usb-KTMicro_USB_Audio_2024-01-08-0000-0000-0000-00.mono-fallback"
+
+[weather]
+latitude = 13.9221
+longitude = 109.1298
+
+[session]
+grid = true
+
+[idle]
+enabled = true
+lock_before_sleep = true
+before_sleep = "powerprofilesctl set power-saver"
+after_sleep = "sleep 3s; powerprofilesctl set balanced"
+
+[[idle.steps]]
+timeout = 10
+action = "keyboard-light"
+on_timeout = "brightnessctl -sd platform::kbd_backlight set 0"
+on_resume = "brightnessctl -rd platform::kbd_backlight"
+
+[[idle.steps]]
+timeout = 300
+action = "dim"
+on_timeout = "brightnessctl -s set 10"
+
+[[idle.steps]]
+timeout = 360
+action = "lock"
+
+[[idle.steps]]
+timeout = 600
+action = "screen-off"
+on_timeout = "powerprofilesctl set power-saver; umbriel msg dpms-off"
+on_resume = "powerprofilesctl set balanced; umbriel msg dpms-on && brightnessctl -r"
+
+[[idle.steps]]
+timeout = 1200
+action = "suspend"
+
+[wallpaper]
+live = false
+
+[keystrokes]
+enabled = false
+position = "bottom-right"
+opacity = 1.0
+push = "up"
+font_size = 26
+radius = 10.0
+max_width = 360
