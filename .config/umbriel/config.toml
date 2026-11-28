@@ -14,8 +14,4 @@ files = [
 ]
 
 [include.optional]
-files = ["mod-override.toml"]
-
-# Overrides noctalia.toml, which Noctalia regenerates.
-[colors]
-background = "#1f1f28FF"
+files = ["mod-override.toml", "unda.toml"]
