@@ -2,6 +2,10 @@
 
 terminal = "jotty"
 
+[theme]
+palette = "Kanagawa"
+mode = "dark"
+
 [activate_linux]
 enabled = false
 opacity = 0.5
@@ -176,3 +180,6 @@ push = "up"
 font_size = 26
 radius = 10.0
 max_width = 360
+
+[templates]
+luciole = true
