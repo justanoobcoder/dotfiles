@@ -9,3 +9,6 @@ hint = ""
 
 [terminal]
 shell = "fish"
+
+[explorer]
+always_show = [".github", ".tack"]
