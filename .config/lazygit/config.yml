@@ -1,0 +1,7 @@
+os:
+  # jon takes Vim's `+{line}` and `--`.
+  edit: "jon -- {{filename}}"
+  editAtLine: "jon +{{line}} -- {{filename}}"
+  editAtLineAndWait: "jon +{{line}} -- {{filename}}"
+  openDirInEditor: "jon -- {{dir}}"
+  suspendOnEdit: true
